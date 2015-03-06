@@ -1,0 +1,27 @@
+{
+	"services":{
+		"new":{
+			"lbl": {
+				"serviceNew" : "New",
+				"serviceName" : "Name",
+				"serviceUrl" : "Url",
+				"serviceEntityId": "Entity Id",
+				"serviceDescription": "Description"
+			},
+			"placeholder":{
+				"serviceName" : "Name of the service",
+				"serviceUrl" : "http://example.com",
+				"serviceDescription": "Description of the service"
+			},
+			"msg": {
+				"serviceCreateSuccess" : "Service created!",
+				"serviceCreateError" : "Failed to create service"
+			},
+			"btn":
+			{
+				"newEntityId" : "New"
+			}
+		}
+	}
+	
+}

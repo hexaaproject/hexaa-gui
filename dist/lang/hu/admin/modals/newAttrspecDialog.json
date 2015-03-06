@@ -1,0 +1,14 @@
+{
+	"admin": {
+		"modals": {
+			"newAttrspecDialog": {
+				"lbl": {
+					"title": "Új attribútum specifikáció"
+				},
+				"btn": {
+					"close": "Bezárás"
+				}
+			}
+		}
+	}
+}

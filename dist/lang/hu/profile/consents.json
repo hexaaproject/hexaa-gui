@@ -1,0 +1,25 @@
+{
+	"profile":
+	{
+		"consents":
+		{
+			"lbl":
+			{
+				"title": "Jóváhagyások",
+				"consentsTitle": "Jóváhagyások",
+				"noAttributeSpecificationsAssociated" : "Nem találhatóak rád érvényes attribútumok.",
+				"noAttributeValuesForSpecification": "Nem találhatóak értékek, ehhez az attribútumhoz!"
+			},
+			"msg":
+			{
+				"consentAddError": "Hozzájárulás megadása sikertelen!",
+				"consentAddSuccess": "Hozzárjárulás megadva!",
+				"consentUpdateSuccess": "Jóváhagyás frissítve!",
+				"consentUpdateError": "Nem sikerült a jóváhagyás frissítése!",
+				"consentRemoveError": "Nem sikerült megtagadni a hozzájárulást!",
+				"consentRemoveSuccess": "Hozzájárulás megtagadva!"
+			}
+		}
+	}
+	
+}

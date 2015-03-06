@@ -1,0 +1,38 @@
+<div class="form-group" ng-controller="OrganizationPropertiesCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <form name="organizationPropertiesForm" class="form-horizontal" ng-model="organizationPropertiesForm">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name" translate>organizations.properties.lbl.organizationName</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="properties.name" id="name" placeholder="{{'organizations.properties.placeholder.organizationName' | translate}}" ng-readonly="!isManagerOfOrganization(properties.id)" required notifyuierror/>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="description" translate>organizations.properties.lbl.organizationDescription</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="properties.description" id="description" placeholder="{{'organizations.properties.placeholder.organizationDescription' | translate}}" ng-readonly="!profile.isManagerOfOrganization(properties.id)" notifyuierror/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="url" translate>organizations.properties.lbl.organizationUrl</label>
+                    <div class="col-sm-10">
+                        <input type="url" class="form-control" ng-model="properties.url" id="url" placeholder="{{'organizations.properties.placeholder.organizationUrl' | translate}}" ng-readonly="!profile.isManagerOfOrganization(properties.id)" notifyuierror/>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="default_role" translate>organizations.properties.lbl.organizationDefaultRole</label>
+                    <div class="col-sm-10">
+                        <select ng-model="properties.default_role_id" id="default_role" class="form-control"  ng-readonly="!profile.isManagerOfOrganization(properties.id)" notifyuierror>
+                            <option ng-repeat="role in properties.roles" ng-selected="{{role.id == properties.default_role_id}}" value="{{role.id}}">{{role.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

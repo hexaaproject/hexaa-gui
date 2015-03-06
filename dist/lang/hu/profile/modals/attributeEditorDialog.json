@@ -1,0 +1,15 @@
+{
+	"profile": {
+		"modals": {
+			"attributeEditorDialog": {
+				"lbl": {
+					"title": "Attribútum"									
+				},
+				"btn": {
+					"save": "Mentés",
+					"dialogClose": "Bezárás"
+				}
+			}
+		}
+	}
+}

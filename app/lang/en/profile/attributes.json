@@ -1,0 +1,47 @@
+{
+	"profile":
+	{
+		"attributes":
+		{
+			"lbl":
+			{
+				"title": "My Attributes",
+				"attributesTitle": "Attributes",
+				"noAssociatedAttributeSpecifications": "There are no attributespecifications associated to You!",
+				"attributeNew": "New attribute",
+				"attributeValue": "Value",
+				"attributeIsDefault": "Is Default",				
+				"attributeActions": "Actions",
+				"attributeAssociations": "Associations",
+				"attributeSupportingServices": "Supporting Services",
+				"attributeAssociatedServices": "Associated Services",
+				"serviceAssociationWarning": "If you dont select at least one service, your value will be provided to all services.",
+				"serviceName": "Name",
+				"serviceLogo": "Logo",
+				"serviceDescription": "Description",
+				"noSupportedServiceForAttributeSpecification": "There is no supporting service for this attribute specification!"
+			},			
+			"btn" :
+			{
+				"attributeNew": "New",
+				"attributeEdit": "Edit",
+				"attributeRemove": "Remove",
+				"attributeSave": "Save",
+				"cancel": "Cancel"
+			},
+			"placeholder": {
+				"serviceList": "Search in the SP list"
+			},
+			"msg":
+			{
+				"attributeValuePrincipalCreateSuccess": "AttributeValuePrincipal created!",
+				"attributeValuePrincipalCreateError": "Failed to create AttributeValuePrincipal! ",
+				"attributeValuePrincipalUpdateSuccess": "AttributeValuePrincipal updated!",
+				"attributeValuePrincipalUpdateError": "Failed to update AttributeValuePrincipal! ",
+				"attributeValuePrincipalRemoveError" : "Failed to remove AttributeValuePrincipal!",
+				"problemOccured": "Problem occured!",
+				"attributeValuePrincipalRemoveSuccess": "AttributeValuePrincipal has been removed!"
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+<div ng-controller="ProfileMyServicesCtrl">
+    <h2 translate>profile.myservices.lbl.title</h2>
+    <hr/>
+    <div ng-repeat="item in services">
+        <div class="clearfix">
+            <img class="servicelogo pull-left" ng-src="{{ item.key.logo_path | imageFormatter }}"/>
+            <h3>{{ item.key.name }}</h3>
+        </div>
+        <table class="table table-responsive">
+            <tr>
+                <td ng-if="item.key.description !== null">Description</td>
+                <td ng-if="item.key.description !== null">{{item.key.description}}</td>
+            </tr>
+            <tr>
+                <td ng-if="item.key.org_short_name !== null">Contact</td>
+                <td ng-if="item.key.org_short_name !== null">{{item.key.org_short_name}}</td>
+            </tr>
+            <tr>
+                <td ng-if="item.key.priv_url !== null">Privacy</td>
+                <td ng-if="item.key.priv_url !== null"><a ng-href="item.key.priv_url" target="_blank">{{item.key.priv_url}}</a></td>
+            </tr>
+        </table>
+        <h4>Entitlementpacks</h4>
+        <div ng-repeat="entitlementpack in item.values" class="panel panel-default">
+            <div class="panel-heading"><h4 class="panel-title">{{entitlementpack.name}} </h4> </div>
+            <div class="panel-body">
+                <ul ng-repeat="entitlement in entitlementpack.entitlements">
+                    <li title="{{entitlement.description}}">
+                        <a href="#/profile/myorganizations/entitlement/{{entitlement.id}}" ng-class="{ 'alert-warning': entitlement.id == lookuped_entitlement }">
+                            <span class="glyphicon glyphicon-star" ng-if="entitlement.id == lookuped_entitlement">
+                            </span>
+                            {{entitlement.name}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

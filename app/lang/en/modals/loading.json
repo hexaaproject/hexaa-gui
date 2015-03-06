@@ -1,0 +1,13 @@
+{
+	"modals" :{
+		"loading":
+		{
+			"lbl": 
+				{
+					"loadingHeader": "Please wait",
+                                        "loadingBody": "The application is communicating with the server, please be patient!",
+                                        "loadingProgressbarTitle": "Loading..."
+				}
+		}				
+	}
+}

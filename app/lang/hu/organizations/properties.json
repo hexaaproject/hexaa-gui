@@ -1,0 +1,33 @@
+{
+	"organizations":
+	{
+		"properties":
+		{
+			"lbl":
+			{		
+				"title": "Tulajdonságok",
+				"organizationName": "Név",
+				"organizationDescription": "Leírás",
+				"organizationDefaultRole": "Alapértelmezett szerepkör",
+				"organizationUrl": "Honlap"
+			},
+			"msg": 
+			{
+				"organizationUpdateSuccess": "Szervezet frissítve!",
+				"organizationUpdateError": "Szervezet frissítése sikertelen! ",
+				"organizationGetError": "Nem sikerült lekérdezni a kért szervezeti egységet!",
+				"organizationRoleGetError": "Nem sikerült lekérdezni a kért szervezeti egység szerepköreit!"
+			},
+			"placeholder":
+			{
+				"organizationName": "A szervezet neve",
+				"organizationDescription": "A szervezet leírása",
+				"organizationDefaultRole": "A szervezet alapértelmezett szerepköre",
+				"organizationUrl": "A weboldal címe"
+			},
+			"help":{
+				"title": "Hogy módosítsam a szervezetem tulajdonságait?"
+			}
+		}
+	}	
+}

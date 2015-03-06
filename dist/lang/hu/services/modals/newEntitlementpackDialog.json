@@ -1,0 +1,18 @@
+{
+	"services": {
+		"modals": {
+			"newEntitlementpackDialog": {
+				"lbl": {
+					"title": "Szolgáltatás szerkesztő"
+				},
+				"btn": {
+					"dialogClose": "Bezárás"
+				},
+				"msg": {
+					"entitlementpackSaveSuccess": "A szolgáltatás mentésre került!",
+					"entitlementpackSaveError": "Nem sikerült menteni a szolgáltatást!"
+				}
+			}
+		}
+	}
+}

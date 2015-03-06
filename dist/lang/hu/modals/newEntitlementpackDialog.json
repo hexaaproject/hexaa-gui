@@ -1,0 +1,12 @@
+{
+	"modals": {
+		"newEntitlementpackDialog": {
+			"lbl": {
+				"title": "Új jogosultság csomag"
+			},
+			"btn": {
+				"dialogClose": "Bezárás"
+			}
+		}
+	}
+}

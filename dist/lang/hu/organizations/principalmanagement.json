@@ -1,0 +1,51 @@
+{
+	"organizations":
+	{
+		"principalmanagement":
+		{
+			"lbl":
+			{
+				"title": "Felhasználók áttekintése",
+				"principalOverviewTitle": "Felhasználók áttekintése",
+				"principalUsername": "Felhasználó",
+				"principalEmail": "E-mail",
+				"principalActions": "Műveletek",
+				"principalIsManager": "Manager",
+				"principalIsActive": "Aktív",
+				"principalIsInvited": "Meghívás alatt"
+			},
+			"btn":
+			{
+				"principalActionRevoke": "Lemondat",
+				"principalActionRemove": "Törlés",
+				"principalActionPropose": "Kinevez",
+				"invitationView": "Megtekint",
+				"invitationResend": "Újraküld",
+				"invitationCancel": "Visszavon",
+				"invitationInvite": "Új meghívó",
+				"inviteMember": "Tag meghívása",
+				"inviteManager": "Menedzser meghívása"
+			},
+			"msg":
+			{
+				"memberRemoveSuccess": "Felhasználó eltávolítva a VO-ból!",
+				"memberRemoveError": "Felhasználó törlése sikertelen a VO-ból!",
+				"managerRevokeSuccess": "Manageri jog megvonása sikeres!",
+				"managerRevokeError": "Nem sikerült megvonni a manageri jogot!",
+				"managerProposeSuccess": "Manager kinevezve!",
+				"managerProposeError": "Manager kinevezése sikertelen!",
+				"invitationResendSuccess" : "Meghívó sikeresen újraküldve!",
+				"invitationResendError" : "Meghívó újraküldése sikertelen!",	
+				"invitationCancelSuccess": "Meghívó visszavonva!",
+				"invitationCancelError": "Meghívó visszavonása sikertelen",
+				"failedToRetrieveData": "Nem sikerült az adatok letöltése!",
+				"confirmationNeeded": "Megerősítés szükséges",
+				"confirmRemoveMember": "Tényleg törölni kívánja a {{fedid}} felhasználót?",
+				"confirmRevokeManager": "Tényleg megvonja a manageri jogot a {{fedid}} felhasználótól?",				
+				"confirmRemoveSelf": "Tényleg törölni kívánja saját magát? Figyelem! A törlés megerősítésekor Ön többé nem lesz tagja a VO-nak.",
+				"confirmRevokeSelf": "Biztosan lemond manageri posztjáról? Ez visszavonhatatlan, és csak a VO managere lesz képes Önt újra kinevezni."
+			}
+		}
+	}
+	
+}

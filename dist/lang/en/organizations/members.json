@@ -1,0 +1,34 @@
+{
+	"organizations":
+	{
+		"members":
+		{
+			"lbl":
+			{				
+				"title": "Members",
+				"allPrincipals": "Everybody",
+				"associatedPrincipals": "Associated members"
+			},
+			"btn":
+			{
+				"inviteMembers": "Invite",
+				"addMembers" : "Add",
+				"removeMembers" : "Remove"
+			},
+			"placeholder":
+			{
+				"principalList": "Type a name",
+				"memberList": "Type a name"
+			},
+			"msg":
+			{
+				"principalsRetrieveError": "Failed to retrieve principal list",
+				"memberRetrieveError": "Failed to retrieve memberlist",
+				"memberUpdateError": "Failed to save memberlist!",
+				"memberUpdateSuccess" :  "Memberlist updated!",
+				"problemOccured": "Problem occured",
+				"allChangesSaved": "All changes have been saved!"
+			}
+		}
+	}	
+}

@@ -1,0 +1,23 @@
+{
+	"modals": {
+		"serviceDetails":
+		{
+			"lbl":
+			{
+				"serviceDetails": "Szolgáltatás tulajdonságai",
+				"serviceDescription": "Leírás",
+				"serviceOwnerName": "Tulajdonos szervezet",
+				"servicePrivacyDesc": "Adatkezelési leírás",
+				"servicePrivacyUrl": "Adatkezelési elvek megtekintése"
+			},
+			"msg":
+			{
+				"getServiceError": "A kért szolgáltatás adatainak letöltése meghiúsult!"
+			},
+			"btn":
+			{
+				"close": "Bezárás"
+			}
+		}
+	}
+}

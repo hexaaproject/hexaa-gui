@@ -1,0 +1,47 @@
+{
+	"profile":
+	{
+		"attributes":
+		{
+			"lbl":
+			{
+				"title": "Attribútumaim",
+				"attributesTitle": "Attribútumok",
+				"noAssociatedAttributeSpecifications": "Nincsenek az attribútum specifikációhoz társított értékek!",
+				"attributeNew": "Új érték",
+				"attributeValue": "Érték",
+				"attributeIsDefault": "Alapértelmezett",
+				"attributeActions": "Műveletek",
+				"attributeAssociations": "Hozzárendelések",
+				"attributeSupportingServices": "Támogatott szolgáltatások",
+				"attributeAssociatedServices": "Hozzárendelt szolgáltatások",
+				"serviceAssociationWarning": "Ha nem rendeli hozzá az értéket legalább egy szolgáltatáshoz, akkor az értéket minden szolgáltatás megkapja!",
+				"serviceName": "Név",
+				"serviceLogo": "Logo",
+				"serviceDescription": "Leírás",
+				"noSupportedServiceForAttributeSpecification": "Nincsen ezen attribútum specifikációt támogató szolgáltatás!"
+			},		
+			"btn": 
+			{
+				"attributeNew": "Új",
+				"attributeEdit": "Szerkesztés",
+				"attributeRemove": "Törlés",
+				"attributeSave": "Mentés",
+				"cancel": "Mégsem"
+			},
+			"placeholder": {
+				"serviceList": "Keresés a szolgáltatók listájában"
+			},
+			"msg":
+			{
+				"attributeValuePrincipalCreateSuccess": "Érték létrehozva!",
+				"attributeValuePrincipalCreateError": "Nem sikerült létrehozni az értéket! ",
+				"attributeValuePrincipalUpdateSuccess": "Érték frissítve!",
+				"attributeValuePrincipalUpdateError": "Nem sikerült frissíteni az értéket! ",
+				"attributeValuePrincipalRemoveError" : "Nem sikerült törölni az értéket!",
+				"problemOccured": "Hiba történt!",
+				"attributeValuePrincipalRemoveSuccess": "Az érték törlése sikeres!"
+			}
+		}
+	}
+}

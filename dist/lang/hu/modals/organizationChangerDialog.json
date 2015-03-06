@@ -1,0 +1,17 @@
+{
+	"modals": {
+		"organizationChangerDialog": {
+			"lbl":{
+				"title":"Válasszon egy VO-t!",
+				"organizationName": "Név",
+				"organizationDescription": "Leírás",
+				"organizationActions": "Művelet"
+			},
+			"btn": {
+				"close": "Bezárás",
+				"organizationSelect": "Kiválasztás"
+			}
+
+		}
+	}
+}

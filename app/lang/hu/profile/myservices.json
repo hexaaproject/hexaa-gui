@@ -1,0 +1,16 @@
+{
+	"profile":
+	{
+		"myservices":
+		{
+			"lbl":{				
+				"title": "Használt szolgáltatásaim",				
+				"labelEntitlementpacks": "Szolgáltatások"				
+			},
+			"msg": {
+				"getMyServicesError": "Nem sikerült letölteni a szolgáltatások listáját!"				
+			}
+		}
+	}
+	
+}

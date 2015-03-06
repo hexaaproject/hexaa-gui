@@ -1,0 +1,32 @@
+<div ng-controller="OrganizationNewsCtrl">
+    <div class="form-group form-inline">
+        <label for="tagFilter" translate>organizations.news.lbl.searchForTags</label>
+
+        <div    id="tagFilter"
+                multi-select
+                input-model="tagSources"
+                button-label="name"
+                item-label="name"
+                tick-property="ticked"
+                orientation="vertical"
+                group-property="multiSelectGroup"
+                static-label="Filter tags"
+                >
+        </div>
+
+        <label for="pageSize"></label> <b translate>organizations.news.lbl.pageSize</b>
+        <select id="pageSize" class="form-control" ng-model="pager.itemPerPage">
+            <option>1</option>
+            <option>5</option>
+            <option>10</option>
+            <option>25</option>
+            <option>50</option>
+            <option>100</option>
+        </select>
+    </div>
+    <div>
+        <div hexaa-shared-news-widget news = "organization.news"></div>
+    </div>
+    <pagination total-items="pager.totalItems" page="pager.currentPage" max-size="pager.maxSize" class="pagination-sm"
+                boundary-links="true" rotate="false" num-pages="pager.numPages" items-per-page="pager.itemPerPage"></pagination>
+</div>

@@ -1,0 +1,13 @@
+{
+	"modals":{
+		"entityIdContactDialog" : {
+			"lbl": {
+				"title" : "Choose SP Contact"
+			},
+			"btn": {
+				"close": "Close",
+				"send": "Send"
+			}
+		}
+	}
+}

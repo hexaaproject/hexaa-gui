@@ -1,0 +1,31 @@
+<div class="container-fluid" ng-controller="ServiceOwnerCtrl">
+    <form name="ownerForm" ng-model="ownerForm">
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <i translate>services.owner.lbl.ownerDetails</i>
+            </div>
+            <div class="panel-body form-group">
+                <label for="name" translate>services.owner.lbl.organizationName</label>
+                <input type="text" class="form-control" id="name" ng-model="owner.org_name" notifyuierror>
+                <label for="description" translate>services.owner.lbl.organizationDescription</label>
+                <input type="text" class="form-control" id="description" ng-model="owner.org_description" notifyuierror>
+                <label for="org_short_name" translate>services.owner.lbl.organizationShortName</label>
+                <input type="text" class="form-control" id="org_short_name" ng-model="owner.org_short_name" notifyuierror>
+                <label for="org_url" translate>services.owner.lbl.organizationUrl</label>
+                <input type="url" class="form-control" id="org_url" ng-model="owner.org_url" notifyuierror validate>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i translate>services.owner.lbl.privacyDetails</i>
+            </div>
+            <div class="panel-body form-group">
+                <label for="priv_url" translate>services.owner.lbl.privacyUrl</label>
+                <input type="url" class="form-control" id="priv_url" ng-model="owner.priv_url"  notifyuierror validate>
+                <label for="priv_description" translate>services.owner.lbl.privacyDescription</label>
+                <input type="text" class="form-control" id="priv_description" ng-model="owner.priv_description"  notifyuierror>
+            </div>
+        </div>
+    </form>
+</div>

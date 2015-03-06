@@ -1,0 +1,77 @@
+"serviceUpdateError": "Failed to update service!",  
+"serviceLogoUpdateError": "Couldnt upload service logo!"  
+"entityIdRequestFailedToRemoveError": "Failed to remove entityId Request!"  
+"serviceDeleteError" : "Failed to delete service!",  
+"serviceSPNotifyError" : "Failed to resend authorization e-mail!"  
+"invitationSendError": "Failed to send invitation! ",  
+"ownerUpdateError": "Failed to update owner information.",  
+"serviceCreateError" : "Failed to create service"  
+"attributeSpecificationAddError" : "Failed to add attributespecification: {0}",  
+"attributeSpecificationRemoveError" :"Failed to add attributespecification: {0}",  
+"connectionRemoveError" : "Failed to remove connection!",  
+"connectionAcceptError" : "Failed to accept request!"  
+"entitlementRemoveError": "Failed to remove entitlement!",  
+"entitlementpackAddError" : "Failed to add entitlement",  
+"entitlementpackUpdateError" : "Failed to update entitlement"  
+"invitationResendError" : "Failed to resend invitation!",  
+"invitationRemoveError" : "Failed to remove invitation!",  
+"invitationUpdateError" : "Failed to update invitation!"  
+"entitlementLoadError" : "Failed to load entitlements of entitlementpack!",  
+"entitlementpacksLoadError": "Failed to load entitlementpacks of service!",  
+"entitlementsRefreshError" : "Failed to query service entitlements!",  
+"entitlementAddError" : "Failed to add entitlement: {0}",  
+"entitlementRemoveError" : "Failed to remove entitlement: {0}",  
+"errorOccured" : "Error occured!",  
+"entitlementpackSavedButError" : "Entitlement pack saved, but: ",  
+"entitlementpackSaveError" : "Failed to create entitlementpack",  
+"entitlementpackUpdateError" : "Failed to remove entitlementpack: ",  
+"entitlementpackRemoveError" : "Failed to remove entitlementpack! "  
+"profileUpdateError": "Couldnt update the profile!"  
+"consentAddError": "Failed to add consent!",  
+"consentUpdateError": "Failed to update consent!",  
+"consentRemoveError": "Failed to remove consent!",  
+"attributeValuePrincipalCreateError": "Failed to create AttributeValuePrincipal! ",  
+"attributeValuePrincipalUpdateError": "Failed to update AttributeValuePrincipal! ",  
+"attributeValuePrincipalRemoveError" : "Failed to remove AttributeValuePrincipal!",  
+"memberRemoveError": "Failed to remove member from VO!",  
+"managerRevokeError": "Failed to remove from managers!",  
+"managerProposeError": "Failed to add principal to managers!",  
+"invitationSendError" : "Failed to send invitation!",  
+"invitationCancelError": "Failed to cancel invitation!",  
+"organizationUpdateError": "Failed to update organisation!",  
+"organizationGetError": "Failed to retrieve organization!",  
+"organizationRoleGetError": "Failed to retrieve organizations roles!"  
+"invitationSendError" : "Failed to send invitation! ",  
+"organizationDeleteError": "Failed to delete organization! ",  
+"consentAddError": "Failed to add consent!",  
+"consentRemoveError": "Failed to remove consent!",  
+"organizationCreateError": "Failed to create organisation! ",  
+"organizationDefaultRoleCreateError": "Organization added, but couldnt create the default role!",  
+"organizationDefaultRoleAttachError": "Couldnt attach the default role to the organization!"  
+"principalsRetrieveError": "Failed to retrieve principal list",  
+"memberRetrieveError": "Failed to retrieve memberlist",  
+"memberUpdateError": "Failed to save memberlist!",  
+"roleRemoveError": "Failed to remove role! ",  
+"roleMemberAddError": "Failed to add member: {0}",  
+"roleMemberRemoveError": "Failed to remove member: {0}",  
+"roleEntitlementAddError": "Failed to add entitlement: {0}",  
+"roleEntitlementRemoveError": "Failed to remove entitlement: {0}",  
+"roleSaveError": "Failed to add role to the organization!"  
+"invitationResendError" : "Failed to resend invitation!",  
+"invitationRemoveError": "Failed to remove invitation!",  
+"invitationUpdateError": "Failed to update invitation!"  
+"tokenLinkError": "Failed to link token!",  
+"entilementpackUpdateError": "Failed to update entitlementpack list!",  
+"invitationSendError": "Failed to send invitation! ",  
+"attributeValueCreateError": "Failed to add AttributeValueOrganization!",  
+"attributeValueUpdateError": "Failed to update AttributeValueOrganization!",  
+"attributeValueRemoveError" : "Failed to remove AttributeValueOrganization {0}!",  
+"principalsRetrieveError": "Unable to retrieve principals"  
+"entityIdRequestRemoveError": "Failed to remove entityId request!",  
+"entityIdRequestAcceptError": "Failed to accept entityId Request!",  
+"entityIdRequestRejectError": "Failed to remove reject Request!"  
+"attributeSpecificationCreateError": "Failed to create Attribute!"  
+"attributeSpecificationDeleteError": "Failed to delete Attribute!",  
+"attributeSpecificationUpdateError" : "Failed to update Attribute!",  
+"principalCreateError": "Failed to create principal! ",  
+"principalUpdateError": "Failed to update principal! ",  

@@ -1,0 +1,12 @@
+{
+    "modals":
+            {
+                "confirmationDialog":
+                {
+                    "btn":{
+                        "yes" : "Igen",
+                        "no" : "Nem"
+                    }
+                }
+            }
+}

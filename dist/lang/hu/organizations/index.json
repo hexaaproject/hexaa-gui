@@ -1,0 +1,42 @@
+{
+	"organizations":
+	{
+		"index":
+		{
+			"lbl":
+			{
+				"title": "Szervezetek",
+				"pleaseSelectAnOrganization": "Kérem válasszon egy szervezetet a listából, vagy hozzon létre egy újat!"
+			},
+			"btn": {
+				"newOrganization": "Új",
+				"saveOrganization": "Mentés",
+				"deleteOrganization": "Törlés"
+			},
+			"msg": {
+				"organizationDeleteSuccess": "Szervezet törölve!",
+				"organizationDeleteError": "Nem sikerült törölni a szervezetet! ",
+                "confirmationNeeded": "Megerősítés szükséges",
+                "organizationDeleteConfirm": "Tényleg törölni kívánja a {{name}} szervezetet?",
+                "organizationsGetError": "Nem tudtam letölteni a szervezetek listáját"
+			},
+			"subpages": {
+                "news": "Hírek",
+				"properties": "Tulajdonságok",
+				"managers": "Managerek",
+				"members": "Tagok",
+				"attributes": "Attribútumok",
+				"consents": "Hozzájárulások",
+				"entitlementpacks": "Használt szolgáltatások",
+				"roles": "Szerepkörök",
+				"invitations": "Meghívók",
+				"principaloverview": "Felhasználók áttekintése",
+				"public_catalog": "Jogosultság katalógus"
+			}
+		}
+	}
+	
+}
+
+
+	

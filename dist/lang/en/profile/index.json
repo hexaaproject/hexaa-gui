@@ -1,0 +1,22 @@
+{
+	"profile":
+	{
+		"index":
+		{
+			"lbl": {
+				"title": "Profile"
+			},
+			"subpages":
+			{					
+				"me": "Me",
+                "news": "News",
+				"attributes": "Attributes",
+				"consents": "Consents",
+				"dashboard": "Dashboard",
+				"myorganizations": "My organizations",
+				"myservices": "My services",
+				"vowizard": "VO Wizard"
+			}
+		}
+	}	
+}

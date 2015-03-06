@@ -1,0 +1,50 @@
+{
+	"organizations":
+	{
+		"principalmanagement":
+		{
+			"lbl":
+			{
+				"title": "Users",
+				"principalUsername": "Username",
+				"principalEmail": "E-mail",
+				"principalActions": "Actions",
+				"principalIsManager": "Manager",
+				"principalIsActive": "Active",
+				"principalIsInvited": "Invitation pending"
+			},
+			"btn":
+			{
+				"principalActionRevoke": "Revoke",
+				"principalActionRemove": "Remove",
+				"principalActionPropose": "Propose",
+				"invitationView": "View",
+				"invitationResend": "Resend",
+				"invitationCancel": "Cancel",
+				"invitationInvite": "Invite",
+				"inviteMember": "Invite member",
+				"inviteManager": "Invite manager"
+			},
+			"msg":
+			{
+				"memberRemoveSuccess": "Member removed from VO!",
+				"memberRemoveError": "Failed to remove member from VO!",
+				"managerRevokeSuccess": "Removed from managers!",
+				"managerRevokeError": "Failed to remove from managers!",
+				"managerProposeSuccess": "Principal became a manager!",
+				"managerProposeError": "Failed to add principal to managers!",
+				"invitationSendSuccess" : "Invitation sent!",
+				"invitationSendError" : "Failed to send invitation!",	
+				"invitationCancelSuccess": "Invitation canceled!",
+				"invitationCancelError": "Failed to cancel invitation!",
+				"failedToRetrieveData": "Failed to retrieve data!",
+				"confirmationNeeded": "Confirmation Needed!",
+				"confirmRemoveMember": "Do you want to delete user {{fedid}}?",
+				"confirmRevokeManager": "Do you want to revoke {{fedid}} from the managers?",				
+				"confirmRemoveSelf": "Do you want to delete yourself from the group? Be careful! Confirming this action you wont be able to access the VO.",
+				"confirmRevokeSelf": "Do you want to revoke yourself? This action can not be undone. Only VO managers are able to propose you again."
+			}
+		}
+	}
+	
+}

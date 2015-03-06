@@ -1,0 +1,37 @@
+{
+	"services":
+	{
+		"entityids":{
+			"lbl":
+			{
+				"entityIdManagement": "Entity ID kezelés",
+				"entityIdRequests": "Entity ID kérvények",
+				"entityId": "EntityId",
+				"entityIdMessage": "Üzenet",
+				"entityIdStatus": "Állapot",
+				"entityIdCreated": "Létrehozva",
+				"entityIdAction": "Művelet",
+				"editorModeNew": "Új Entity ID kérvényezése",
+				"editorModeEdit": "Entity ID szerkesztése",
+				"entityIdAdminMustAccept": "A kérvényét az adminisztrátornak minden esetben el kell bírálnia, mielőtt Ön az EntityId-t használatba vehetné!"
+			},
+			"placeholder":
+			{
+				"entityId": "Írja be az Entity Id-t",
+				"entityIdMessage": "Írjon be egy üzenetet az adminisztrátor számára ide"
+			},
+			"msg":
+			{
+				"entityIdRequestFailedToRemoveError": "Nem sikerült törölni a kérvényt!"
+			},
+			"btn":
+			{
+				"entityIdEdit" : "Szerkesztés",
+				"entityIdNew" : "Új",
+				"entityIdDelete" : "Törlés",
+				"entityIdSave" : "Mentés",
+				"dialogClose": "Bezárás"
+			}
+		}
+	}
+}

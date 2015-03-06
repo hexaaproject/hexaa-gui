@@ -1,0 +1,57 @@
+{
+	"organizations":
+	{
+		"roles":
+		{
+			"lbl":{
+				"title": "Szerepkörök",
+				"roleProperties": "Szerepkör tulajdonságai",
+				"roleName": "Név",
+				"roleDescription": "Leírás",
+				"roleStartDate": "Érvényesség kezdete",
+				"roleEndDate": "Érvényesség vége",
+				"roleEntitlements": "Szerepkör jogköre",
+				"entitlementList": "Kiadható jogok",
+				"roleEntitlementList": "Kiadott jogok",
+				"roleMembers": "Szerepkör tagjai",
+				"organizationMemberList": "Szervezet tagjai",
+				"roleMemberList": "Tagok"
+			},
+			"btn":
+			{
+				"entitlementsAdd": "Hozzáad",
+				"entitlementsRemove": "Eltávolít",
+				"membersAdd": "Hozzáad",
+				"membersRemove": "Eltávolít",
+				"roleAdd": "Hozzáadás",
+				"roleSave": "Szerepkör mentése",
+				"roleRemove": "Szerepkör törlése",
+				"roleUndo": "Visszavonás"
+			},
+			"placehodler":
+			{
+				"roleName": "Szerepkör neve",
+				"roleDescription": "Szerepkör leírása",
+				"roleStartDate": "Érvényes ettől a dátumtól",
+				"roleEndDate": "Érvényes eddig a dátumig"
+			},
+			"msg": {
+				"confirmationNeeded": "Megerősítés szükséges",
+				"roleDeleteConfirmation": "Biztosan törlöd a {{name}} szerepkört?",
+				"editorModeNew": "Új",
+				"editorModeEdit": "Szerkesztés",
+				"roleRemoveError": "Nem sikerült törölni a szerepkört! ",
+				"roleRemoveSuccess": "Szerepkör törölve!",
+				"roleMemberAddError": "{0}-t nem hozáadni a tagokhoz.",
+				"roleMemberRemoveError": "{0}-t nem sikerült eltávolítani a tagok közül",
+				"roleEntitlementAddError": "Jogkör hozzáadása sikertelen: {0}",
+				"roleEntitlementRemoveError": "Jogkör eltávolítása sikertelen: {0}",
+				"roleSaveSuccess": "Szerepkör mentve.",
+				"roleSaveError": "Nem sikerült hozzáadni a szerepkört a csoporthoz!",
+				"roleUpdateSuccess": "Szerepkör frissítve",
+				"roleUpdateError": "Szerepkör frissítése sikertelen"
+			}
+		}
+	}
+	
+}

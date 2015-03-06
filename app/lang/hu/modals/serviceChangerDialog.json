@@ -1,0 +1,18 @@
+{
+	"modals": {
+		"serviceChangerDialog": {
+			"lbl":{
+				"title":"Válasszon egy szolgáltatást!",
+				"serviceLogo": "Logo",
+				"serviceName": "Név",
+				"serviceDescription": "Leírás",
+				"serviceActions": "Akció"
+			},
+			"btn": {
+				"close": "Bezárás",
+				"serviceSelect": "Kiválaszt"
+			}
+
+		}
+	}
+}

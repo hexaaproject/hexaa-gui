@@ -1,0 +1,16 @@
+{
+	"services":
+	{
+		"news":
+		{
+			"lbl":
+			{
+				"title": "Események",
+				"news": "Események",
+				"searchForTags": "Keresés Tag alapján: ",
+				"pageSize": "Oldalméret: "
+			}
+		}
+	}
+	
+}

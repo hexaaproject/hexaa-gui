@@ -1,0 +1,46 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title" translate>services.entityids.lbl.entityIdManagement</h3>
+    </div>
+    <div  class="modal-body">
+        <h3 translate>services.entityids.lbl.entityIdRequests</h3>
+        <i translate>services.entityids.lbl.entityIdAdminMustAccept</i>
+        <table class="table">
+            <tr>
+                <th translate>services.entityids.lbl.entityId</th>
+                <th translate>services.entityids.lbl.entityIdMessage</th>
+                <th translate>services.entityids.lbl.entityIdStatus</th>
+                <th translate>services.entityids.lbl.entityIdCreated</th>
+                <th translate>services.entityids.lbl.entityIdAction</th>
+            </tr>
+            <tr ng-repeat="entityid in entityids">
+                <td>{{entityid.entityid}}</td>
+                <td>{{entityid.message}}</td>
+                <td>{{entityid.status}}</td>
+                <td>{{entityid.created_at}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" ng-click="edit($index)" translate>services.entityids.btn.entityIdEdit</button>
+                    <button type="button" class="btn btn-danger" ng-click="remove($index)" translate>services.entityids.btn.entityIdDelete</button>
+                </td>
+            </tr>
+        </table>
+        <button type="button" class="btn btn-default" ng-click="newRequest()" translate>services.entityids.btn.entityIdNew</button>
+        <div class="form-group" collapse="!editor" >
+            <hr/>
+            <h3>{{mode}}</h3>
+            <label for="entitiyId" translate>services.entityids.lbl.entityId</label>
+            <input type="text" class="form-control" ng-model="new.entityid" id="entityid" placeholder="{{'services.entityids.placeholder.entityId' | translate}}" required/>
+
+            <label for="message" translate>services.entityids.lbl.entityIdMessage</label>
+            <textarea type="text" class="form-control" ng-model="new.message" id="message" placeholder="{{'services.entityids.placeholder.entityIdMessage' | translate}}">
+            </textarea>
+            <p>
+                <button type="button" class="btn btn-primary" ng-click="addEntityRequest()" translate>services.entityids.btn.entityIdSave</button>
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger pull-right" ng-click="close()" translate>services.entityids.btn.dialogClose</button>
+    </div>
+
+</div>

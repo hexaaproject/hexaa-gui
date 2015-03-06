@@ -1,0 +1,38 @@
+<div class="table-responsive container-fluid" ng-controller="ServiceConnectedEntitlementpacksCtrl">
+
+    <div class="panel panel-default panel-heading form-group form-inline">
+            <span>
+               <label for="pageSize"> <b>Page size:</b></label>
+                <select id="pageSize" class="form-control" ng-model="pager.itemPerPage">
+                    <option>1</option>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
+            </span>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th translate>services.connectedpacks.lbl.entitlementpackName</th>
+            <th translate>services.connectedpacks.lbl.organizationName</th>
+            <th translate>services.connectedpacks.lbl.connectionStatus</th>
+            <th translate>services.connectedpacks.lbl.action</th>
+        </tr>
+        <tr ng-repeat="connection in service.connections | pager: pager">
+
+            <td>{{connection.entitlementpack}}</td>
+            <td><a ng-click="showDetails(connection.organization_id)">{{connection.organization}}</a></td>
+            <td>{{connection.status}}</td>
+            <td>
+                <button type="button" ng-click="acceptConnection(connection)" class="btn btn-success pull-left" ng-hide="connection.status == 'accepted'" translate>services.connectedpacks.btn.connectionAccept</button>
+                <button type="button" ng-click="deleteConnection(connection)" class="btn btn-danger pull-right" translate>services.connectedpacks.btn.connectionDelete</button>
+            </td>
+        </tr>
+    </table>
+    <pagination total-items="pager.totalItems" page="pager.currentPage" max-size="pager.maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="pager.numPages" items-per-page="pager.itemPerPage"></pagination>
+    <pre>Page: {{pager.currentPage}} / {{pager.numPages}}</pre>
+</div>
+<br/>

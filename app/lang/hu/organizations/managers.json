@@ -1,0 +1,38 @@
+{
+	"organizations":
+	{
+		"managers":
+		{
+			"lbl":
+			{
+				"title": "Menedzserek",
+				"allPrincipals": "Minden személy",
+				"associatedPrincipals": "Szervezet managerei"
+			},
+			"btn":
+			{
+				"inviteManagers": "Meghívás",
+				"addManagers" : "Hozzáad",
+				"removeManagers" : "Eltávolít"
+			},
+			"placeholder":
+			{
+				"principalList": "Írjon be egy nevet",
+				"managerList": "Írjon be egy nevet"
+			},
+			"msg":
+			{
+				"managerFailedToUpdate": "Nem sikerült frissíteni a managerlistát!",
+				"managerUpdated" :  "Managerlista frissítve!",
+				"problemOccured": "Hiba történt",
+				"allChangesSaved": "Minden változás mentésre került!",
+				"principalsRetrieveError": "Nem sikerült lekérni a taglistát"
+			},
+			"help":
+			{
+				"title": "Kik a szervezet managerei?"
+			}
+		}
+	}
+	
+}

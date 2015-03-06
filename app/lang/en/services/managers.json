@@ -1,0 +1,30 @@
+{
+	"services":{
+		"managers":{
+			"lbl":
+			{
+				"title": "Managers",
+				"allPrincipals": "Everybody",
+				"associatedPrincipals": "Associated managers"
+			},
+			"btn":
+			{
+				"inviteManagers": "Invite",
+				"addManagers" : "Add",
+				"removeManagers" : "Remove"
+			},
+			"placeholder":
+			{
+				"principalList": "Type a name",
+				"managerList": "Type a name"
+			},
+			"msg":
+			{
+				"managerFailedToUpdate": "Failed to update managerlist",
+				"managerUpdated" :  "Managerlist updated!",
+				"problemOccured": "Problem occured",
+				"allChangesSaved": "All changes have been saved!"
+			}
+		}
+	}	
+}

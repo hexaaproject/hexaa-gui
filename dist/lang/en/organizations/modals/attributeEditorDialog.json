@@ -1,0 +1,14 @@
+{
+	"organizations": {
+		"modals": {
+			"attributeEditorDialog": {
+				"lbl": {
+					"title": "Attribute editor"				
+				},
+				"btn": {
+					"dialogClose": "Close"
+				}
+			}
+		}
+	}
+}

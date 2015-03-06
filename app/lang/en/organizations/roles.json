@@ -1,0 +1,57 @@
+{
+	"organizations":
+	{
+		"roles":
+		{
+			"lbl":{
+				"title": "Roles",				
+				"roleProperties": "Properties",
+				"roleName": "Name",
+				"roleDescription": "Description",
+				"roleStartDate": "Start date",
+				"roleEndDate": "End date",
+				"roleEntitlements": "Entitlements",
+				"entitlementList": "Entitlements",
+				"roleEntitlementList": "Role entitlements",
+				"roleMembers": "Members",
+				"organizationMemberList": "People",
+				"roleMemberList": "Members"
+			},
+			"btn":
+			{
+				"entitlementsAdd": "Add",
+				"entitlementsRemove": "Remove",
+				"membersAdd": "Add",
+				"membersRemove": "Remove",
+				"roleSave": "Save",
+				"roleRemove": "Delete",
+				"roleUndo": "Undo",
+				"roleEdit": "Edit",
+				"roleAdd": "New"
+			},
+			"placehodler":
+			{
+				"roleName": "Name of Role",
+				"roleDescription": "Description of Role",
+				"roleStartDate": "Valid since",
+				"roleEndDate": "Valid until"
+			},
+			"msg": {
+				"confirmationNeeded": "Confirmation needed",
+				"roleDeleteConfirmation": "Do you want to delete role {{name}}?",
+				"editorModeNew": "New",
+				"editorModeEdit": "Edit",
+				"roleRemoveError": "Failed to remove role! ",
+				"roleRemoveSuccess": "Role deleted",
+				"roleMemberAddError": "Failed to add member: {0}",
+				"roleMemberRemoveError": "Failed to remove member: {0}",
+				"roleEntitlementAddError": "Failed to add entitlement: {0}",
+				"roleEntitlementRemoveError": "Failed to remove entitlement: {0}",
+				"roleSaveSuccess": "Role has been saved.",
+				"roleSaveError": "Failed to add role to the organization!",
+				"roleUpdateSuccess": "Role updated",
+				"roleUpdateError": "Failed to update role"
+			}
+		}
+	}	
+}

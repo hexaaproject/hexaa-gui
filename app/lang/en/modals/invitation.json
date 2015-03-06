@@ -1,0 +1,25 @@
+{
+	"modals":
+	{
+		"invitation":
+		{
+			"lbl": {
+                "inviteByEmail": "Use e-mail address to invite people",
+				"invitationTitle": "Invitation to {{unitName}}",
+				"invitationEmailAddresses": "Email Addresses",
+				"invitationText" : "Invitation text",
+				"invitationLandingUrl": "Landing Url",
+				"invitationStartDate": "Start date",
+				"invitationEndDate": "End date",
+				"invitationLimit": "Limit",
+				"invitationRole": "Role",
+				"invitationLocale": "Locale"
+			},
+			"btn": {
+				"invitationOk": "Invite",
+				"invitationCancel": "Cancel"
+			}
+		}
+	}
+
+}

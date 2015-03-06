@@ -1,0 +1,36 @@
+{
+	"admin":
+	{
+		"principals":
+		{
+			"lbl":
+			{
+				"title": "Felhasználók",
+				"principalFedid": "Fedid",
+				"principalEmail": "E-mail",
+				"principalDisplayName": "Becenév",
+				"editorModeNew": "Új",
+				"editorModeEdit": "Szerkesztés",
+				"id": "Azonosító",
+				"principalAction": "Műveletek"
+			},
+			"btn":
+			{
+				"principalSave": "Mentés",
+				"principalNew": "Új",
+				"principalDelete": "Törlés"
+			},
+			"msg":
+				{
+					"principalCreateSuccess": "Felhasználói fiók létrehozva!",
+					"principalCreateError": "Nem sikerült létrehozni a felhasználói fiókot! ",
+					"principalUpdateSuccess": "Felhasználói fiók frissítve!",
+					"principalUpdateError": "Nem sikerült frissítenia  felhasználói fiókot!",
+					"confirmationNeeded": "Megerősítés szükséges",
+					"principalDeleteConfirm": "Biztosan törli a  {{fedid}} fiókot?",
+					"principalGetError": "Nem sikerült letölteni a felhasználók listáját"
+				}
+		}
+	}
+	
+}

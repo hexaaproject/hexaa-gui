@@ -1,0 +1,22 @@
+{
+	"organizations":
+	{
+		"consents":
+		{
+			"lbl":
+			{
+				"title": "Hozzájárulások",
+				"noAttributeSpecificationsAssociated" : "Nem találhatóak ezen szervezetre érvényes attribútumok.",
+				"noAttributeValuesForSpecification": "Nem találhatóak értékek, ehhez az attribútumhoz!"
+			},
+			"msg":
+			{
+				"consentAddError": "Hozzájárulás megadása sikertelen!",
+				"consentAddSuccess": "Hozzárjárulás megadva!",
+				"consentRemoveError": "Nem sikerült megtagadni a hozzájárulást!",
+				"consentRemoveSuccess": "Hozzájárulás megtagadva!"
+			}
+		}
+	}
+	
+}

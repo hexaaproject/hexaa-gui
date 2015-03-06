@@ -1,0 +1,34 @@
+<div class="row container-fluid" ng-controller="ServiceAttributeSpecificationsCtrl">
+    <b ng-show="attrspecs.length == 0" translate>services.attributespecifications.lbl.noAttributeSpecificationsFound</b>
+    <div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Private
+            </div>
+            <div class="panel-body">
+                <div id="privateAttrSpecBox" angular-duallistbox elements="private_attrspecs" selected="service.private_attrspecs" element-display="'name'"
+                     element-value="'id'"
+                     non-selected-list-label="'services.attributespecifications.lbl.attributeSpecificationList' | translate"
+                     selected-list-label="'services.attributespecifications.lbl.attributeSpecificationConnectedList' | translate"
+                     filter-place-holder="'services.attributespecifications.placeholder.attributeSpecificationFilter' | translate">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default" ng-if="hexaa_properties.public_attribute_spec_enabled">
+            <div class="panel-heading">
+                Public
+            </div>
+            <div class="panel-body">
+                <div id="publicAttrSpecBox" angular-duallistbox elements="public_attrspecs" selected="service.public_attrspecs" element-display="'name'"
+                     element-value="'id'"
+                     non-selected-list-label="'services.attributespecifications.lbl.attributeSpecificationList' | translate"
+                     selected-list-label="'services.attributespecifications.lbl.attributeSpecificationConnectedList' | translate"
+                     filter-place-holder="'services.attributespecifications.placeholder.attributeSpecificationFilter' | translate">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="form-group">
+    <form name="newOrganizationForm" model="newOrganizationForm">
+        <label for="name" translate>organizations.new.lbl.organizationName</label>
+        <input type="text" class="form-control" ng-model="organization.name" id="name"
+               placeholder="{{'organizations.new.placeholder.organizationName' | translate}}" required notifyuierror/>
+
+        <label for="description" translate>organizations.new.lbl.organizationDescription</label>
+        <input type="text" class="form-control" ng-model="organization.description" id="description" placeholder="{{'organizations.new.placeholder.organizationDescription' | translate}}" notifyuierror/>
+
+
+        <label for="role" translate>organizations.new.lbl.organizationDefaultRole</label>
+        <input type="text" class="form-control" ng-model="organization.role.name" id="role"
+               placeholder="{{'organizations.new.placeholder.organizationDefaultRole' | translate}}" required notifyuierror/>
+
+    </form>
+</div>

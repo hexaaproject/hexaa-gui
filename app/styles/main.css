@@ -1,0 +1,219 @@
+/*
+Copyright 2014 MTA SZTAKI
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+/* MultiSuggestBox directive */
+.multisuggestbox {
+	/*width: 200px;*/
+}
+
+.form-control .searchUser {
+	width: inherit !important;
+	position: relative !important;
+}
+
+.form-control .selectUser {
+	width: inherit !important;
+	position: relative !important;
+}
+
+
+/* FIX */
+textarea { resize: vertical; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+.well h3 {
+	cursor: pointer;
+}
+
+.accordion-toggle{
+	cursor: pointer;
+}
+
+.breadcrumb > li + li:before {
+  content: "\27a4\00a0" !important;
+}
+
+.breadcrumb li:hover {
+    cursor: move;
+}
+
+.listbox{
+    height: 100%;
+    width: inherit !important;
+    background-color: white;
+    border-style: solid;
+    border-color: #f5f5f5;
+    border-width: 2px;
+}
+
+.listboxItemContainer
+{
+    overflow: auto;
+    overflow-x:hidden;
+    height: 100%;
+}
+
+.listboxItem, .shorten {
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+.popover-content {
+    word-wrap: break-word;
+}
+
+.listboxItem:hover {
+ cursor: move;
+}
+
+.listboxSelectedItem {
+    background-color: lightgray;
+}
+
+.toggleBoxTitle {
+    font-variant: small-caps;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: auto;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.truncate {
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+
+.toggleBoxContent{
+    background-color: white;
+    width: inherit;
+    position: absolute;
+    width: 96%;
+    z-index: 1;
+}
+
+
+.ui-resizable-s {
+  bottom: 0;
+}
+.ui-resizable-e {
+  right: 0;
+}
+
+> .btn {
+    float: inherit;
+}
+
+> .btn + .btn {
+    margin-left: -4px;
+}
+
+.btn-group {
+    white-space: nowrap; /* prevent buttons from wrapping when in tight spaces (e.g., the table on the tests page)*/    
+}
+
+.leftify {
+  position: relative;
+}
+.leftify .dropdown-menu {
+   left: auto !important;
+   right: 0px;
+ }
+
+ #loadingIcon {
+     width: 3em;
+}
+
+ .servicelogo {
+     height: 5em;
+ }
+
+.scrollable {
+    height: 130px;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.nav > .active > a {
+    background-color: lightgray;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+form .ng-invalid {
+    border:1px solid Red;
+}
+
+div.panel-heading.danger {
+    background-color: #f2dede !important;
+}
+
+div.panel-heading.success {
+    background-color: #dff0d8 !important;
+}
+
+.navbar-right .dropdown-menu li {
+    display: block;
+}
+
+.navbar-right .dropdown-menu li i {
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+.sidebar .nav  li {
+    /*border-bottom: 1px solid #e7e7e7;*/
+}
+
+.sidebar .list-group-item {
+  font-weight: bold;
+  border: none;
+  background-color: #f8f8f8;
+  /*text-align: center;*/
+  padding-left: 10px;
+}
+
+.sidebar .danger {
+  background-color: #f2dede;
+}
+
+#dashboard .panel {
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.sidebar {
+    min-height: 30em;
+}

@@ -1,0 +1,12 @@
+{
+	"modals": {
+		"newEntitlementpackDialog": {
+			"lbl": {
+				"title": "New Entitlementpack"
+			},
+			"btn": {
+				"dialogClose": "Close"
+			}
+		}
+	}
+}

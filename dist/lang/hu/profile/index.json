@@ -1,0 +1,23 @@
+{
+	"profile":
+	{
+		"index":
+		{
+			"lbl": {
+				"title": "Profil"
+			},
+			"subpages":
+			{				
+                "news": "Hírek",
+				"me": "Én",
+				"attributes": "Attribútum értékeim",
+				"consents": "Hozzájárulásaim",
+				"dashboard": "Vezérlőpult",
+				"myorganizations": "Tagságaim",
+				"myservices" : "Szolgáltatásaim",
+				"vowizard": "VO Varázsló"
+			}
+		}
+	}
+	
+}

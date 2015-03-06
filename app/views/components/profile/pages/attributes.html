@@ -1,0 +1,61 @@
+<div class="container-fluid" ng-controller="ProfileAttributesCtrl">
+    <h2 translate>profile.attributes.lbl.attributesTitle</h2>
+
+    <div ng-show="profile.attributeSpecifications.length == 0">
+        <h4 translate>profile.attributes.lbl.noAttributespecificationsAssociated</h4>
+    </div>
+    <div ng-hide="profile.attributeSpecifications.length == 0">
+        <div class="panel panel-default" ng-repeat="attspec in profile.attributeSpecifications">
+            <div class="panel-heading">
+                {{attspec.name}}
+            </div>
+            <div class="panel-body" ng-init="load(attspec)">
+                <b translate>profile.attributes.lbl.attributeSupportingServices</b>
+                <div style="margin-bottom: 0.5em;" ng-if="attspec.supportingServices == undefined" translate>
+                    profile.attributes.lbl.noSupportedServiceForAttributeSpecification
+                </div>
+                <table class="table table-condensed" ng-if="attspec.supportingServices.length > 0">
+                    <tr>
+                        <td translate>profile.attributes.lbl.serviceLogo</td>
+                        <td translate>profile.attributes.lbl.serviceName</td>
+                        <td translate>profile.attributes.lbl.serviceDescription</td>
+                    </tr>
+                    <tr ng-repeat="service in attspec.supportingServices">
+                        <td><img src="{{service.logo | imageFormatter}}" class="servicelogo"/></td>
+                        <td>{{service.name}}</td>
+                        <td>{{service.description}}</td>
+                    </tr>
+                </table>
+                <b translate>profile.attributes.lbl.attributesTitle</b>
+                <div style="margin-bottom: 0.5em;" ng-if="attspec.values.length == 0" translate>
+                    profile.attributes.lbl.noAssociatedAttributeSpecifications
+                </div>
+
+                <table class="table table-condensed" ng-if="attspec.values.length > 0">
+                    <tr>
+                        <td translate>profile.attributes.lbl.attributeValue</td>
+                        <td translate>profile.attributes.lbl.attributeAssociatedServices</td>
+                        <td translate>profile.attributes.lbl.attributeActions</td>
+                    </tr>
+                    <tr ng-repeat="attribute in attspec.values">
+                        <td>{{attribute.value}}</td>
+                        <td>
+                            <ul>
+                                <li ng-repeat="service in attribute.associatedServices">{{service.name}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="editAttribute(attspec,attribute)" ng-hide="attribute.id==-1" translate>profile.attributes.btn.attributeEdit</button>
+                            <button class="btn btn-danger" ng-click="removeAttribute(attspec,attribute)" ng-hide="attribute.id==-1" translate>profile.attributes.btn.attributeRemove</button>
+                        </td>
+                    </tr>
+                </table>
+                <div class="clearfix">
+                    <button class="btn btn-primary pull-right" ng-click="newAttribute(attspec)" translate>profile.attributes.btn.attributeNew</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

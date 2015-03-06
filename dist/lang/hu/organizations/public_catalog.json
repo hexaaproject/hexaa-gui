@@ -1,0 +1,28 @@
+{
+	"organizations": {
+		"public_catalog":
+		{
+			"lbl":
+			{
+				"title": "Publikus szolgáltatások",
+				"publicEntitlements": "Publikus Szolgáltatások",
+				"entitlements": "Jogosultságok",
+				"status": "Status",
+				"noPublicEntitlementsWereFound": "Nem találhatóak a rendszerben publikus szolgáltatások",
+				"pendingEntitlementpack": "Szolgáltatási kérvény benyújtva. A szolgáltató managerének jóváhagyására vár."
+			},
+			"btn":
+			{
+				"addEntitlementpack": "Hozzáad",
+				"removeEntitlementpack": "Eltávolít"
+			},
+			"msg":
+			{
+				"entitlementpackAddSuccess": "Szolgáltatás kérvényezve! Szolgáltatói jóváhagyásra vár!",
+				"entitlementpackAddError": "Nem sikerült kérvényezni az adott szolgáltatást!",
+				"entitlementpackRemoveSuccess": "Szolgáltatás törölve!",
+				"entitlementpackRemoveError": "Szolgáltatás törlése sikertelen!"
+			}
+		}
+	}
+}

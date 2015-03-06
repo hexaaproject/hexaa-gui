@@ -1,0 +1,24 @@
+<form name="attributeEditorForm">
+    <label for="value" translate>profile.attributes.lbl.attributeValue</label>
+    <input type="text" class="form-control" id="value" placeholder="Value of Attribute" ng-model="attribute.value"
+           notifyuierror required/>
+    <label for="value" translate>profile.attributes.lbl.attributeAssociations</label>
+
+    <div class="container-fluid row">
+
+        <div id="attributesbox" angular-duallistbox elements="attributeSpecification.supportingServices"
+             selected="attribute.associatedServices" element-display="'name'" element-value="'id'"
+             non-selected-list-label="'profile.attributes.lbl.attributeSupportingServices' | translate"
+             selected-list-label="'profile.attributes.lbl.attributeAssociatedServices' | translate"
+             filter-place-holder="'profile.attributes.placeholder.serviceList' | translate">
+        </div>
+
+    </div>
+    <blockquote><i translate>profile.attributes.lbl.serviceAssociationWarning</i></blockquote>
+    <div class="clearfix">
+        <button class="btn btn-primary pull-right" ng-click="save()" ng-disabled="attributeEditorForm.$invalid" translate>
+            profile.attributes.btn.attributeSave
+        </button>
+        <button class="btn btn-warning" ng-click="undo()" translate>profile.attributes.btn.cancel</button>
+    </div>
+</form>

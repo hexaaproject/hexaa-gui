@@ -1,0 +1,44 @@
+<div ng-controller="OrganizationsInvitationsCtrl as vm">
+    <div class="form-group clearfix">
+        <form>
+            <div class="row">
+                <div class="col-xs-6">
+                    <span class="input-group">
+                        <span class="input-group-addon"> Page size:</span>
+                    <select id="pageSize" class="form-control" ng-model="vm.pager.itemPerPage">
+                        <option>5</option>
+                        <option>10</option>
+                        <option>25</option>
+                        <option>50</option>
+                        <option>100</option>
+                    </select>
+                    </span>
+                </div>
+                <div class="col-xs-6">
+                    <div hexaa-organizations-invitationbar-widget organization="vm.organization"></div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div ng-show="vm.organization.invitations.length == 0">
+        <h4 translate>organizations.invitations.lbl.invitationNotFoundForOrganization</h4>
+    </div>
+
+    <div hexaa-organizations-invitations-widget
+         organization="vm.organization"
+         delete-invitation="vm.delete(invitation)"
+         edit-invitation="vm.edit(invitation)"
+         resend-invitation="vm.resend(invitation)">
+
+    </div>
+
+    <div ng-show="vm.organization.invitations.length != 0">
+        <pagination total-items="vm.pager.totalItems" page="vm.pager.currentPage" max-size="vm.pager.maxSize"
+                    class="pagination-sm" boundary-links="true" rotate="false"
+                    num-pages="vm.pager.numPages" items-per-page="vm.pager.itemPerPage"></pagination>
+        <pre>Page: {{vm.pager.currentPage}} / {{vm.pager.numPages}}</pre>
+    </div>
+
+</div>

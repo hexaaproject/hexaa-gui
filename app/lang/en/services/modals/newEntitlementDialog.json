@@ -1,0 +1,18 @@
+{
+	"services":
+	{
+		"modals":
+		{
+			"newEntitlementDialog":{
+				"lbl": 
+					{				
+						"title":"Permission"					
+					},
+					"btn": {
+						"dialogClose" : "Close"
+					}					
+			}			
+		}
+	}
+	
+} 

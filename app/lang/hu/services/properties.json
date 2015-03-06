@@ -1,0 +1,27 @@
+{
+	"services":
+	{
+		"properties":
+		{
+			"lbl": {
+				"title": "Tulajdonságok",
+				"serviceName" : "Név",
+				"serviceUrl" : "URL:",
+				"serviceEntityId": "SAML SP Entity ID",
+				"serviceDescription" : "Leírás",
+				"logoRestrictions" : "A kép szélessége nem lehet több mint 400 px!"
+			},
+			"placeholder": {
+				"serviceName" : "A szolgáltatás neve",
+				"serviceUrl" : "http://www.pelda.hu",
+				"serviceDescription" : "A szolgáltatás leírása"
+			},
+			"msg": {
+				"serviceUpdateSuccess" : "Szolgáltatás frissítve!",
+				"serviceUpdateError":  "Nem sikerült frissíteni a szolgáltatást!",
+				"serviceLogoUpdateError":  "Nem sikerült feltölteni a szolgáltatás logoját!"
+			}
+		}
+	}
+	
+}

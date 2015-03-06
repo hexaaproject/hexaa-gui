@@ -1,0 +1,14 @@
+{
+	"organizations": {
+		"modals": {
+			"attributeEditorDialog": {
+				"lbl": {
+					"title": "Attribútum szerkesztő"				
+				},
+				"btn": {
+					"dialogClose": "Bezárás"
+				}
+			}
+		}
+	}
+}

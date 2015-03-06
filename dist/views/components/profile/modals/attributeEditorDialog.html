@@ -1,0 +1,14 @@
+<div class="modal-header clearfix" xmlns="http://www.w3.org/1999/html">
+    <button class="btn pull-right" ng-click="vm.close()"
+            title="{{'profile.modals.attributeEditorDialog.btn.dialogClose' | translate}}">
+        <i class="fa fa-times" title=""></i>
+    </button>
+    <h3 class="modal-title" translate>profile.modals.attributeEditorDialog.lbl.title</h3>
+</div>
+<div class="modal-body">
+    <div hexaa-profile-attribute-editor-widget
+         attribute="vm.attribute"
+         attribute-specification="vm.attributeSpecification"
+         save-attribute="vm.save(attribute)">
+    </div>
+</div>

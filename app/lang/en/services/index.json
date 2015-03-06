@@ -1,0 +1,37 @@
+{
+	"services":{
+		"index":{
+			"subpages":
+			{
+                "news" : "News",
+				"properties" : "Properties",
+				"owner" : "Owner & Privacy",
+				"managers" : "Managers",
+				"attributeSpecifications": "Attribute Specifications",
+				"entitlements": "Permissions",
+				"entitlementpacks" : "Permission sets",
+				"connectedEntitlementpacks" : "Connected Organizations",
+				"invitations" : "Invitation management"
+			},
+			"msg":
+			{
+				"serviceDeleteSuccess" : "Service deleted!",
+				"serviceDeleteError" : "Failed to delete service!",
+                "confirmationNeeded": "Confirmation needed",
+                "serviceDeleteConfirm": "Do you want to delete {{name}} service?",
+                "serviceSPNotifySuccess" : "EntityId authorization e-mail has been resent!",
+                "serviceSPNotifyError" : "Failed to resend authorization e-mail!"
+			},
+			"lbl":{
+				"title": "Services",
+				"noServiceSelected": "Please select a service from the list on your left, or create a new one!",
+				"serviceNotEnabled": "This service has not yet been enabled by the SP Admin!"
+			},
+			"btn":{
+				"serviceSave" : "Save Service",
+				"serviceDelete": "Delete",
+				"serviceNew" : "New"
+			}
+		}
+	}	
+}

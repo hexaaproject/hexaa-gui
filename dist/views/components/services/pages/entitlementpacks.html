@@ -1,0 +1,39 @@
+<div class="container-fluid row" ng-controller="ServiceEntitlementpacksCtrl">
+        <div class="panel panel-default panel-heading form-group form-inline">
+            <span>
+               <label for="pageSize"></label> <b>Page size:</b>
+                <select id="pageSize" class="form-control" ng-model="pager.itemPerPage">
+                    <option>1</option>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
+            </span>
+            <button class="btn btn-success pull-right" ng-click="newEntitlementpack()"><i class="glyphicon glyphicon-plus"></i> {{'services.entitlementpacks.btn.entitlementpackNew'|translate}}</button>
+        </div>
+    <div ng-show="service.entitlementpacks.length == 0">
+        <h4 translate>services.entitlementpacks.lbl.noEntitlementpackHasBeenFound</h4>
+    </div>
+
+    <div ng-repeat="entitlementpack in service.entitlementpacks" >
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button class="btn btn-default" ng-click="editEntitlementpack(entitlementpack)" title="{{'organizations.roles.btn.roleEdit'|translate}}"  data-toggle="modal"> <i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-danger"  ng-click="removeEntitlementpack(entitlementpack)" title="{{'organizations.roles.btn.roleRemove'|translate}}"><i class="fa fa-trash"> </i></button>
+                    </div>
+                </div>
+                <h4>{{entitlementpack.name}}</h4>
+
+            </div>
+            <div class="panel-body">
+                <ng-include src="'views/components/services/directives/entitlementpack_simple.tpl.html'"/>
+            </div>
+        </div>
+    </div>
+    <pagination total-items="pager.totalItems" page="pager.currentPage" max-size="pager.maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="pager.numPages" items-per-page="pager.itemPerPage"></pagination>
+    <pre>Page: {{pager.currentPage}} / {{pager.numPages}}</pre>
+</div>

@@ -1,0 +1,35 @@
+{
+	"services":{
+		"invitations":{
+			"lbl" : {
+					"title": "Invitations",
+					"invitationNotFoundForService" : "There are no invitations for this service",
+					"invitationEmail" : "E-mail",
+					"invitationStatus" : "Status",
+					"invitationLandingUrl" : "Landing URL",
+					"invitationStartDate" : "Start date",
+					"invitationEndDate" : "End date",
+					"invitationLimit" : "Limit",
+					"invitationLocale": "Locale",
+					"invitationUrl": "Url: "
+				},
+				"btn" : {
+					"invitationEdit" : "Edit",
+					"invitationResend" : "Resend",
+					"invitationDelete" : "Delete",
+					"inviteManager": "Invite manager"
+				},
+				"msg" : {
+					"confirmationNeeded": "Confirmation needed",
+					"invitationDeleteConfirmation": "Are you sure you want to delete invitation created by {{fedid}}?",
+					"invitationResendSuccess" : "Invitation resent!",
+					"invitationResendError" : "Failed to resend invitation!",
+					"invitationRemoveSuccess" : "Invitation removed!",
+					"invitationRemoveError" : "Failed to remove invitation!",
+					"invitationUpdateSuccess" : "Invitation updated!",
+					"invitationUpdateError" : "Failed to update invitation!",
+					"invitationsGetError": "Failed to get invitations!"
+				}
+		}
+	}	
+}

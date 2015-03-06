@@ -1,0 +1,39 @@
+{
+  "name": "hexaa-gui",
+  "version": "0.26.0",
+  "keywords": [
+    "hexaa",
+    "hexaa-backend",
+    "hexaa-gui",
+    "AAI",
+    "attribute",
+    "external attribute"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "jquery-ui": "~1.11.1",
+    "angular": "1.3.14",
+    "json3": "~3.2.6",
+    "es5-shim": "~2.1.0",
+    "bootstrap": "~3.3.0",
+    "angular-resource": "1.2.15",
+    "angular-cookies": "1.2.15",
+    "angular-sanitize": "1.2.15",
+    "angular-route": "1.2.15",
+    "angular-bootstrap": "0.10.0",
+    "angular-css-injector": "~1.0.3",
+    "angular-translate": "~2.2.0",
+    "angular-translate-loader-partial": "~2.0.1",
+    "angular-translate-storage-cookie": "~2.2.0",
+    "angular-animate": "~1.2.24",
+    "font-awesome": "~4.2.0",
+    "ng-file-upload": "~1.6.12",
+    "angular-toastr": "~0.5.2",
+    "bootstrap-duallistbox": "~3.0.2",
+    "bootstrap-switch": "~3.3.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.4",
+    "angular-scenario": "1.2.15"
+  }
+}

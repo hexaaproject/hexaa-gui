@@ -1,0 +1,13 @@
+{
+	"modals":{
+		"entityIdContactDialog" : {
+			"lbl": {
+				"title" : "SP felelős kiválasztása"
+			},
+			"btn": {
+				"close": "Bezárás",
+				"send": "Küldés"
+			}
+		}
+	}
+}

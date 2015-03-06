@@ -1,0 +1,17 @@
+{
+	"admin":
+	{
+		"entityids":
+		{
+			"lbl": {
+				"title" : "EntityIds",
+				"contactType": "Type",
+				"entityid" : "Entity ID",
+				"cotnactEmail": "E-mail"
+			},		
+			"msg": {
+				"entityIdsGetError": "Failed to get entity Id-s"
+			}
+		}
+	}
+}

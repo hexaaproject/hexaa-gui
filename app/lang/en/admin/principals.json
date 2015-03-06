@@ -1,0 +1,35 @@
+{
+	"admin":
+	{
+		"principals":
+		{
+			"lbl":
+				{
+					"title": "Principals",
+					"principalFedid": "Fedid",
+					"principalEmail": "E-mail",
+					"principalDisplayName": "Display name",
+					"editorModeNew": "New",
+					"editorModeEdit": "Edit",
+					"id": "Id",
+					"principalAction": "Actions"
+				},
+				"btn":
+				{
+					"principalSave": "Save",
+					"principalNew": "New",
+					"principalDelete": "Delete"
+				},
+				"msg":
+				{
+					"principalCreateSuccess": "Principal created!",
+					"principalCreateError": "Failed to create principal! ",
+					"principalUpdateSuccess": "Principal updated!",
+					"principalUpdateError": "Failed to update principal! ",
+					"confirmationNeeded": "Confirmation needed",
+					"principalDeleteConfirm": "Do you want to delete principal {{fedid}}?",
+					"principalGetError": "Failed to get principals"
+				}
+		}
+	}	
+}

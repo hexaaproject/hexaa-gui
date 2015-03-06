@@ -1,0 +1,53 @@
+<div class="container-fluid" ng-controller="OrganizationsCtrl" ng-hide="selectedOrganization === null">
+    <div class="row" >
+        <div class="col-xs-12 col-md-2">
+            <div class="navbar-default sidebar" >
+                <ul class="nav" id="sidebar-left">
+                    <li ng-class="{active: page=='news'}"
+                        ng-click="navigate('#/organizations/news')" ><a translate="organizations.index.subpages.news" href=""></a></li>
+                    <li ng-class="{active: page=='properties'}"
+                        ng-click="navigate('#/organizations/properties')" ><a translate="organizations.index.subpages.properties" href=""></a></li>
+                    <li ng-class="{active: page=='principalmanagement'}"
+                        ng-click="navigate('#/organizations/principalmanagement')"><a href="" translate="organizations.index.subpages.principaloverview"></a></li>
+
+                    <li class="list-group-item" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)">Management</li>
+                    <li ng-class="{active: page=='invitations'}"
+                        ng-click="navigate('#/organizations/invitations')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.invitations" href=""></a></li>
+                    <li ng-class="{active: page=='entitlementpacks'}"
+                        ng-click="navigate('#/organizations/entitlementpacks')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.entitlementpacks" href=""></a></li>
+                    <li ng-class="{active: page=='roles'}"
+                        ng-click="navigate('#/organizations/roles')" ng-show="profile.isMemberOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.roles" href=""></a></li>
+                    <li ng-class="{active: page=='attributes'}"
+                        ng-click="navigate('#/organizations/attributes')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.attributes" href=""></a></li>
+                    <li ng-class="{active: page=='public_catalog'}"
+                        ng-click="navigate('#/organizations/public_catalog')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.public_catalog" href=""></a></li>
+                    <li class="danger" ng-click="deleteOrganization(selectedOrganization)" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.btn.deleteOrganization"></a></li>
+                    <li class="list-group-item" ng-show="profile.isAdmin">
+                        Administration
+                    </li>
+                    <li ng-class="{active: page=='managers'}"
+                        ng-click="navigate('#/organizations/managers')" ng-show="profile.isAdmin"><a translate="organizations.index.subpages.managers" href=""></a></li>
+                    <li ng-class="{active: page=='members'}"
+                        ng-click="navigate('#/organizations/members')" ng-show="profile.isAdmin"><a translate="organizations.index.subpages.members" href=""></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-md-10">
+            <h3 class="page-header">
+                <span style="cursor: pointer" ng-click="openOrganizationChanger()">{{selectedOrganization.name}}</span>
+                <i class="fa fa-angle-right"></i> <small>{{Page.getSubPageTitle()}}</small></h3>
+            <ng-include src="'views/components/organizations/pages/'+page+'.html'"></ng-include>
+
+            <br/>
+            <button type="button" ng-click="saveOrganization()" class="btn btn-primary pull-right" ng-show="(isActiveTab('/organizations/new') || (canBeSaved && profile.isManagerOfOrganization(selectedOrganization.id)))">{{'organizations.index.btn.saveOrganization' | translate}}</button>
+        </div>
+
+        <div class="col-xs-12 col-md-1">
+
+        </div>
+
+
+    </div>
+</div>

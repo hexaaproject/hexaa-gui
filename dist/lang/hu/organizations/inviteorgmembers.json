@@ -1,0 +1,15 @@
+{
+	"organizations":
+	{
+		"inviteorgmembers":
+		{
+			"msg":
+			{
+				"invitationSendSuccess": "Meghívó elküldve!",
+				"invitationSendError": "Nem sikerült elküldeni a meghívót! ",
+				"invitationSendSuccessLinkCreated": "A meghívó linkje elkészült: ",
+				"invitationSendSuccessEmailAndLink": "A meghívó sikeresen el lett küldve a címzetteknek. Ezen felül egy meghívó link is készült: "
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"organizations":
+	{
+		"properties":
+		{
+			"lbl":
+			{		
+				"title": "Properties",
+				"organizationName": "Name",
+				"organizationDescription": "Description",
+				"organizationDefaultRole": "Default role",
+				"organizationUrl": "Home page"
+			},
+			"msg": 
+			{
+				"organizationUpdateSuccess": "Organization updated!",
+				"organizationUpdateError": "Failed to update organisation!",
+				"organizationGetError": "Failed to retrieve organization!",
+				"organizationRoleGetError": "Failed to retrieve organizations roles!"
+			},
+			"placeholder":
+			{
+				"organizationName": "Name of the organization",
+				"organizationDescription": "Description of the organization",
+				"organizationDefaultRole": "Organization's default role",
+				"organizationUrl": "Url of the organizations webpage"
+			},
+			"help":{
+				"title": "Properties of organization",
+				"content": "Content goes here."
+			}
+		}
+	}
+}

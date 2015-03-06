@@ -1,0 +1,54 @@
+{
+	"organizations":
+	{
+		"entitlementpacks":
+		{
+			"lbl":
+			{
+				"title": "Connected services",
+				"entitlementpackPublic": "Public",
+				"entitlementpackConnected": "Connected",
+				"token": "Token"
+			},
+			"msg":
+			{
+				"tokenLinkSuccessful": "Token linked!",
+				"tokenLinkError": "Failed to link token!",
+				"entilementpackRemoveError": "Failed to remove entitlementpack!",
+				"entitlementpackRemoveSuccess" : "Entitlementpack removed!",				
+				"problemOccured": "Problem occured",
+				"areyousure": "Are you sure?",
+				"statusPending": "Pending",
+				"statusOk": "Ok",
+				"confirmationNeeded": "Confirmation needed",
+				"entitlementpackDeleteConfirm": "Do you want to delete entitlementpack {{name}}?"
+			},
+			"placeholder":
+			{
+				"token": "Enter token here",
+				"serviceFilter": "Enter a service name"
+			},
+			"btn":
+			{
+				"entitlementpackAdd": "Connect",
+				"entitlementpackRemove": "Remove",
+				"tokenLink": "Ok"
+			},
+			"tblfield":
+			{
+				"name": "Name",
+				"description": "Description",
+				"permissions": "Permissions",
+				"servicemanagers": "Service managers",				
+				"status": "Status",
+				"actions": "Actions"
+			},
+			"header":
+			{
+				"addModal": "Connect service to organization",
+				"removeModal": "Remove service from organization",
+				"choosePublic": "Choose from public services"
+			}
+		}
+	}		
+}

@@ -1,0 +1,24 @@
+{
+	"modals":
+	{
+		"invitation":
+		{
+			"lbl": {
+                "inviteByEmail": "Meghívás e-mailben",
+				"invitationTitle": "Meghívás a {{unitName}}-ba",
+				"invitationEmailAddresses": "E-mail címek",
+				"invitationText" : "Meghívó",
+				"invitationLandingUrl": "Landing Url",
+				"invitationStartDate": "Érvényesség kezdete",
+				"invitationEndDate": "Érvényesség vége",
+				"invitationLimit": "Limit",
+				"invitationRole": "Szerepkör",
+				"invitationLocale": "Nyelv"
+			},
+			"btn": {
+				"invitationOk": "Ok",
+				"invitationCancel": "Bezárás"
+			}
+		}
+	}	
+}

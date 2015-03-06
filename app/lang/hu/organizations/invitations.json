@@ -1,0 +1,44 @@
+{
+	"organizations":
+	{
+		"invitations":
+		{
+			"lbl":
+			{
+				"title": "Meghívók",
+				"invitationNotFoundForOrganization": "Nincs nyilvántartva meghívó, ehhez a szervezethez.",
+				"invitationEmail": "E-mail",
+				"invitationStatus": "Állapot",
+				"invitationLandingUrl": "Landing URL",
+				"invitationStartDate" : "Érvényesség kezdete",
+				"invitationEndDate" : "Érvényesség vége",
+				"invitationLimit" : "Limit",
+				"invitationRole": "Szerepkör",
+				"invitationLocale": "Nyelv",
+				"invitationUrl": "Meghívó link: "
+			},
+			"btn":
+			{
+				"invitationEdit" : "Szerkesztés",
+				"invitationResend" : "Újraküldés",
+				"invitationDelete": "Törlés",
+				"invitationInvite": "Meghívás",
+				"invitationInviteMember": "Tag meghívása",
+				"invitationInviteManager": "Menedzser meghívása"
+			},
+			"msg":
+			{
+				"confirmationNeeded": "Megerősítés szükséges",
+				"invitationDeleteConfirmation": "Biztosan törli {{fedid}} meghívóját?",
+				"invitationResendSuccess" : "Meghívó újraküldve!",
+				"invitationResendError" : "Nem sikerült újraküldeni a meghívót!",
+				"invitationRemoveSuccess" : "Meghívó törölve!",
+				"invitationRemoveError": "Nem sikerült törölni a meghívót!",
+				"invitationUpdateSuccess": "Meghívó frissítve!",
+				"invitationUpdateError": "Nem sikerült frissíteni a meghívót!",
+				"invitationGetError": "Nem sikerült letölteni a szervezet meghívóit!"
+			}
+		}
+	}
+	
+}

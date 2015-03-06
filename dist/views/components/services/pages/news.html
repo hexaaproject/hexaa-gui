@@ -1,0 +1,33 @@
+<div ng-controller="ServiceNewsCtrl">
+        <div class="panel panel-default panel-heading form-inline">
+
+            <label for="tagInput" translate>services.news.lbl.searchForTags</label>
+            <div    id="tagFilter"
+                    multi-select
+                    input-model="tagSources"
+                    button-label="name"
+                    item-label="name"
+                    tick-property="ticked"
+                    orientation="vertical"
+                    group-property="multiSelectGroup"
+                    static-label="Filter tags"
+                    >
+            </div>
+
+            <label for="pageSize"><b translate>services.news.lbl.pageSize</b></label>
+            <select id="pageSize" class="form-control" ng-model="pager.itemPerPage">
+                <option>1</option>
+                <option>5</option>
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+            </select>
+        </div>
+        <div hexaa-shared-news-widget news = "service.news"></div>
+    </p>
+
+    <pagination total-items="pager.totalItems" page="pager.currentPage" max-size="pager.maxSize" class="pagination-sm"
+                boundary-links="true" rotate="false" num-pages="pager.numPages" items-per-page="pager.itemPerPage"></pagination>
+
+</div>

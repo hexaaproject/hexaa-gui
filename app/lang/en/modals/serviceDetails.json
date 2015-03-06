@@ -1,0 +1,23 @@
+{
+	"modals": {
+		"serviceDetails":
+		{
+			"lbl":
+			{
+				"serviceDetails": "Service details",
+				"serviceDescription": "Description",
+				"serviceOwnerName": "Owner organization",
+				"servicePrivacyDesc": "Privacy policy",
+				"servicePrivacyUrl": "Visit privacy document"
+			},
+			"msg":
+			{
+				"getServiceError": "Couldnt retrieve the selected service's data!"
+			},
+			"btn":
+			{
+				"close": "Close"
+			}
+		}
+	}
+}

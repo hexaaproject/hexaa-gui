@@ -1,0 +1,13 @@
+{
+	"modals":
+	{
+		"message":
+		{
+			"btn": 
+			{
+				"messageClose": "Bezárás"
+			}
+		}
+	}
+	
+}

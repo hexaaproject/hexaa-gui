@@ -1,0 +1,33 @@
+{
+	"services":
+	{
+		"managers":
+		{
+			"lbl":
+			{
+				"title": "Menedzserek",
+				"allPrincipals": "Minden személy",
+				"associatedPrincipals": "Szervezet managerei"
+			},
+			"btn":
+			{
+				"inviteManagers": "Meghívás",
+				"addManagers" : "Hozzáad",
+				"removeManagers" : "Eltávolít"
+			},
+			"placeholder":
+			{
+				"principalList": "Írjon be egy nevet",
+				"managerList": "Írjon be egy nevet"
+			},
+			"msg":
+			{
+				"managerFailedToAdd": "Nem sikerült hozzáadni a menedzserekhez: {0}",
+				"managerFailedToRemove" :  "Nem sikerült eltávolítani a menedzserek közül: {0}",
+				"problemOccured": "Hiba történt",
+				"allChangesSaved": "Minden változás mentésre került!"
+			}
+		}
+	}
+	
+}

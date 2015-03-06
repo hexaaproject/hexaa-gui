@@ -1,0 +1,61 @@
+{
+	"services":
+	{
+		"entitlementpacks":{
+			"lbl":
+			{
+				"title": "Permission sets",
+				"entitlementpackToken" : "Token",
+				"entitlementpackBasic" : "Basic",
+				"entitlementpackName" : "Name",
+				"entitlementpackDescription" : "Description",
+				"entitlementpackType" : "Type",
+				"entitlementpackTypePrivate" : "Private",
+				"entitlementpackTypePublic": "Public",
+				"entitlementsTitle" : "Permissions",
+				"entitlementpackNewTitle" : "New service",
+				"editorModeNew" : "New",
+				"editorModeEdit" : "Edit",
+				"noEntitlementpackHasBeenFound" : "No service has been found",
+				"serviceEntitlements": "Provider permissions",
+				"entitlementpackEntitlements": "Service permissions",
+				"entitlementsName": "Name",
+				"entitlementsDescription": "Description",
+				"entitlementsUri": "SAML value"
+
+			},
+			"btn" :{
+				"entitlementAdd" : "Add",
+				"entitlementRemove" : "Remove",
+				"entitlementpackNew" : "New",
+				"entitlementpackSave" : "Save",
+				"entitlementpackUndo" : "Undo",
+				"entitlementpackRemove" : "Remove",
+				"entitlementpackGenerateToken": "Generate token"
+
+			},
+			"msg" : {
+				"confirmationNeeded": "Confirmation needed",
+				"entitlementpackDeleteConfirmation": "Are you sure you want to delete service {{name}}?",
+				"entitlementLoadError" : "Failed to load permissions of provider!",
+				"entitlementpacksLoadError": "Failed to load services of provider!",
+				"entitlementsRefreshError" : "Failed to query provider permissions!",
+				"entitlementAddError" : "Failed to add permission: {0}",
+				"entitlementRemoveError" : "Failed to remove permission: {0}",
+				"errorOccured" : "Error occured!",
+				"entitlementpackSavedButError" : "Service saved, but: ",
+				"entitlementpackSaveSuccess" : "Service saved!",
+				"entitlementpackSaveError" : "Failed to create service",
+				"entitlementpackUpdateSuccess" : "Service updated",
+				"entitlementpackUpdateError" : "Failed to remove service: ",
+				"entitlementpackRemoveSuccess" : "Service removed!",
+				"entitlementpackRemoveError" : "Failed to remove service! "
+			},
+			"placeholder": {
+				"entitlementpackFilter": "Filter",
+				"entitlementpackToken": "Press the button to generate a token"
+			}
+		}
+	}	
+
+}

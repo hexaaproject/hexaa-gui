@@ -1,0 +1,11 @@
+<div class="row" ng-controller="ServiceManagersCtrl">
+    <div class="col-xs-12 col-md-12">
+        <div angular-duallistbox elements="principals" selected="service.managers"
+             id="managersbox"
+             element-display="'fedid'" element-value="'id'" class="managersbox"
+             non-selected-list-label="'services.managers.lbl.allPrincipals' | translate"
+             selected-list-label="'services.managers.lbl.associatedPrincipals' | translate"
+             filter-place-holder="'services.managers.placeholder.principalList' | translate">
+        </div>
+    </div>
+</div>

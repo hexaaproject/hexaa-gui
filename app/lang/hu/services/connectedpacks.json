@@ -1,0 +1,26 @@
+{
+	"services":
+	{
+		"connectedpacks":
+		{
+			"lbl": {
+				"title": "Kapcsolt szervezetek",
+				"entitlementpackName" : "Jogosultság csomag",
+				"organizationName" : "Szervezet",
+				"connectionStatus" : "Státusz",
+				"action" : "Művelet"
+			},
+			"btn": {
+				"connectionAccept": "Elfogad",
+				"connectionDelete" : "Töröl"
+			},
+			"msg" : {
+				"connectionRemoveSuccess" : "Kérés törölve",
+				"connectionRemoveError" : "Nem sikerült törölni a kérést!",
+				"connectionAcceptSuccess" : "Kérés elfogadva!",
+				"connectionAcceptError" : "Nem sikerült elfogadni a kérést!"
+			}
+		}
+	}
+	
+}

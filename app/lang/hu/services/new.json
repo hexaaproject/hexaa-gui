@@ -1,0 +1,29 @@
+{
+	"services":
+	{
+		"new":
+		{
+			"lbl": {
+				"serviceNew" : "Új szolgáltatás",
+				"serviceName" : "Név",
+				"serviceUrl" : "Url",
+				"serviceEntityId": "Entity Id",
+				"serviceDescription": "Leírás"
+			},
+			"placeholder":{
+				"serviceName" : "Szolgáltatás neve",
+				"serviceUrl" : "http://pelda.hu",
+				"serviceDescription": "Szolgáltatás leírása"
+			},
+			"msg": {
+				"serviceCreateSuccess" : "Szolgáltatás létrejött!",
+				"serviceCreateError" : "Nem sikerült létrehozni a szolgáltatást!"
+			},
+			"btn":
+			{
+				"newEntityId" : "Új"
+			}
+		}
+	}
+	
+}

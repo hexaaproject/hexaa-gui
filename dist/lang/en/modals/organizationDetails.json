@@ -1,0 +1,24 @@
+{
+	"modals":
+	{
+		"organizationDetails":
+		{
+			"lbl":
+			{
+				"organizationName": "Name",
+				"organizationDescription": "Descripiton",
+				"organizationManagers": "Managers",
+				"organizationDetails": "Organization details"
+			},
+			"msg":
+			{
+				"organizationGetError": "Failed to retrieve organization data",
+				"organizationManagersGetError": "Failed to retrieve organization managers"
+			},
+			"btn":
+			{
+				"close": "Close"
+			}
+		}
+	}
+}

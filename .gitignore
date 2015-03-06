@@ -1,0 +1,14 @@
+app/.idea/*
+*~
+*json~
+*py
+nbproject/
+secret.json
+.tmp/*
+bower_components/
+node_modules/
+app/health_report/*
+.idea/*
+app/config.php
+dist/config.php
+npm-debug.log

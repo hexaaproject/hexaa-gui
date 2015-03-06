@@ -1,0 +1,17 @@
+{
+	"modals": {
+		"organizationChangerDialog": {
+			"lbl":{
+				"title":"Select an organization!",
+				"organizationName": "Name",
+				"organizationDescription": "Description",
+				"organizationActions": "Actions"
+			},
+			"btn": {
+				"close": "Close",
+				"organizationSelect": "Select"
+			}
+
+		}
+	}
+}

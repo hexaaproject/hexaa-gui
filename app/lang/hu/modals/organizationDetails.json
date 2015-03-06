@@ -1,0 +1,19 @@
+{
+	"modals":
+	{
+		"organizationDetails":
+		{
+			"lbl":
+			{
+				"organizationName": "Név",
+				"organizationDescription": "Leírás",
+				"organizationManagers": "Menedzserek",
+				"organizationDetails": "Szervezet tulajdonságai"
+			},
+			"btn":
+			{
+				"close": "Bezárás"
+			}
+		}
+	}
+}

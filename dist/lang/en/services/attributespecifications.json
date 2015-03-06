@@ -1,0 +1,28 @@
+{
+	"services":{
+		"attributespecifications":{
+			"lbl": {
+				"title": "Attributes Secifications",
+				"attributeSpecificationList": "All",		
+				"attributeSpecificationVisibilitySelect" : "Select",
+				"attributeSpecificationVisibilityPublic" : "Public",
+				"attributeSpecificationVisibilityPrivate" : "Private",
+				"attributeSpecificationConnectedList" : "Connected",
+				"noAttributeSpecificationsFound": "No attributespecifications has been found in the system. Contact the HEXAA administrator for further instructions!"
+			},
+			"placeholder":{
+				"attributeSpecificationFilter": "Type in an attributespecification"
+			},
+			"btn": {
+				"attributeSpecificationAdd": "Add",
+				"attributeSpecificationRemove" : "Remove"
+			},
+			"msg" : {
+				"attributeSpecificationAddError" : "Failed to add attributespecification: {0}",
+				"attributeSpecificationRemoveError" :"Failed to add attributespecification: {0}",
+				"allChangesSaved" : "All changes have been saved",
+				"problemOccured" : "Problem occured"				
+			}
+		}
+	}	
+}

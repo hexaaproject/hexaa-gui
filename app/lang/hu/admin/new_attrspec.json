@@ -1,0 +1,25 @@
+{
+	"admin":
+	{
+		"newAttrspec":
+		{
+			"lbl": {
+				"attributeSpecificationUri": "Uri",
+				"attributeSpecificationName" : "Név",
+				"attributeSpecificationDescription" : "Leírás",
+				"attributeSpecificationSyntax": "Szintaxis",
+				"attributeSpecificationIsMultiValue": "Többértékű",
+                                "attributeSpecificationMaintainer": "Karbantartó",
+                                "attributeSpecificationMaintainerUser":"Felhasználó",
+                                "attributeSpecificationMaintainerOrganization":"Szervezet menedzsere"
+			},
+			"btn": {
+				"attributeSpecificationSave": "Mentés"
+			},
+			"msg": {
+				"attributeSpecificationCreateSuccess": "Attribútum létrehozva!",
+				"attributeSpecificationCreateError": "Nem sikerült létrehozni az attribútumot!"		
+			}
+		}
+	}
+}

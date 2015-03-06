@@ -1,0 +1,39 @@
+{
+	"services":
+	{
+		"index":
+		{
+			"subpages":
+			{
+                "news" : "Hírek",
+				"properties" : "Tulajdonságok",
+				"owner" : "Szervezet és Biztonság",
+				"managers" : "Managerek",
+				"attributeSpecifications": "Attribútumok",
+				"entitlements": "Jogkörök",
+				"entitlementpacks" : "Jogosultság csomagok",
+				"connectedEntitlementpacks" : "Használt jogosultságcsomagok",
+				"invitations" : "Meghívók"
+			},
+			"msg":
+			{
+				"serviceDeleteSuccess" : "Szolgáltatás törölve!",
+				"serviceDeleteError" : "Nem sikerült törölni a szolgáltatást!",
+                "confirmationNeeded": "Megerősítés szükséges",
+                "serviceDeleteConfirm": "Tényleg törölni kívánja a {{name}} szolgáltatást?",
+                "serviceSPNotifySuccess" : "Engedélyező e-mail újraküldve!",
+                "serviceSPNotifyError" : "Engedélyező e-mail újraküldése sikertelen!"
+			},
+			"lbl":{
+				"noServiceSelected": "Kérem válasszon egy szolgáltatást a listából, vagy hozzon létre egy újat!",
+				"serviceNotEnabled": "Ez a szolgáltatás még nincs engedélyezve az SP adminisztrátora által!"
+			},
+			"btn":{
+				"serviceSave" : "Mentés",
+				"serviceDelete": "Törlés",
+				"serviceNew" : "Új"
+			}
+		}
+	}
+	
+}

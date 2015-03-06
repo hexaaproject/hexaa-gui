@@ -1,0 +1,19 @@
+{
+	"admin":
+	{
+		"index":
+		{
+			"lbl":
+			{
+				"title": "Adminisztráció"
+			},
+			"subpages":
+			{
+				"attributespecifications": "Attribútumok",
+				"principals": "Felhasználók",
+				"entityidrequests": "Entity ID kérvények",
+                                "entityids": "Entity ID-k"
+			}
+		}
+	}	
+}

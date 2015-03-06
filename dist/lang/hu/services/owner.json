@@ -1,0 +1,22 @@
+{
+	"services":
+	{
+		"owner": {
+			"lbl": {
+				"title": "Szervezet és Biztonság",
+				"ownerDetails": "Szervezet tulajdonságai",
+				"privacyDetails": "Biztonsági tudnivalók",
+				"organizationName": "Név",
+				"organizationDescription": "Leírás",
+				"organizationShortName": "Rövidített név",
+				"organizationUrl": "Url",
+				"privacyUrl": "Url",
+				"privacyDescription": "Leírás"
+			},
+			"msg": {
+				"ownerUpdateError": "Nem sikerült frissíteni a tulajdonosi adatokat.",
+				"ownerUpdateSuccess": "Sikeres frissítés!"
+			}			
+		}
+	}
+}

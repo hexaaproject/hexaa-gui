@@ -1,0 +1,94 @@
+<div ng-controller="ServicesInvitationsCtrl">
+    <div ng-show="service.invitations.length == 0">
+        <h4 translate>services.invitations.lbl.invitationNotFoundForService</h4>
+    </div>
+    <div class="panel panel-info panel-heading clearfix">
+        <button type="button" ng-click="inviteManagers(service)"  class="btn btn-primary pull-right" ng-controller="InviteServiceManagersCtrl" >
+            <b translate>services.invitations.btn.inviteManager</b> <span class="glyphicon glyphicon-envelope"></span>
+        </button>
+    </div>
+    <accordion close-others="oneAtATime">
+        <accordion-group  ng-repeat="invitation in service.invitations"  >
+            <accordion-heading>
+                <div ng-click="load(invitation.id)" class="shorten">
+                    <i class="caret pull-right"></i></span>
+                    <i class="glyphicon glyphicon-ok" ng-show="!invitation.is_pending"></i>
+                    <i class="glyphicon glyphicon-time" ng-show="invitation.is_pending"></i>
+                    <i class="glyphicon glyphicon-star"></i>
+                    {{invitation.created_at | date}}
+                    <span style="display: inline">
+                        <i ng-repeat="(key,value) in invitation.statuses"> {{key}}<i ng-if="$index+1 != keyCount(invitation.statuses)">,</i>
+                        </i>
+                    </span>
+                    <span ng-show="invitation.counter != null || invitation.limit != null">
+                        <b> (<b ng-if="invitation.counter != null">{{invitation.counter }} </b>
+                            <b ng-if="invitation.counter == null">0</b>
+                            / {{invitation.limit}} )
+                        </b>
+                    </span>
+                </div>
+            </accordion-heading>
+
+            <div>
+                <div class="form-group">
+                    <table class="table table-condensed" ng-hide="invitation.emails.length == 0">
+                        <tr>
+                            <th translate>services.invitations.lbl.invitationEmail</th>
+                            <th translate>services.invitations.lbl.invitationStatus</th>
+                        </tr>
+                        <tr ng-repeat="(key,value) in invitation.statuses">
+                            <td>{{key}}</td>
+                            <td>{{value}}</td>
+                        </tr>
+                    </table>
+
+                    <p>
+                    <blockquote ng-hide="invitation.message == null">{{invitation.message}}</blockquote>
+                    <pre ng-if="keyCount(invitation.statuses) == 0"><b translate>services.invitations.lbl.invitationUrl</b> {{baseUIAddr}}/index.php?token={{invitation.token}}&action=accept</pre>
+                    </p>
+
+                    <table class="table table-condensed">
+                        <tr ng-hide="invitation.landing_url == null">
+                            <td translate>services.invitations.lbl.invitationLandingUrl</td>
+                            <td>{{invitation.landing_url}}</td>
+                        </tr>
+                        <tr ng-hide="invitation.start_date == null">
+                            <td translate>services.invitations.lbl.invitationStartDate</td>
+                            <td>{{invitation.start_date | date}}</td>
+                        </tr>
+                        <tr ng-hide="invitation.end_date == null">
+                            <td translate>services.invitations.lbl.invitationEndDate</td>
+                            <td>{{invitation.end_date | date}}</td>
+                        </tr>
+                        <tr ng-hide="invitation.limit == null">
+                            <td translate>services.invitations.lbl.invitationLimit</td>
+                            <td>{{invitation.limit}}</td>
+                        </tr>
+                        <tr ng-hide="invitation.locale == null">
+                            <td translate>organizations.invitations.lbl.invitationLocale</td>
+                            <td>{{invitation.locale}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    <button class="btn btn-primary" ng-click="edit(invitation)" translate>services.invitations.btn.invitationEdit</button>
+                    <button class="btn btn-success" ng-click="resend(invitation)" ng-hide="invitation.emails.length == 0" translate>services.invitations.btn.invitationResend</button>
+                    <button class="btn btn-danger" ng-click="delete(invitation)" translate>services.invitations.btn.invitationDelete</button>
+                </p>
+            </div>
+
+        </accordion-group>
+    </accordion>
+    <pagination total-items="pager.totalItems" page="pager.currentPage" max-size="pager.maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="pager.numPages" items-per-page="pager.itemPerPage"></pagination>
+    <pre>Page: {{pager.currentPage}} / {{pager.numPages}}</pre>
+    <div>
+        <i>Page size:</i>
+        <select ng-model="pager.itemPerPage">
+            <option>5</option>
+            <option>10</option>
+            <option>25</option>
+            <option>50</option>
+            <option>100</option>
+        </select>
+    </div>
+</div>

@@ -1,0 +1,296 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="hexaaApp"  ng-controller="IndexCtrl as IndexVm" > <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="hexaaApp"  ng-controller="IndexCtrl as IndexVm" > <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="hexaaApp"  ng-controller="IndexCtrl as IndexVm"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="hexaaApp"  ng-controller="IndexCtrl as IndexVm"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title ng-bind="Page.getTitle()"></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <link rel="stylesheet" href="../bower_components/jquery-ui/themes/black-tie/jquery-ui.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="styles/angular-multi-select.css">
+    <link rel="stylesheet" href="../bower_components/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css">
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <!--<link rel="stylesheet" href="styles/main.css"> -->
+    <link rel="stylesheet" href="styles/animations.css">
+    <!-- endbuild -->
+
+    <script src="connect.php"></script>
+</head>
+<body ng-cloak class="ng-cloak" >
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<div class="container">
+    <div class="col-xs-12 col-md-12">
+
+        <nav id="nav" class="navbar navbar-default" role="navigation" style="margin-bottom: 0">
+            <div id="navContainer" class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle navbar-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand navbar-left" href="#/profile/dashboard"><img src="images/hexaa.png"></a>
+                </div>
+                <div class="pull-right" loading-widget>
+                    <img id="loadingIcon" src="images/loading.gif"   />
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{active: (isActiveTab('/organizations') == true) }" ><a href="#/organizations/" translate="index.menuBar.organizations"></a></li>
+                        <li ng-class="{active: (isActiveTab('/services') == true) }" ><a href="#/services/" translate="index.menuBar.services"></a></li>
+                        <li ng-class="{active: (isActiveTab('/admin') == true) }" ng-show="profile.isAdmin" ><a href="#/admin/" translate="index.menuBar.admin"></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> {{profile.fedid}}<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li ng-class="{active: (isActiveTab('/profile') == true) }"  >
+                                    <a href="#/profile/">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                        <span translate="index.menuBar.profile"></span>
+                                    </a>
+                                </li>
+                                <li ng-if="profile.administrator" >
+                                    <a ng-click="profile.setIsAdmin(false)" ng-if="profile.isAdmin">
+                                        <i class="glyphicon glyphicon-eye-close link"></i>
+                                        <span translate="index.menuBar.viewAsUser"></span>
+                                    </a>
+                                    <a ng-click="profile.setIsAdmin(true)" ng-if="!profile.isAdmin">
+                                        <i class="glyphicon glyphicon-eye-open link"></i>
+                                        <span translate="index.menuBar.viewAsAdmin"></span>
+                                    </a>
+                                </li>
+                                <li ng-class="{active: (isActiveTab('/logout') == true) }"  >
+                                    <a href="#/profile/logout">
+                                        <i class="glyphicon glyphicon-log-out"></i>
+                                        <span translate="index.menuBar.logOut"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div ng-view class="content">
+
+        </div>
+        <p>
+        <div class="panel-footer row footer">
+            <div class="col-md-4">
+                Backend-Version: {{hexaa_properties.backend_version}}
+            </div>
+            <div class="col-md-4">
+                <b translate>index.lbl.copyright</b>
+            </div>
+            <div class="col-md-4">
+                Frontend-Version: FRONTEND_VERSION_PLACEHOLDER
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--[if lt IE 9]>
+<script src="../bower_components//es5-shim/es5-shim.js"></script>
+<script src="../bower_components//json3/lib/json3.min.js"></script>
+<![endif]-->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="../bower_components/es5-shim/es5-shim.js"></script>
+<script src="../bower_components/jquery/jquery.js"></script>
+<script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/json3/lib/json3.min.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../bower_components/angular-css-injector/angular-css-injector.js"></script>
+<script src="../bower_components/angular-translate/angular-translate.js"></script>
+<script src="../bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+<script src="../bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/ng-file-upload/angular-file-upload.js"></script>
+<script src="../bower_components/angular-toastr/dist/angular-toastr.js"></script>
+<script src="../bower_components/bootstrap-duallistbox/src/jquery.bootstrap-duallistbox.js"></script>
+<script src="../bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/utils/angular-multi-select.js"></script> <!-- Modded vendor script -->
+<script src="scripts/config/app.js"></script>
+<script src="scripts/config/module.js"></script>
+<script src="scripts/shared/module.js"></script>
+<script src="scripts/shared/controllers/module.js"></script>
+<script src="scripts/shared/controllers/pages/module.js"></script>
+<script src="scripts/shared/controllers/modals/module.js"></script>
+<script src="scripts/shared/directives/module.js"></script>
+<script src="scripts/components/module.js"></script>
+<script src="scripts/components/admin/module.js"></script>
+<script src="scripts/components/admin/controllers/module.js"></script>
+<script src="scripts/components/admin/controllers/modals/module.js"></script>
+<script src="scripts/components/admin/controllers/pages/module.js"></script>
+<script src="scripts/components/admin/directives/module.js"></script>
+<script src="scripts/components/organizations/module.js"></script>
+<script src="scripts/components/organizations/controllers/module.js"></script>
+<script src="scripts/components/organizations/controllers/pages/module.js"></script>
+<script src="scripts/components/organizations/controllers/modals/module.js"></script>
+<script src="scripts/components/organizations/directives/module.js"></script>
+<script src="scripts/components/profile/module.js"></script>
+<script src="scripts/components/profile/controllers/module.js"></script>
+<script src="scripts/components/profile/controllers/pages/module.js"></script>
+<script src="scripts/components/profile/controllers/modals/module.js"></script>
+<script src="scripts/components/profile/directives/module.js"></script>
+<script src="scripts/components/services/module.js"></script>
+<script src="scripts/components/services/controllers/module.js"></script>
+<script src="scripts/components/services/controllers/pages/module.js"></script>
+<script src="scripts/components/services/controllers/modals/module.js"></script>
+<script src="scripts/components/services/controllers/modals/entityIdContactDialog.js"></script>
+<script src="scripts/components/services/directives/module.js"></script>
+<script src="scripts/services/module.js"></script>
+<script src="scripts/services/facades/module.js"></script>
+<script src="scripts/models/module.js"></script>
+<script src="scripts/filters/module.js"></script>
+
+
+<script src="scripts/config/http.js"></script>
+<script src="scripts/config/routing.js"></script>
+<script src="scripts/config/translate.js"></script>
+<script src="scripts/config/exceptionConfig.js"></script>
+<script src="scripts/config/toastrConfig.js"></script>
+<script src="scripts/components/services/directives/hexaa-services-entitlementpack-editor-widget.js"></script>
+<script src="scripts/shared/controllers/pages/IndexCtrl.js"></script>
+<script src="scripts/components/organizations/controllers/pages/index.js"></script>
+<script src="scripts/components/organizations/controllers/modals/organizationNewDialog.js"></script>
+<script src="scripts/components/organizations/controllers/pages/principalmanagement.js"></script>
+<script src="scripts/components/organizations/controllers/pages/properties.js"></script>
+<script src="scripts/components/organizations/controllers/pages/managers.js"></script>
+<script src="scripts/components/organizations/controllers/pages/members.js"></script>
+<script src="scripts/components/organizations/controllers/pages/news.js"></script>
+<script src="scripts/components/organizations/controllers/pages/roles.js"></script>
+<script src="scripts/components/organizations/controllers/pages/roles_new.js"></script>
+<script src="scripts/components/organizations/controllers/pages/inviteorgmanagers.js"></script>
+<script src="scripts/components/organizations/controllers/pages/inviteorgmembers.js"></script>
+<script src="scripts/components/organizations/controllers/pages/entitlementpacks.js"></script>
+<script src="scripts/components/organizations/controllers/pages/attributes.js"></script>
+<script src="scripts/components/organizations/controllers/pages/invitations.js"></script>
+<script src="scripts/components/organizations/controllers/pages/public_catalog.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-properties-widget.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-role-editor-widget.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-role-widget.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-roles-widget.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-users-widget.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-invitations-widget.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-invitationbar-widget.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-entitlementcatalog-widget.js"></script>
+<script src="scripts/components/organizations/directives/hexaa-organizations-attribute-editor-widget.js"></script>
+<script src="scripts/components/profile/controllers/pages/myorganizations.js"></script>
+<script src="scripts/components/profile/controllers/pages/myservices.js"></script>
+<script src="scripts/shared/controllers/modals/invitation.js"></script>
+<script src="scripts/shared/controllers/modals/message.js"></script>
+<script src="scripts/shared/controllers/modals/confirmationDialog.js"></script>
+<script src="scripts/components/organizations/controllers/modals/organizationDetails.js"></script>
+<script src="scripts/components/services/controllers/modals/serviceDetails.js"></script>
+<script src="scripts/components/organizations/controllers/modals/organizationChangerDialog.js"></script>
+<script src="scripts/components/organizations/controllers/modals/attributeEditorDialog.js"></script>
+<script src="scripts/components/services/controllers/modals/serviceChangerDialog.js"></script>
+<script src="scripts/components/services/controllers/modals/newEntitlementDialog.js"></script>
+<script src="scripts/components/services/controllers/pages/index.js"></script>
+<script src="scripts/components/services/controllers/pages/news.js"></script>
+<script src="scripts/components/services/controllers/pages/properties.js"></script>
+<script src="scripts/components/services/controllers/pages/managers.js"></script>
+<script src="scripts/components/services/controllers/pages/attributespecifications.js"></script>
+<script src="scripts/components/services/controllers/pages/new.js"></script>
+<script src="scripts/components/services/controllers/pages/owner.js"></script>
+<script src="scripts/components/services/controllers/pages/entitlements.js"></script>
+<script src="scripts/components/services/controllers/pages/entitlementpacks.js"></script>
+<script src="scripts/components/services/controllers/pages/inviteservicemanagers.js"></script>
+<script src="scripts/components/services/controllers/pages/connectedpacks.js"></script>
+<script src="scripts/components/services/controllers/pages/invitations.js"></script>
+<script src="scripts/components/services/controllers/modals/newEntitlementpackDialog.js"></script>
+<script src="scripts/components/profile/controllers/pages/index.js"></script>
+<script src="scripts/components/profile/controllers/pages/attributes.js"></script>
+<script src="scripts/components/profile/controllers/pages/consents.js"></script>
+<script src="scripts/components/profile/controllers/pages/me.js"></script>
+<script src="scripts/components/profile/controllers/pages/logout.js"></script>
+<script src="scripts/components/profile/controllers/pages/news.js"></script>
+<script src="scripts/components/profile/controllers/pages/dashboard.js"></script>
+<script src="scripts/components/profile/controllers/pages/vowizard.js"></script>
+<script src="scripts/components/profile/controllers/modals/module.js"></script>
+<script src="scripts/components/profile/controllers/modals/attributeEditorDialog.js"></script>
+<script src="scripts/components/profile/directives/hexaa-profile-attribute-editor-widget.js"></script>
+<script src="scripts/components/admin/directives/hexaa-admin-attributespecification-editor-widget.js"></script>
+<script src="scripts/components/admin/directives/hexaa-admin-principal-editor-widget.js"></script>
+<script src="scripts/components/admin/controllers/pages/index.js"></script>
+<script src="scripts/components/admin/controllers/pages/attributespecifications.js"></script>
+<script src="scripts/components/admin/controllers/modals/newAttrspecDialog.js"></script>
+<script src="scripts/components/admin/controllers/modals/newPrincipalDialog.js"></script>
+<script src="scripts/components/admin/controllers/pages/principals.js"></script>
+<script src="scripts/components/admin/controllers/pages/entityids.js"></script>
+<script src="scripts/services/hexaaService.js"></script>
+<script src="scripts/services/facades/Roles.js"></script>
+<script src="scripts/services/facades/Consents.js"></script>
+<script src="scripts/services/facades/Invitations.js"></script>
+<script src="scripts/services/facades/AttributeSpecifications.js"></script>
+<script src="scripts/services/facades/Principal.js"></script>
+<script src="scripts/services/facades/Services.js"></script>
+<script src="scripts/services/facades/Organizations.js"></script>
+<script src="scripts/services/facades/Entitlementpacks.js"></script>
+<script src="scripts/models/Resource.js"></script>
+<script src="scripts/models/Organization.js"></script>
+<script src="scripts/models/Service.js"></script>
+<script src="scripts/models/Role.js"></script>
+<script src="scripts/models/Principal.js"></script>
+<script src="scripts/models/Invitation.js"></script>
+<script src="scripts/models/Entitlementpack.js"></script>
+<script src="scripts/models/AttributeSpecification.js"></script>
+<script src="scripts/services/requestNotificationChannel.js"></script>
+<script src="scripts/services/dialogService.js"></script>
+<script src="scripts/services/themeService.js"></script>
+<script src="scripts/services/securityService.js"></script>
+<script src="scripts/services/profileService.js"></script>
+<script src="scripts/services/settingsService.js"></script>
+<script src="scripts/services/startupService.js"></script>
+<script src="scripts/services/pageTitleService.js"></script>
+<script src="scripts/shared/directives/ngmodelonblur.js"></script>
+<script src="scripts/shared/directives/validate.js"></script>
+<script src="scripts/shared/directives/draggable.js"></script>
+<script src="scripts/shared/directives/resizable.js"></script>
+<script src="scripts/shared/directives/loadingWidget.js"></script>
+<script src="scripts/shared/directives/notifyuierror.js"></script>
+<script src="scripts/shared/directives/angular-duallistbox.js"></script>
+<script src="scripts/shared/directives/hexaa-shared-news-widget.js"></script>
+<script src="scripts/shared/directives/bootstrap-switch.js"></script>
+<script src="scripts/filters/pager.js"></script>
+<script src="scripts/filters/imageFormatter.js"></script>
+<script src="scripts/filters/placeholder.js"></script>
+<script src="scripts/utils/extensions.js"></script>
+<script src="scripts/utils/jslinq.js"></script>
+<script src="scripts/utils/wrappers.js"></script>
+<!-- endbuild -->
+</body>
+</html>
+

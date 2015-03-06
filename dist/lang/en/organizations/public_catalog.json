@@ -1,0 +1,29 @@
+{
+	"organizations":
+	{
+		"public_catalog":
+		{
+			"lbl":
+			{
+				"title": "Public Services",			
+				"entitlements": "Permissions",
+				"noPublicEntitlementsWereFound": "No public services has been found in the system",
+				"status": "Status",
+				"pendingEntitlementpack": "This service is waiting for SP manager's approval"
+			},
+			"btn":
+			{
+				"addEntitlementpack": "Add",
+				"removeEntitlementpack": "Remove"
+			},
+			"msg":
+			{
+				"entitlementpackAddSuccess": "Entitlementpack added! Needs service administrator's approval!",
+				"entitlementpackAddError": "Couldnt attach service!",
+				"entitlementpackRemoveSuccess": "Service detached.",
+				"entitlementpackRemoveError": "Failed to detach service!"
+			}
+		}
+	}
+	
+}

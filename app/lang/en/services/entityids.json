@@ -1,0 +1,37 @@
+{
+	"services":
+	{
+		"entityids":{
+			"lbl":
+			{
+				"entityIdManagement": "Entity ID Management",
+				"entityIdRequests": "Entity ID Requests",
+				"entityId": "EntityId",
+				"entityIdMessage": "Message",
+				"entityIdStatus": "Status",
+				"entityIdCreated": "Created",
+				"entityIdAction": "Action",
+				"editorModeNew": "New Entity Id Request",
+				"editorModeEdit": "Edit Entity Id Request",
+				"entityIdAdminMustAccept": "Your Entity Id Request must be accepted by the HEXAA administrator. Only after that will You be able to use It!"
+			},
+			"placeholder":
+			{
+				"entityId": "Enter EntityId here",
+				"entityIdMessage": "Enter message here"
+			},
+			"msg":
+			{
+				"entityIdRequestFailedToRemoveError": "Failed to remove entityId Request!"
+			},
+			"btn":
+			{
+				"entityIdEdit" : "Edit",
+				"entityIdNew" : "New",
+				"entityIdDelete" : "Delete",
+				"entityIdSave" : "Save",
+				"dialogClose": "Close"
+			}
+		}
+	}
+}

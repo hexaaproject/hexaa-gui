@@ -1,0 +1,22 @@
+{
+	"services":
+	{
+		"owner": {
+			"lbl": {
+				"title": "Owner & Privacy",
+				"ownerDetails": "Owner details",
+				"privacyDetails": "Privacy Information",
+				"organizationName": "Name",
+				"organizationDescription": "Description",
+				"organizationShortName": "Short name",
+				"organizationUrl": "Url",
+				"privacyUrl": "Url",
+				"privacyDescription": "Description"
+			},
+			"msg": {
+				"ownerUpdateError": "Failed to update owner information.",
+				"ownerUpdateSuccess": "Information updated."
+			}	
+		}
+	}
+}

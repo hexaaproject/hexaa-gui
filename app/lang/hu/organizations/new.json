@@ -1,0 +1,37 @@
+{
+	"organizations":
+	{
+		"new":
+		{
+			"lbl":
+			{
+				"organizationNew": "Új szervezet",
+				"organizationName": "Név",
+				"organizationDescription": "Leírás",
+				"organizationDefaultRole": "Alapértelmezett szerepkör"
+			},
+			"msg": 
+			{
+				"organizationCreateSuccess": "Szervezet létrehozva!",
+				"organizationCreateError": "Szervezet létrehozása sikertelen! ",
+				"organizationDefaultRoleCreateError": "Nem sikerült létrehozni az alapértelmezett szerepkört!",
+				"organizationDefaultRoleAttachError": "Nem tudtam a szervezethez hozzácsatolni az szerepkört!"
+			},
+			"placeholder":
+			{
+				"organizationName": "A szervezet neve",
+				"organizationDescription": "A szervezet leírása",
+				"organizationDefaultRole": "A szervezet alapértelmezett szerepköre"
+			},
+			"help":
+			{
+				"title": "Új szervezet létrehozása"
+			},			
+			"btn": {
+				"close": "Bezárás"
+			}
+		}
+	}	
+}
+
+

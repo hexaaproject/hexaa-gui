@@ -1,0 +1,25 @@
+<div ng-controller="AdminNewAttrSpec">
+    <div class="form-group">
+        <label for="uri" translate>admin.newAttrspec.lbl.attributeSpecificationUri</label>
+        <input type="text" class="form-control" ng-model="attrspec.uri" id="uri" placeholder="Uri of the attribute" notifyuierror/>
+        <label for="name" translate>admin.newAttrspec.lbl.attributeSpecificationName</label>
+        <input type="text" class="form-control" ng-model="attrspec.name" id="name" placeholder="Name of the attribute" notifyuierror/>
+        <label for="description" translate>admin.newAttrspec.lbl.attributeSpecificationDescription</label>
+        <input type="text" class="form-control" ng-model="attrspec.description" id="description" placeholder="Description of the attribute" notifyuierror/>
+        <label for="syntax" translate>admin.newAttrspec.lbl.attributeSpecificationSyntax</label>
+        <select class="form-control" ng-model="attrspec.syntax" id="syntax" notifyuierror>
+            <option>string</option>
+            <option>base64</option>
+        </select>
+        <label for="maintainer" translate>admin.newAttrspec.lbl.attributeSpecificationMaintainer</label>
+        <select class="form-control" ng-model="attrspec.maintainer" id="maintainer" notifyuierror>
+            <option value="user" translate>admin.newAttrspec.lbl.attributeSpecificationMaintainerUser</option>
+            <option value="manager" translate>admin.newAttrspec.lbl.attributeSpecificationMaintainerOrganization</option>
+        </select>
+        <label for="is_multivalue" translate>admin.newAttrspec.lbl.attributeSpecificationIsMultiValue</label>
+        <input type="checkbox" class="form-control" ng-model="attrspec.is_multivalue" id="is_multivalue" notifyuierror/>
+    </div>
+
+    <br/>
+    <button type="button" ng-click="addNewAttrSpec()" class="btn btn-primary pull-right" translate>admin.newAttrspec.btn.attributeSpecificationSave</button>
+</div>

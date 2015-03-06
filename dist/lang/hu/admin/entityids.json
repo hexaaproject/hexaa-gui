@@ -1,0 +1,17 @@
+{
+	"admin":
+	{
+		"entityids":
+		{
+			"lbl": {
+				"title": "EntityId-k",
+				"contactType": "Típus",
+				"entityId" : "Entity ID",
+				"contactEmail": "E-mail"
+			},		
+			"msg": {
+				"entityIdsGetError": "Nem sikerült letölteni az Entity ID-ket"
+			}
+		}
+	}
+}

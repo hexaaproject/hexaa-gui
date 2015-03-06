@@ -1,0 +1,16 @@
+{
+	"services":
+	{
+		"news":
+		{
+			"lbl":
+			{
+				"title": "News",
+				"news": "News",
+				"searchForTags": "Search for tags: ",
+				"pageSize": "Page size: "
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,20 @@
+{
+	"organizations":
+	{
+		"consents":
+		{
+			"lbl":
+			{
+				"noAttributeSpecificationsAssociated" : "There are no attributespecifications associated to this organization",
+				"noAttributeValuesForSpecification": "No AttrbuteValuePrincipals has been found for this AttributeSpecification!"
+			},
+			"msg":
+			{
+				"consentAddError": "Failed to add consent!",
+				"consentAddSuccess": "Consent added!",
+				"consentRemoveError": "Failed to remove consent!",
+				"consentRemoveSuccess": "Consent removed!"
+			}
+		}
+	}	
+}

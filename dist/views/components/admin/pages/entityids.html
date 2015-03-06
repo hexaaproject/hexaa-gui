@@ -1,0 +1,51 @@
+<div ng-controller="AdminEntityIdsCtrl as vm">
+    <div class="panel panel-default panel-heading clearfix">
+        <form>
+            <div class="row">
+                <div class="col-xs-6">
+                <span class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+                    <input type="text" ng-model="vm.filterText" class="form-control" placeholder="Filter"/>
+                </span>
+                </div>
+
+                <div class="col-xs-6">
+                <span class="input-group">
+                    <span class="input-group-addon">Page size:</span>
+                    <select class="form-control" ng-model="vm.pager.itemPerPage">
+                        <option>1</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>25</option>
+                        <option>50</option>
+                        <option>100</option>
+                    </select>
+                </span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <table class="table">
+        <tr>
+            <th translate>admin.entityids.lbl.entityid</th>
+        </tr>
+        <tr ng-repeat="item in vm.entityids | filter: vm.filterText | pager: vm.pager">
+            <td>
+                <dl>
+                    <dt class="panel panel-default panel-header">{{item.key}}</dt>
+                    <dd style="padding-left: 20px;" ng-repeat="contact in item.value">
+                        <dl>
+                            <dt translate>admin.entityids.lbl.contactType</dt>
+                            <dd>{{contact.type}}</dd>
+                            <dt translate>admin.entityids.lbl.contactEmail</dt>
+                            <dd>{{contact.email}}</dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </td>
+        </tr>
+    </table>
+    <pagination total-items="vm.pager.totalItems" page="vm.pager.currentPage" max-size="vm.pager.maxSize" class="pagination-sm"
+                boundary-links="true" rotate="false" num-pages="vm.pager.numPages" items-per-page="vm.pager.itemPerPage"></pagination>
+    <pre>Page: {{vm.pager.currentPage}} / {{vm.pager.numPages}}</pre>
+</div>

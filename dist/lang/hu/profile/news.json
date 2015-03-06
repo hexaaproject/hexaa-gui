@@ -1,0 +1,17 @@
+{
+	"profile":
+	{
+		"news":
+		{
+			"lbl":
+			{
+				"title": "Események",
+				"news": "Események",
+				"searchIn": "Keresés az alábbiakban:",
+				"taggedWith": "Tag-ek szerint:",
+				"pageSize": "Lapméret"
+			}
+		}
+	}
+	
+}

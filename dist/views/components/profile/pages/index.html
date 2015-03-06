@@ -1,0 +1,40 @@
+<div class="container-fluid" ng-controller="ProfileCtrl">
+    <div class="row">
+        <div class="col-xs-12 col-md-2">
+            <ul class="nav navbar-default sidebar" role="tablist">
+                <li ng-class="{active: page=='dashboard'}"
+                    ng-click="navigate('#/profile/dashboard')" ><a translate="profile.index.subpages.dashboard" href=""></a></li>
+
+                <li ng-class="{active: page=='myorganizations'}"
+                    ng-click="navigate('#/profile/myorganizations')" ><a translate="profile.index.subpages.myorganizations" href=""></a></li>
+
+                <li ng-class="{active: page=='myservices'}"
+                    ng-click="navigate('#/profile/myservices')" ><a translate="profile.index.subpages.myservices" href=""></a></li>
+
+                <li ng-class="{active: page=='vowizard'}"
+                    ng-click="navigate('#/profile/vowizard')" ><a translate="profile.index.subpages.vowizard" href=""></a></li>
+
+                <li ng-class="{active: page=='news'}"
+                    ng-click="navigate('#/profile/news')" ><a translate="profile.index.subpages.news" href=""></a></li>
+
+                <li ng-class="{active: page=='me'}"
+                    ng-click="navigate('#/profile/me')" ><a translate="profile.index.subpages.me" href=""></a></li>
+
+                <li ng-class="{active: page=='attributes'}"
+                    ng-click="navigate('#/profile/attributes')" ><a translate="profile.index.subpages.attributes" href=""></a></li>
+
+                <li ng-class="{active: page=='consents'}"
+                    ng-click="navigate('#/profile/consents')" ><a translate="profile.index.subpages.consents" href=""></a></li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-10">
+
+            <ng-include src="'views/components/profile/pages/'+page+'.html'" ></ng-include>
+
+            <br/>
+        </div>
+
+    </div>
+</div>
+
+

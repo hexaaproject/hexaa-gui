@@ -1,0 +1,63 @@
+<div class="container-fluid" ng-controller="OrganizationAttributesCtrl">
+
+    <div ng-show="organization.attributeSpecifications.length == 0">
+        <h4 translate>organizations.attributes.lbl.noAssociatedAttributeSpecifications</h4>
+    </div>
+
+    <div ng-hide="organization.attributeSpecifications.length == 0">
+
+        <div class="panel panel-default" ng-repeat="attspec in organization.attributeSpecifications">
+            <div class="panel-heading">
+                {{attspec.name}}
+            </div>
+            <div class="panel-body" ng-init="load(attspec)">
+                <b translate>organizations.attributes.lbl.attributeSupportingServices</b>
+                <div style="margin-bottom: 0.5em;" ng-if="attspec.supportingServices == undefined" translate>
+                    organizations.attributes.lbl.noSupportedServiceForAttributeSpecification
+                </div>
+
+                <table class="table table-condensed" ng-if="attspec.supportingServices.length > 0">
+                    <tr>
+                        <td translate>organizations.attributes.lbl.serviceLogo</td>
+                        <td translate>organizations.attributes.lbl.serviceName</td>
+                        <td translate>organizations.attributes.lbl.serviceDescription</td>
+                    </tr>
+                    <tr ng-repeat="service in attspec.supportingServices">
+                        <td><img src="{{service.logo | imageFormatter}}" class="servicelogo"/></td>
+                        <td>{{service.name}}</td>
+                        <td>{{service.description}}</td>
+                    </tr>
+                </table>
+                <b translate>organizations.attributes.lbl.attributesTitle</b>
+
+                <div style="margin-bottom: 0.5em;" ng-if="attspec.values.length == 0" translate>
+                    organizations.attributes.lbl.noAssociatedAttributeSpecifications
+                </div>
+
+                <table class="table table-condensed" ng-if="attspec.values.length > 0">
+                    <tr>
+                        <td translate>organizations.attributes.lbl.attributeValue</td>
+                        <td translate>organizations.attributes.lbl.attributeAssociatedServices</td>
+                        <td translate>organizations.attributes.lbl.attributeActions</td>
+                    </tr>
+                    <tr ng-repeat="attribute in attspec.values">
+                        <td>{{attribute.value}}</td>
+                        <td>
+                            <ul>
+                                <li ng-repeat="service in attribute.services">{{service.name}}</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" ng-click="editAttribute(attspec,attribute)" ng-hide="attribute.id==-1" translate>organizations.attributes.btn.attributeEdit</button>
+                            <button class="btn btn-danger" ng-click="removeAttribute(attspec,attribute)" ng-hide="attribute.id==-1" translate>organizations.attributes.btn.attributeRemove</button>
+                        </td>
+                    </tr>
+                </table>
+                <div class="clearfix">
+                    <button class="btn btn-primary pull-right" ng-click="newAttribute(attspec)" translate>organizations.attributes.btn.attributeNew</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

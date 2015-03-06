@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h2 class="modal-title" translate>services.new.lbl.serviceNew</h2>
+</div>
+
+<div class="modal-body form-group">
+    <form name="newServiceForm" ng-model="newServiceForm">
+        <label for="name" translate>services.new.lbl.serviceName</label>
+        <input type="text" class="form-control"  ng-model="new.name" id="name" placeholder="{{'services.new.placeholder.serviceName' | translate}}" ng-model="newServiceName" notifyuierror required>
+
+        <label for="url" translate>services.new.lbl.serviceUrl</label>
+        <input type="text" class="form-control" ng-model="new.url" id="url" placeholder="{{'services.new.placeholder.serviceUrl' | translate}}" notifyuierror required>
+
+        <label for="description" translate>services.new.lbl.serviceDescription</label>
+        <input type="text" class="form-control" ng-model="new.description" id="description" placeholder="{{'services.new.placeholder.serviceDescription' | translate}}" notifyuierror>
+
+        <label for="entityidGroup" translate>services.new.lbl.serviceEntityId</label>
+        <span id="entityidGroup">
+            <select class="form-control"  name="entityId" ng-model="new.entityid" id="entityid" notifyuierror required>
+                <option ng-repeat="(item,value) in entityids" value="{{item}}">{{item}}</option>
+            </select>
+        </span>
+
+        <div id="contacts" ng-if="entityids[new.entityid] !== undefined">
+            <h4>Choose contact:</h4>
+            <div ng-repeat="(id,contact) in entityids[new.entityid]">
+                <div>
+                    <dl>
+                        <dt><input name="contacts" value="{{$index}}" type="checkbox" ng-click="select(contact)"/><b style="padding-left: 5px;">{{contact.surName}}</b></dt>
+                        <dd style="padding-left: 20px;">
+                            <dl>
+                                <dt>Type</dt>
+                                <dd>{{contact.type}}</dd>
+                                <dt>E-mail</dt>
+                                <dd>{{contact.email}}</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-danger" ng-click="close()" translate>Close</button>
+    <button class="btn btn-primary" translate ng-click="save()" ng-disabled="newServiceForm.$invalid">Save</button>
+</div>

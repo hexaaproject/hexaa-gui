@@ -1,0 +1,19 @@
+{
+	"admin":
+	{
+		"index":
+		{
+			"lbl":
+			{
+				"title": "Administration"
+			},
+			"subpages":
+			{
+				"attributespecifications": "Attribute specifications",
+				"principals": "Principals",
+				"entityidrequests": "Entity ID Requests",
+                "entityids": "Entity IDs"
+			}
+		}
+	}	
+}

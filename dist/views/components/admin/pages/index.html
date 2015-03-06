@@ -1,0 +1,26 @@
+<div class="container-fluid" ng-controller="AdminCtrl">
+    <div class="row">
+        <div class="col-xs-12 col-md-2">
+            <div class="navbar-default sidebar">
+                <ul class="nav" id="sidebar-left" role="tablheist">
+
+                    <li ng-class="{active: page=='attributespecifications'}"
+                        ng-click="navigate('#/admin/attributespecifications')" ><a translate>admin.index.subpages.attributespecifications</a></li>
+
+                    <li ng-class="{active: page=='principals'}"
+                        ng-click="navigate('#/admin/principals')" ><a translate>admin.index.subpages.principals</a></li>
+
+                    <li ng-class="{active: page=='entityids'}"
+                        ng-click="navigate('#/admin/entityids')" ><a translate>admin.index.subpages.entityids</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-9">
+            <h3 class="page-header">
+                <span>{{Page.getPageTitle()}}</span>
+                <i class="fa fa-angle-right"></i> <small>{{Page.getSubPageTitle()}}</small></h3>
+            <ng-include src="'views/components/admin/pages/'+page+'.html'" ></ng-include>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+	"profile": {
+		"vowizard": {
+			"lbl": {
+				"title": "Szervezet Varázsló",
+				"heading": "Hozzon létre egy új Virtuális Szervezetet",
+				"progress": "{{currentStep}}. lépés a {{numberOfSteps}}-ból",
+				"stepCreateVO": "Szervezet létrehozása",
+				"stepAttachService": "Szolgáltatás hozzácsatolása",
+				"stepCreateRoles": "Szerepkör hozzáadása",
+				"stepInviteMembers": "Emberek meghívása",
+				"stepFinish": "Véglegesítés",
+				"finishMessage": " <h2>Már csak egy lépés...</h2>Kattintson a Befejezés gombra a konfiguráció véglegesítéséhez.<br/>Két kimenetele lehet a folyamatnak <ol><li>Ha a létrehozás során hiba történne, a varázsló jelzi Önnek azt, és lehetőséget ad a javítására.</li><li>Ha minden rendben lezajlott, akkor átirányítja Önt a szervezet oldalára.</li></ol><br/>"
+			},
+			"msg": {
+				"noValidVO": "First you must create an organization",
+				"entitlementpackAddSuccess": "{{entitlementpack} added to the organization!",
+				"entitlementpackAddError": "Failed to add {{entitlementpack}} to the organization!",
+				"invitationAddSuccess": "Invitation {{invitation}} created!",
+				"invitationAddError": "Failed to send invitation: {{invitation}}!",
+				"roleAddSuccess": "{{role}} added to the organizations roles!",
+				"roleAddError": "{{role}} Failed to create role!",
+				"organizationAddSuccess": "Organization {{organization}} created!"
+			},
+			"btn": {
+				"finish": "Befejezés",
+				"next": "Következő",
+				"back": "Előző"
+			}
+		}
+	}
+}

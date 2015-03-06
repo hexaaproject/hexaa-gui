@@ -1,0 +1,25 @@
+{
+	"profile":
+	{
+		"dashboard":
+		{
+			"lbl":
+			{
+				"title": "Dashboard",
+				"profile" : "Profile",
+				"organizations": "Organizations",
+				"services": "My Services",
+				"profileDisplayName" : "Display Name",
+				"profileFederalId" : "Federal Id",
+				"profileEmail" : "E-mail"				
+			},
+			"btn":
+			{
+				"manage": "Manage",
+				"actions": "Actions",
+				"new": "New"
+			}
+		}
+	}
+	
+}

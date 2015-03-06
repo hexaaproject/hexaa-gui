@@ -1,0 +1,138 @@
+<div id="dashboard" ng-controller="ProfileDashboardCtrl">
+    <h3 class="page-header">Dashboard</h3>
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading clearfix">
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" translate>
+                                    profile.dashboard.btn.actions
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li>
+                                        <a ng-click="newOrganization()"" translate>
+                                            profile.dashboard.btn.new
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="navigate('#/organizations/')" translate>
+                                            profile.dashboard.btn.manage
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+                                            <input type="text" class="form-control" name="organizationFilter" ng-model="organizationFilter" placeholder="Filter"/>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4 translate>profile.dashboard.lbl.organizations</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="scrollable">
+                            <ul>
+                                <li ng-repeat="organization in dashboard.organizations | filter: organizationFilter">
+                                    <a href="#/organizations/{{organization.id}}/news"><span class="truncate">{{organization.name}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="panel  panel-info">
+                    <div class="panel-heading clearfix">
+                        <button ng-click="navigate('#/profile/me')" class="btn btn-default btn-xs pull-right" translate>profile.dashboard.btn.manage</button>
+                        <h4 translate>profile.dashboard.lbl.profile</h4>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-condensed">
+                            <tr ng-if="profile.display_name != null">
+                                <td translate>
+                                    profile.dashboard.lbl.profileDisplayName
+                                </td>
+                                <td>
+                                    {{profile.display_name}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td translate>
+                                    profile.dashboard.lbl.profileFederalId
+                                </td>
+                                <td>
+                                    {{profile.fedid}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td translate>
+                                    profile.dashboard.lbl.profileEmail
+                                </td>
+                                <td>
+                                    {{profile.email}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-success box" >
+                    <div class="panel-heading clearfix" >
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" translate>
+                                    profile.dashboard.btn.actions
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li>
+                                        <a ng-click="newService()" translate>
+                                            profile.dashboard.btn.new
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="navigate('#/services/')" translate>
+                                            profile.dashboard.btn.manage
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+                                            <input type="text" class="form-control" name="servicesFilter" ng-model="servicesFilter" placeholder="Filter"/>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4 translate>profile.dashboard.lbl.services</h4>
+                    </div>
+                    <div class="panel-body" >
+                        <div class="scrollable">
+                            <ul>
+                                <li ng-repeat="service in dashboard.services | filter: servicesFilter"><a href="#/services/{{service.id}}/news"><span class="truncate">{{service.name}}</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $('.dropdown-menu input, .dropdown-menu label').click(function(e) {
+            e.stopPropagation();
+        });
+    </script>
+</div>

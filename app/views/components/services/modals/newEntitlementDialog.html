@@ -1,0 +1,22 @@
+<div class="modal-header clearfix" xmlns="http://www.w3.org/1999/html">
+    <button class="btn pull-right" ng-click="vm.close()" title="{{'services.modals.newEntitlementDialog.btn.dialogClose' | translate}}">
+        <i class="fa fa-times"></i>
+    </button>
+    <h3 class="modal-title" translate>services.modals.newEntitlementDialog.lbl.title</h3>
+</div>
+<div class="modal-body">
+    <form name="entitlementForm" ng-model="entitlementForm">
+        <label for="uri" translate>services.entitlements.lbl.entitlementUri</label>
+        <div class="input-group">
+<span class="input-group-addon">{{vm.prefix}}:<span>
+<input type="text" id="uri" placeholder="Uri of the entitlement" ng-model="vm.entitlement.uri" notifyuierror required/>
+        </div>
+        <label for="name" translate>services.entitlements.lbl.entitlementName</label>
+        <input type="text" class="form-control" id="name" placeholder="Name of Entitlement" ng-model="vm.entitlement.name" notifyuierror required/>
+        <label for="description" translate>services.entitlements.lbl.entitlementDescription</label>
+        <input type="text" class="form-control" id="description" placeholder="Description of Entitlement" ng-model="vm.entitlement.description" notifyuierror/>
+        <br/>
+        <button class="btn btn-default" ng-click="vm.undo(entitlement)" translate>services.entitlements.btn.entitlementUndo</button>
+        <button class="btn btn-primary pull-right" ng-disabled="!entitlementForm.$valid" ng-click="vm.save(entitlement)" translate>services.entitlements.btn.entitlementSave</button>
+    </form>
+</div>

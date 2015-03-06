@@ -1,0 +1,32 @@
+{
+	"admin":
+	{
+		"attributespecifications":
+		{
+			"lbl": {
+				"title": "Attribútum specifikációk",
+				"attributeSpecificationUri": "Uri",
+				"attributeSpecificationName" : "Név",
+				"attributeSpecificationDescription" : "Leírás",
+				"attributeSpecificationSyntax": "Szintaxis",
+				"attributeSpecificationIsMultiValue": "Többértékű",
+                "attributeSpecificationMaintainer": "Karbantartó",
+                "attributeSpecificationMaintainerUser":"Felhasználó",
+                "attributeSpecificationMaintainerOrganization":"Szervezet menedzsere"
+			},
+			"btn": {
+				"attributeSpecificationSave": "Mentés",
+				"attributeSpecificationDelete": "Törlés"
+			},
+			"msg": {
+				"attributeSpecificationGetError": "Nem sikerült letölteni a rendszer attribútumspecifikációit!",
+				"attributeSpecificationDeleteSuccess": "Attribútum törölve!",
+				"attributeSpecificationDeleteError": "Nem sikerült törölni az attribútumot!",
+				"attributeSpecificationUpdateSuccess" : "Attribútum frissítve!",
+				"attributeSpecificationUpdateError" : "Nem sikerült frissíteni az attribútumot!",
+				"attributeSpecificationDeleteConfirm": "Biztosan törli a {{name}}-t?",
+				"confirmationNeeded" : "Megerősítés szükséges!"
+			}
+		}
+	}
+}

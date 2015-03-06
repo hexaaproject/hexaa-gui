@@ -1,0 +1,21 @@
+<div ng-controller="ProfileMyOrganizationsCtrl">
+    <h2 translate>profile.myorganizations.lbl.title</h2>
+    <hr/>
+    <div class="panel panel-default" ng-repeat="item in organizations">
+        <div class="panel-heading"><h4 class="panel-title">{{ item.key.name }} </h4> </div>
+        <div class="panel-body">
+            <div ng-repeat="role in item.values">
+                <b>Role: {{role.name}}</b>
+                <ul ng-repeat="entitlement in role.entitlements">
+                    <li title="{{entitlement.description}}">
+                        <a href="#/profile/myservices/entitlement/{{entitlement.id}}" ng-class="{ 'alert-warning': entitlement.id == lookuped_entitlement }">
+                            <span class="glyphicon glyphicon-star" ng-if="entitlement.id == lookuped_entitlement">
+                            </span>
+                            {{entitlement.name}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+{
+	"modals": {
+		"serviceChangerDialog": {
+			"lbl":{
+				"title":"Select a service!",
+				"serviceLogo": "Logo",
+				"serviceName": "Name",
+				"serviceDescription": "Description",
+				"serviceUrl": "Service url"
+			},
+			"btn": {
+				"close": "Close",
+				"serviceSelect": "Select"
+			}
+
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"modals":
+	{
+		"newRole":
+		{	
+			"lbl":
+			{
+				"title": "New Role"
+			},
+			"btn":
+			{
+				"dialogClose": "Close"
+			}			
+		}
+	}
+}

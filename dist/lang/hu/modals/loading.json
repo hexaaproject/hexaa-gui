@@ -1,0 +1,13 @@
+{
+	"modals" :{
+		"loading":
+		{
+			"lbl": 
+				{
+					"loadingHeader": "Kérem várjon",
+                                        "loadingBody": "Az alkalmazás éppen a szerverrel kommunikál!",
+                                        "loadingProgressbarTitle": "Betöltés.."
+				}
+		}				
+	}
+}

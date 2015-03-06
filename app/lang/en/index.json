@@ -1,0 +1,29 @@
+{
+	"index": 
+	{
+		"lbl":
+		{
+			"loggedInAs": "You are logged in as: ",
+			"theme": "Theme",
+			"copyright": "Copyright 2013-2015"
+		},
+		"menuBar": 
+		{
+			"organizations" : "Organizations", 
+			"services" : "Services",
+	    		"profile" : "Profile", 			
+		    	"admin" : "Admin",
+			"logOut" : "Logout",
+			"help": "HELP",
+			"viewAsAdmin": "Views as admin",
+			"viewAsUser": "Views as user"
+		},
+		"msg":
+	    {
+	    	"noHelpFoundTitle": "Sorry, this time, we can not help You!",
+	    	"noHelpFoundContent": "No help entry found for this section!"
+	    }
+
+	}
+}
+

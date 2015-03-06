@@ -1,0 +1,18 @@
+{
+	"services": {
+		"modals": {
+			"newEntitlementpackDialog": {
+				"lbl": {
+					"title": "Service editor"
+				},
+				"btn": {
+					"dialogClose": "Close"
+				},
+				"msg": {
+					"entitlementpackSaveSuccess": "Service saved!",
+					"entitlementpackSaveError": "Failed to save service!"
+				}
+			}
+		}
+	}
+}

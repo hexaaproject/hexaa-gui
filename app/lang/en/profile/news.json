@@ -1,0 +1,17 @@
+{
+	"profile":
+	{
+		"news":
+		{
+			"lbl":
+			{
+				"title": "News",
+				"news": "News",
+				"searchIn": "Search in: ",
+				"taggedWith": "Tagged with:",
+				"pageSize": "Page size:"
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,60 @@
+<div ng-controller="AdminAttributeSpecificationsCtrl as vm">
+    <div class="panel panel-default panel-heading clearfix">
+        <button class="btn btn-default pull-right"
+                ng-click="vm.new()">New</i>
+        </button>
+        <span>
+            <i>Page size:</i>
+            <select ng-model="vm.pager.itemPerPage">
+                <option>1</option>
+                <option>5</option>
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option>100</option>
+            </select>
+        </span>
+    </div>
+    <div ng-repeat="attrspec in vm.attrspecs">
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                {{attrspec.name}}
+            <span class="pull-right">
+                <button class="btn btn-default"
+                        ng-click="vm.edit(attrspec)"><i class="fa fa-pencil"></i>
+                </button>
+                    <button class="btn btn-danger"
+                            ng-click="vm.delete(attrspec)"><i class="fa fa-trash"> </i>
+                    </button>
+            </span>
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed">
+                    <tr>
+                        <td>Uri</td>
+                        <td>{{attrspec.uri}}</td>
+                    </tr>
+                    <tr ng-if="attrspec.description !== null">
+                        <td>Description</td>
+                        <td>{{attrspec.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>Syntax</td>
+                        <td>{{attrspec.syntax}}</td>
+                    </tr>
+                    <tr>
+                        <td>Maintainer</td>
+                        <td>{{attrspec.maintainer}}</td>
+                    </tr>
+                    <tr>
+                        <td>Multivalue</td>
+                        <td>{{attrspec.is_multivalue}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <pagination total-items="vm.pager.totalItems" page="vm.pager.currentPage" max-size="vm.pager.maxSize" class="pagination-sm"
+                boundary-links="true" rotate="false" num-pages="vm.pager.numPages" items-per-page="vm.pager.itemPerPage"></pagination>
+    <pre>Page: {{vm.pager.currentPage}} / {{vm.pager.numPages}}</pre>
+</div>

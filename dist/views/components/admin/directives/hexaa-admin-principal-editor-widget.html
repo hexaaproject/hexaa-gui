@@ -1,0 +1,11 @@
+<form class="form-group" name="principalEditorForm">
+    <label for="fedid" translate>admin.principals.lbl.principalFedid</label>
+    <input type="text" class="form-control" id="fedid" placeholder="Type a federation id" ng-model="principal.fedid" required notifyuierror/>
+    <label for="email" translate>admin.principals.lbl.principalEmail</label>
+    <input type="text" class="form-control" id="email" placeholder="Type an email" ng-model="principal.email" required notifyuierror/>
+    <label for="display_name" translate>admin.principals.lbl.principalDisplayName</label>
+    <input type="text" class="form-control" id="display_name" placeholder="Type a name to display" ng-model="principal.display_name" notifyuierror/>
+    <div class="pull-right">
+        <button class="btn btn-primary" ng-click="save()" ng-disabled="principalEditorForm.$invalid" translate>admin.principals.btn.principalSave</button>
+    </div>
+</form>

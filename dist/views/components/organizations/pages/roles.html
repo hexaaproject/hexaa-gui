@@ -1,0 +1,43 @@
+<div ng-controller="OrganizationRolesCtrl as vm">
+
+
+    <div class="form-group clearfix">
+        <form>
+            <div class="row">
+                <div class="col-xs-4">
+                <span class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+                    <input type="text" ng-model="vm.filterText" class="form-control" placeholder="Filter"/>
+                </span>
+                </div>
+
+                <div class="col-xs-4">
+                <span class="input-group">
+                    <span class="input-group-addon">Page size:</span>
+                    <select class="form-control" ng-model="vm.pager.itemPerPage">
+                        <option>1</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>25</option>
+                        <option>50</option>
+                        <option>100</option>
+                    </select>
+                </span>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-success pull-right" ng-click="vm.btnNewRole()"><i class="fa fa-plus"></i> {{'organizations.roles.btn.roleAdd'|translate}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div hexaa-organizations-roles-widget
+         organization="vm.organization"
+         filter-by="vm.filterText"
+         page-by="vm.pager"
+         delete-role="vm.deleteRole(role)"
+         edit-role="vm.editRole(role)">
+
+    </div>
+
+</div>

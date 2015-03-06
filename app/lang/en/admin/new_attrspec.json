@@ -1,0 +1,26 @@
+{
+	"admin":
+	{
+		"newAttrspec":
+		{
+			"lbl": {
+				"attributeSpecificationUri": "Uri",
+				"attributeSpecificationName" : "Name",
+				"attributeSpecificationDescription" : "Description",
+				"attributeSpecificationSyntax": "Syntax",
+				"attributeSpecificationIsMultiValue": "Multivalue",
+                                "attributeSpecificationMaintainer": "Maintainer",
+                                "attributeSpecificationMaintainerUser":"User",
+                                "attributeSpecificationMaintainerOrganization":"Organization manager"
+			},
+			"btn": {
+				"attributeSpecificationSave": "Save"
+			},
+			"msg": {
+				"attributeSpecificationCreateSuccess": "Attribute created!",
+				"attributeSpecificationCreateError": "Failed to create Attribute!"
+			}
+		}
+	}
+
+}

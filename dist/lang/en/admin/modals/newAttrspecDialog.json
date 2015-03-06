@@ -1,0 +1,14 @@
+{
+	"admin": {
+		"modals": {
+			"newAttrspecDialog": {
+				"lbl": {
+					"title": "New Attribute specification"
+				},
+				"btn": {
+					"close": "Close"
+				}
+			}
+		}
+	}
+}

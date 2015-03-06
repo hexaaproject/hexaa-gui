@@ -1,0 +1,48 @@
+<div class="container-fluid" ng-controller="ServicesCtrl" ng-hide="selectedService === null">
+    <div class="row">
+        <div class="col-xs-12 col-md-2">
+            <div class="navbar-default sidebar">
+                <ul class="nav" id="sidebar-left" role="tablheist">
+                    <li ng-class="{active: page=='news'}"
+                        ng-click="navigate('#/services/news')" ><a translate="services.index.subpages.news" href=""></a></li>
+                    <li ng-class="{active: page=='owner'}"
+                        ng-click="navigate('#/services/owner')" ><a translate="services.index.subpages.owner" href=""></a></li>
+                    <li ng-class="{active: page=='properties'}"
+                        ng-click="navigate('#/services/properties')" ><a translate="services.index.subpages.properties" href=""></a></li>
+                    <li ng-class="{active: page=='managers'}"
+                        ng-click="navigate('#/services/managers')" ><a translate="services.index.subpages.managers" href=""></a></li>
+                    <li ng-class="{active: page=='attributespecifications'}"
+                        ng-click="navigate('#/services/attributespecifications')" ><a translate="services.index.subpages.attributeSpecifications" href=""></a></li>
+                    <li ng-class="{active: page=='entitlements'}"
+                        ng-click="navigate('#/services/entitlements')" ><a translate="services.index.subpages.entitlements" href=""></a></li>
+                    <li ng-class="{active: page=='entitlementpacks'}"
+                        ng-click="navigate('#/services/entitlementpacks')" ><a translate="services.index.subpages.entitlementpacks" href=""></a></li>
+                    <li ng-class="{active: page=='connectedpacks'}"
+                        ng-click="navigate('#/services/connectedpacks')" ><a translate="services.index.subpages.connectedEntitlementpacks" href=""></a></li>
+                    <li ng-class="{active: page=='invitations'}"
+                        ng-click="navigate('#/services/invitations')" ><a translate="services.index.subpages.invitations" href=""></a></li>
+                    <li class="danger" ng-click="deleteService(selectedService)"><a translate="services.index.btn.serviceDelete"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-10" >
+            <div class="panel-danger" ng-show="!selectedService.is_enabled">
+                <div class="panel-heading clearfix">
+                    <button ng-click="resendEntityIdAuth(selectedService)" class="btn btn-danger pull-right" type="button">Resend</button>
+                    <i translate>services.index.lbl.serviceNotEnabled</i>
+                </div>
+            </div>
+            <br/>
+            <div>
+                <h3 class="page-header">
+                    <span style="cursor: pointer" ng-click="openServiceChanger()">{{selectedService.name}}</span>
+                    <i class="fa fa-angle-right"></i> <small>{{Page.getSubPageTitle()}}</small></h3>
+                    <ng-include src="'views/components/services/pages/'+page+'.html'" ></ng-include>
+
+                <br/>
+                <button type="button" ng-click="saveService(selectedService)" class="btn btn-primary pull-right" ng-show="canBeSaved" translate>services.index.btn.serviceSave</button>
+            </div>
+        </div>
+    </div>
+</div>

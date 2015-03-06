@@ -1,0 +1,27 @@
+{
+	"services":
+	{
+		"connectedpacks":
+		{
+			"lbl": {
+				"title": "Connected Organizations",
+				"entitlementpackName" : "Name",
+				"organizationName" : "Organization",
+				"connectionStatus" : "Status",
+				"action" : "Action"
+			},
+			"btn": {
+				"connectionAccept": "Accept",
+				"connectionDelete" : "Delete"
+			},
+			"msg" : {
+				"confirmationNeeded": "Confirmation needed",
+				"connectionDeleteConfirmation": "Do you want to delete de connection?",
+				"connectionRemoveSuccess" : "Connection removed!",
+				"connectionRemoveError" : "Failed to remove connection!",
+				"connectionAcceptSuccess" : "Request accepted!",
+				"connectionAcceptError" : "Failed to accept request!"
+			}
+		}
+	}	
+}

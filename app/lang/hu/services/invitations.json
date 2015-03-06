@@ -1,0 +1,37 @@
+{
+	"services":
+	{
+		"invitations":
+		{
+			"lbl" : {
+				"invitationNotFoundForService" : "Nem találhatóak meghívók ehhez a szolgáltatáshoz!",	
+				"invitationEmail" : "E-mail",
+				"invitationStatus" : "Státusz",
+				"invitationLandingUrl" : "Landing URL",
+				"invitationStartDate" : "Érvényesség kezdete",
+				"invitationEndDate" : "Érvényesség vége",
+				"invitationLimit" : "Limit",
+				"invitationLocale": "Nyelv",
+				"invitationUrl": "Meghívó link: "
+			},
+			"btn" : {
+				"invitationEdit" : "Szerkesztés",
+				"invitationResend" : "Újraküldés",
+				"invitationDelete" : "Törlés",
+				"inviteManager": "Menedzser meghívása"
+			},
+			"msg" : {
+				"confirmationNeeded": "Megerősítés szükséges",
+				"invitationDeleteConfirmation": "Biztosan törli {{fedid}} meghívóját?",
+				"invitationResendSuccess" : "Meghívú újraküldve!",
+				"invitationResendError" : "Nem sikerült újraküldeni a meghívót!!",
+				"invitationRemoveSuccess" : "Meghívó törölve!",
+				"invitationRemoveError" : "Nem sikerült törölni a meghívót!",
+				"invitationUpdateSuccess" : "Meghívó frissítve!",
+				"invitationUpdateError" : "Nem sikerült frissíteni a meghívót!",
+				"invitationsGetError": "Nem sikerült betölteni a meghívókat!"
+			}
+		}
+	}
+	
+}

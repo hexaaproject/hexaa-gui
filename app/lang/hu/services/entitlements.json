@@ -1,0 +1,38 @@
+{
+	"services":
+	{
+		"entitlements":
+		{
+			"lbl": 
+			{
+				"title": "Jogok",
+				"entitlementList" : "Jogkok",
+				"entitlementUri" : "Uri",
+				"entitlementName" : "Név",
+				"entitlementDescription" : "Leírás",
+				"editorModeNew": "Új",
+				"editorModeEdit": "Szerkesztés"
+			},
+			"btn": {
+				"entitlementAdd" : "Hozzáadás",
+				"entitlementRemove" : "Törlés",
+				"entitlementSave" : "Mentés",
+				"entitlementEdit": "Szerkesztés",
+				"entitlementUndo" : "Visszavonás",
+				"entitlementRemove": "Törlés"
+			},
+			"msg": {
+				"confirmationNeeded": "Megerősítés szükséges!",
+				"entitlementDeleteConfirm": "Biztosan törölni szeretné a jogosultságot: {{name}}?",
+				"entitlementRemoveError": "Nem sikerült törölni a jogosultságot!",
+				"entitlementRemoveSuccess" : "Jogosultság  törölve!",
+				"problemOccured" : "Hiba történt",
+				"entitlementpackAddSuccess": "Jogosultság hozzáadva!",
+				"entitlementpackAddError" : "Nem sikerült hozzáadni a jogosultságot! ",
+				"entitlementpackUpdateSuccess": "Jogosultság frissítve!",
+				"entitlementpackUpdateError" : "Nem sikerült frissíteni a jogosultságot! "
+			}
+		}
+	}
+	
+} 

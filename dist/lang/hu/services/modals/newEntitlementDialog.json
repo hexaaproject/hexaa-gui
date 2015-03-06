@@ -1,0 +1,18 @@
+{
+	"services":
+	{
+		"modals":
+		{
+			"newEntitlementDialog":{
+				"lbl": 
+					{				
+						"title":"Jogosultság"					
+					},
+					"btn": {
+						"dialogClose" : "Bezárás"
+					}					
+			}			
+		}
+	}
+	
+} 

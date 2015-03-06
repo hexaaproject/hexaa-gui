@@ -1,0 +1,25 @@
+{
+	"profile":
+	{
+		"dashboard":
+		{
+			"lbl":
+			{
+				"title": "Vezérlőpult",
+				"profile" : "Profil",
+				"organizations": "Szervezeteim",
+				"services": "Szolgáltatásaim",
+				"profileDisplayName" : "Név",
+				"profileFederalId" : "Föderációs azonosító",
+				"profileEmail" : "E-mail"				
+			},
+			"btn":
+			{
+				"manage": "Kezelés",
+				"actions": "Műveletek",
+				"new": "Új"
+			}
+		}
+	}
+	
+}

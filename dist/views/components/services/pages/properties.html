@@ -1,0 +1,30 @@
+<div class="container-fluid form-group" ng-controller="ServicePropertiesCtrl">
+    <form name="servicePropertiesForm" ng-model="servicePropertiesForm">
+        <label for="name" translate>services.properties.lbl.serviceName</label>
+        <input type="text" class="form-control" id="name" ng-model="properties.name" placeholder="{{'services.properties.placeholder.serviceName' | translate}}" required notifyuierror>
+
+        <label for="url" translate>services.properties.lbl.serviceUrl</label>
+        <input type="text" class="form-control" id="url" ng-model="properties.url" placeholder="{{'services.properties.placeholder.serviceUrl' | translate}}" required notifyuierror>
+
+        <label for="entityid" translate>services.properties.lbl.serviceEntityId</label>
+
+        <select class="form-control" id="entityid" ng-model="properties.entityid" required notifyuierror>
+            <option ng-repeat="(item,value) in entityids" value="{{item}}" ng-selected="{{item == properties.entityid}}">{{item}}</option>
+        </select>
+
+        <label for="description" translate>services.properties.lbl.serviceDescription</label>
+        <input type="text" class="form-control" id="description" ng-model="properties.description" placeholder="{{'services.properties.placeholder.serviceDescription' | translate}}" notifyuierror>
+
+        <label for="logo_path" translate>Logo</label>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="servicelogo" src="{{properties.logo_url | imageFormatter}}"/>
+            </div>
+            <div class="col-md-6">
+                <input type="file" id="logo" ng-file-select="onFileSelect($files)" notifyuierror>
+                <p><pre translate>services.properties.lbl.logoRestrictions</pre></p>
+            </div>
+        </div>
+        <progressbar animate="false" value="dynamic" type="success" ng-hide="progress == 0"><b>{{progress}}%</b></progressbar>
+    </form>
+</div>

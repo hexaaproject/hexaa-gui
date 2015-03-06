@@ -1,0 +1,37 @@
+{
+	"services":
+	{
+		"entitlements":
+		{
+			"lbl": 
+			{				
+				"title":"Permissions",
+				"entitlementList" : "Permissions",
+				"entitlementUri" : "Uri",
+				"entitlementName" : "Name",
+				"entitlementDescription" : "Description",
+				"editorModeNew": "New",
+				"editorModeEdit": "Edit"
+			},
+			"btn": {
+				"entitlementAdd" : "Add",
+				"entitlementRemove" : "Remove",
+				"entitlementSave" : "Save",
+				"entitlementUndo" : "Undo",
+				"entitlementEdit": "Edit"
+			},
+			"msg": {
+				"confirmationNeeded": "Confirmation needed",
+				"entitlementDeleteConfirm": "Would you like to delete permission {{name}}?",
+				"entitlementRemoveError": "Failed to remove permission!",
+				"entitlementRemoveSuccess" : "Entitlement removed!",
+				"problemOccured" : "Problem Occured",
+				"entitlementpackAddSuccess": "Entitlement added!",
+				"entitlementpackAddError" : "Failed to add permission",
+				"entitlementpackUpdateSuccess": "Entitlement updated!",
+				"entitlementpackUpdateError" : "Failed to update permission"
+			}
+		}
+	}
+	
+} 

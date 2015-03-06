@@ -1,0 +1,8 @@
+<div ng-repeat="newsItem in news">
+    <b>{{newsItem.title}}</b>
+    <b class="pull-right">{{newsItem.updated_at | date}}</b>:
+    <p>
+    <i>{{newsItem.message}}</i> #{{newsItem.tag}}
+    </p>
+    </hr>
+</div>

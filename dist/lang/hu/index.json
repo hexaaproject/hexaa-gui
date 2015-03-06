@@ -1,0 +1,30 @@
+{
+	"index":
+	{
+		"lbl": 
+		{
+			"loggedInAs": "Bejelentkezve mint: ",
+			"theme": "Téma",
+			"copyright": "Minden jog fenntartva  2013-2015"
+		},
+		"menuBar": 
+		{
+			"organizations" : "Szervezetek", 
+			"services" : "Szolgáltatások",
+	       		"profile" : "Profil",
+	       		"admin" : "Adminisztráció",
+			"logOut": "Kijelentkezés",
+			"help": "SEGÍTSÉG",
+			"viewAsAdmin": "Munkafolyamat adminként",
+			"viewAsUser": "Munkafolyamat felhasználóként"
+	    },
+	    "msg":
+	    {
+	    	"noHelpFoundTitle": "Nem található súgó!",
+	    	"noHelpFoundContent": "Sajnos jelen témakörben nem található súgó fájl!"
+	    }
+	}
+	
+}
+
+

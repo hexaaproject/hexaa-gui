@@ -1,0 +1,51 @@
+{
+	"organizations":
+	{
+		"attributes":
+		{
+			"lbl":
+			{
+				"title": "Attributes",
+				"attributesTitle" : "Attribute Values",
+				"noAssociatedAttributeSpecifications": "There are no attributespecifications associated to this organization",
+				"attributeValue": "Value",
+				"attributeIsDefault": "Default",
+				"attributeAssociations": "Associations",
+				"attributeSupportingServices": "Supporting Services",
+				"attributeAssociatedServices": "Associated Services",
+				"serviceLogo": "Logo",
+				"serviceName": "Name",
+				"serviceDescription": "Description",
+				"attributeActions": "Actions",
+				"noSupportedServiceForAttributeSpecification": "There is no supporting service for this attribute specification!"
+			},
+			"btn":
+			{
+				"attributeNew": "New",
+				"attributeEdit": "Edit",
+				"attributeRemove": "Remove",
+				"attributeNew": "New value",
+				"attributeSave": "Save",
+				"cancel": "Cancel"
+			},
+			"placeholder": {
+				"serviceList": "Search for SP"
+			},
+			"msg":
+			{
+				"editorModeNew": "New",
+				"editorModeEdit": "Edit",
+				"attributeValueCreateSuccess": "AttributeValueOrganization created!",
+				"attributeValueCreateError": "Failed to add AttributeValueOrganization!",
+				"attributeValueUpdateSuccess": "AttributeValueOrganization updated!",
+				"attributeValueUpdateError": "Failed to update AttributeValueOrganization!",
+				"attributeValueRemoveError" : "Failed to remove AttributeValueOrganization {0}!",
+				"attributeValueChangesSaved" : "All changes have been saved!",	
+				"problemOccured" : "Problem occured",
+				"attributeSpecificationGetError": "Failed to get attributespecifications! ",
+				"attributeValueGetError": "Couldnt download Attribute Values for {{attrspec}}! ",
+				"supportingServicesGetError": "Couldnt retrieve supporting services! "
+			}
+		}
+	}	
+}

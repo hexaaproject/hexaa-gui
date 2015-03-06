@@ -1,0 +1,33 @@
+<div class="row" ng-controller="ServiceEntitlementsCtrl as vm">
+    <div class="panel panel-default panel-heading clearfix">
+        <button class="btn btn-primary pull-right" ng-click="vm.newEntitlement()" translate>
+            services.entitlements.btn.entitlementAdd
+        </button>
+    </div>
+    <div class="panel panel-default" ng-repeat="entitlement in vm.service.entitlements">
+        <div class="panel-heading">
+            {{entitlement.name}}
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive">
+                <tr>
+                    <td><b translate>services.entitlements.lbl.entitlementUri</b></td>
+                    <td>{{entitlement.uri}}</td>
+                </tr>
+                <tr>
+                    <td><b translate>services.entitlements.lbl.entitlementName</b></td>
+                    <td>{{entitlement.name}}</td>
+                </tr>
+                <tr ng-if="entitlement.description !== null">
+                    <td><b translate>services.entitlements.lbl.entitlementDescription</b></td>
+                    <td>{{entitlement.description}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-warning" ng-click="vm.editEntitlement(entitlement)"  translate>services.entitlements.btn.entitlementEdit</button>
+            <button class="btn btn-danger pull-right" ng-click="vm.deleteEntitlement(entitlement)"  translate>services.entitlements.btn.entitlementRemove</button>
+        </div>
+    </div>
+
+</div>

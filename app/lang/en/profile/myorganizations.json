@@ -1,0 +1,16 @@
+{
+	"profile":
+	{
+		"myorganizations":
+		{
+			"lbl":{				
+				"title": "My Organizations",				
+				"labelRole": "Role"				
+			},
+			"msg": {
+				"getMyOrganizationsError": "Couldnt retrieve the organization list!"				
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,37 @@
+{
+	"organizations":
+	{
+		"new":
+		{
+			"lbl":
+			{
+				"organizationNew": "New organization",
+				"organizationName": "Name",
+				"organizationDescription": "Description",
+				"organizationDefaultRole": "Default role"
+			},
+			"msg": 
+			{
+				"organizationCreateSuccess": "Organization created!",
+				"organizationCreateError": "Failed to create organisation! ",
+				"organizationDefaultRoleCreateError": "Organization added, but couldnt create the default role!",
+				"organizationDefaultRoleAttachError": "Couldnt attach the default role to the organization!"
+			},
+			"placeholder":
+			{
+				"organizationName": "Name of the organization",
+				"organizationDescription": "Description of the property",
+				"organizationDefaultRole": "Organization's default role"
+			},
+			"help":
+			{
+				"title": "Want to know more about organizations?"
+			},
+			"btn": {
+				"close": "Close"
+			}
+		}
+	}
+}
+
+

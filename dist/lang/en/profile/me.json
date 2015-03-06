@@ -1,0 +1,32 @@
+{
+	"profile":
+	{
+		"me":
+		{
+			"lbl":{
+				"title": "Profile Overview",
+				"profileTitle": "Profile Overview",
+				"profileId": "User Id",
+				"profileFederalId": "Federal Id",
+				"profileLanguage": "Language",
+				"profileEmail": "Email",
+				"profileDisplayName": "Display Name",
+				"profileTheme": "Theme",
+				"profileBasic": "Basic",
+				"profileUI": "User Interface"
+			},
+			"msg": {
+				"profileUpdateSuccessful" : "Profile updated!",
+				"profileUpdateError": "Couldnt update the profile!"
+			},
+			"panelheading": {
+				"basic": "Basic",
+				"ui": "User interface"
+			},
+			"btn": {
+				"save": "Save my properties"
+			}
+		}
+	}
+	
+}

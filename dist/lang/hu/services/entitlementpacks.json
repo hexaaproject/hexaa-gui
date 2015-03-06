@@ -1,0 +1,60 @@
+{
+	"services":{
+		"entitlementpacks":
+		{
+			"lbl":
+			{
+				"title": "Szolgáltatások",
+				"entitlementpackToken" : "Token",
+				"entitlementpackBasic" : "Általános",
+				"entitlementpackName" : "Név",
+				"entitlementpackDescription" : "Leírás",
+				"entitlementpackType" : "Típus",
+				"entitlementpackTypePrivate" : "Privát",
+				"entitlementpackTypePublic": "Publikus",
+				"entitlementsTitle" : "Jogkörök",
+				"entitlementpackNewTitle" : "Új szolgáltatás",
+				"editorModeNew" : "Új",
+				"editorModeEdit" : "Szerkesztés",
+				"noEntitlementPackHasBeenFound" : "Nem található szolgáltatás a szolgáltatásban",
+				"serviceEntitlements": "Szolgáltató jogosultságai",
+				"entitlementpackEntitlements": "Szolgáltatás jogosultságai"
+
+			},
+			"btn" :{
+				"entitlementAdd" : "Hozzáadás",
+				"entitlementRemove" : "Eltávolítás",
+				"entitlementpackSave" : "Mentés",
+				"entitlementpackUndo" : "Visszavonás",
+				"entitlementpackRemove" : "Törlés",
+				"entitlementpackGenerateToken": "Új token",
+				"entitlementpackNew": "Új"
+
+			},
+			"msg" : {
+				"confirmationNeeded": "Megerősítés szükséges",
+				"entitlementpackDeleteConfirmation": "Biztosan törölni szeretné az alábbi szolgáltatást: {{name}}?",
+				"entitlementLoadError" : "Nem tudtam betölteni a jogosultságcsomag által tartalmazott jogosultságokat!",
+				"entitlementpacksLoadError": "Nem tudtam betölteni a szolgáltatás szolgáltatásait!",
+				"entitlementsRefreshError" : "Nem tudtam betölteni a szolgáltatás jogosultságait!",
+				"entitlementAddError" : "Failed to add entitlement: {0}",
+				"entitlementRemoveError" : "Failed to remove entitlement: {0}",
+				"entitlementAddError" : "Szolgáltatás hozzáadása sikertelen: {0}",
+				"entitlementRemoveError" : "Szolgáltatás törlése sikertelen: {0}",
+				"errorOccured" : "Hiba történt!",
+				"entitlementpackSavedButError" : "szolgáltatás csomag mentése sikeres, de: ",
+				"entitlementpackSaveSuccess" : "A szolgáltatás mentésre került!",
+				"entitlementpackSaveError" : "Nem sikerült a szolgáltatást létrehozni! ",
+				"entitlementpackUpdateSuccess" : "Szolgáltatás frissült!",
+				"entitlementpackUpdateError" : "Nem sikerült törölni a szolgáltatást: ",
+				"entitlementpackRemoveSuccess" : "Szolgáltatás törölve!",
+				"entitlementpackRemoveError" : "Nem sikerült törölni a szolgáltatást! "
+			},
+			"placeholder": {
+				"entitlementpackFilter": "Filter",
+				"entitlementpackToken": "Nyomja meg a + gombot új token generálásához"
+
+			}
+		}
+	}	
+}

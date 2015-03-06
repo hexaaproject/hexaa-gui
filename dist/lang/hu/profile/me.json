@@ -1,0 +1,32 @@
+{
+	"profile":
+	{
+		"me":
+		{
+			"lbl":{
+				"title": "Profil áttekintése",
+				"profileTitle": "Profil áttekintése",
+				"profileId": "Azonosító",
+				"profileFederalId": "Föderációs azonosító",
+				"profileLanguage": "Nyelv",
+				"profileEmail": "Email",
+				"profileDisplayName": "Megjelenítendő név",
+				"profileTheme": "Téma",
+				"profileBasic": "Általános",
+				"profileUI": "Felhasználói felület"
+			},
+			"msg": {
+				"profileUpdateSuccessful" : "Profil frissítve!",
+				"profileUpdateError": "Nem sikerült frissíteni a profilt!"
+			},
+			"panelheading": {
+				"basic": "Alapadatok",
+				"ui": "Felhasználói felület"
+			},
+			"btn": {
+				"save": "Mentés"
+			}
+		}
+	}
+	
+}

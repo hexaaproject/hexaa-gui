@@ -1,0 +1,32 @@
+<!-- <h4 translate>services.entitlementpacks.lbl.entitlementpackBasic</h4> -->
+<form name="entitlementpackForm" ng-model="entitlementpackForm" novalidate>
+    <label for="name" translate>services.entitlementpacks.lbl.entitlementpackName</label>
+    <input type="text" class="form-control" id="name" placeholder="Name of Entitlementpack" ng-model="entitlementpack.name" required/>
+    <label for="description" translate>services.entitlementpacks.lbl.entitlementpackDescription</label>
+    <input type="text" class="form-control" id="description" placeholder="Description of Entitlementpack" ng-model="entitlementpack.description" />
+    <label for="type" translate>services.entitlementpacks.lbl.entitlementpackType</label>
+    <select class="form-control" id="type"  ng-model="entitlementpack.type" required>
+        <option value="private" ng-selected="entitlementpack.type == 'private'" translate>services.entitlementpacks.lbl.entitlementpackTypePrivate</option>
+        <option value="public" ng-selected="entitlementpack.type == 'public'" translate>services.entitlementpacks.lbl.entitlementpackTypePublic</option>
+    </select>
+    <h4 translate>services.entitlementpacks.lbl.entitlementsTitle</h4>
+    <div id="entitlementsbox" angular-duallistbox
+         elements="service.entitlements" selected="entitlementpack.entitlements"
+         element-display="'name'" element-value="'id'"
+         non-selected-list-label="'services.entitlementpacks.lbl.serviceEntitlements' | translate"
+         selected-list-label="'services.entitlementpacks.lbl.entitlementpackEntitlements' | translate"
+         filter-place-holder="'services.entitlementpacks.placeholder.entitlementpackFilter' | translate" style="margin-bottom: 0.5em;">
+    </div>
+
+
+<div class="clearfix">
+    <div class="btn-group pull-right">
+        <button type="button" class="btn btn-primary" ng-click="saveEntitlementpack()" translate ng-disabled="!entitlementpackForm.$valid">
+            services.entitlementpacks.btn.entitlementpackSave
+        </button>
+        <button type="button" class="btn btn-warning" ng-click="undoEntitlementpack()" translate>
+            services.entitlementpacks.btn.entitlementpackUndo
+        </button>
+    </div>
+</div>
+</form>

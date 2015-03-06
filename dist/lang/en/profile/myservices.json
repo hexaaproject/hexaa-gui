@@ -1,0 +1,16 @@
+{
+	"profile":
+	{
+		"myservices":
+		{
+			"lbl":{				
+				"title": "My Services",				
+				"labelEntitlementpacks": "Services"				
+			},
+			"msg": {
+				"getMyServicesError": "Failed to download used services!"				
+			}
+		}
+	}
+	
+}

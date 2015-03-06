@@ -1,0 +1,31 @@
+{
+	"services":
+	{
+		"attributespecifications":
+		{
+			"lbl": {
+				"title": "Attribútumok",
+				"attributeSpecificationList": "Minden",		
+				"attributeSpecificationVisibilitySelect" : "Válasszon",
+				"attributeSpecificationVisibilityPublic" : "Publikus",
+				"attributeSpecificationVisibilityPrivate" : "Privát",
+				"attributeSpecificationConnectedList" : "Használt",
+				"noAttributeSpecificationsFound": "Nem található attribútumspecifikáció a rendszerben. További instrukciókért keresse a HEXAA adminisztrátort."
+			},
+			"btn": {
+				"attributeSpecificationAdd": "Hozzáad",
+				"attributeSpecificationRemove" : "Töröl"
+			},
+			"placeholder":{
+				"attributeSpecificationFilter": "Szűrés attribútumra"
+			},
+			"msg" : {
+				"attributeSpecificationAddError" : "Nem sikerült hozzáadni az attribútumot: {0}",
+				"attributeSpecificationRemoveError" :"Nem sikerült törölni az attribútumot: {0}",
+				"allChangesSaved" : "Minden változtatás mentésre került!",
+				"AttributeSpecificationsUpdateError" : "Nem sikerült menteni a változásokat!"
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,23 @@
+<?php
+
+// Base address of the gui
+$hexaa_base_address = "https://your.hexaa.install";
+
+$hexaa_api_address = "https://your.hexaa.install/api";
+
+$hexaa_cookie_name = "hexaa_cookie_name";
+
+$hexaa_ui_address = "https//your.hexaa.install/hexaaui";
+
+// Hexaa master secret -- obtain from HEXAA config (app/config/parameters.yml)
+$hexaa_master_secret = "insertYourSecretHere";
+
+// Logout URL
+$hexaa_logout_url = $hexaa_base_address."/Shibboleth.sso/Logout?return=".$hexaa_base_address;
+
+$hexaa_env_eppn = "eppn";
+$hexaa_env_mail = "mail";
+
+$hexaa_dont_check_ssl_certificate = false;
+
+?>

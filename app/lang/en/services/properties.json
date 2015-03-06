@@ -1,0 +1,24 @@
+{
+	"services":{
+		"properties":{
+			"lbl": {						
+				"title": "Properties",
+				"serviceName" : "Name",
+				"serviceUrl" : "URL",
+				"serviceEntityId": "SAML SP Entity ID",
+				"serviceDescription" : "Description",
+				"logoRestrictions" : "The image width must be not greater than 400 px!"
+			},
+			"placeholder": {
+				"serviceName" : "Name of the service",
+				"serviceUrl" : "http://www.example.com",
+				"serviceDescription" : "Description of the service"
+			},
+			"msg": {
+				"serviceUpdateSuccess" : "Service updated!",
+				"serviceUpdateError":  "Failed to update service!",
+				"serviceLogoUpdateError":  "Couldnt upload service logo!"
+			}
+		}
+	}	
+}

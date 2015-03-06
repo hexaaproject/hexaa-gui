@@ -1,0 +1,13 @@
+{
+	"services":{
+		"inviteservicemanagers":{
+			"msg":
+			{
+				"invitationSendSuccess": "Invatation sent!",
+				"invitationSendError": "Failed to send invitation! ",
+				"invitationSendSuccessLinkCreated": "Here is your invitation link: ",
+				"invitationSendSuccessEmailAndLink": "Invitation has been sent to the recipients, but a link has also been created: "
+			}
+		}
+	}
+}

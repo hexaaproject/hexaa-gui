@@ -1,0 +1,16 @@
+{
+	"profile":
+	{
+		"myorganizations":
+		{
+			"lbl":{				
+				"title": "Tagságaim",				
+				"labelRole": "Szerepkör"				
+			},
+			"msg": {
+				"getMyOrganizationsError": "Nem sikerült letölteni a tagságokat!"				
+			}
+		}
+	}
+	
+}

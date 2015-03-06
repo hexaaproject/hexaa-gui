@@ -1,0 +1,102 @@
+<div class="container-fluid" id="myWizard" ng-controller="ProfileVOWizardCtrl as vm">
+
+    <h3 translate>profile.vowizard.lbl.heading</h3>
+    <hr>
+
+    <progressbar max="vm.numberOfSteps" value="vm.currentStep" type="{{vm.getProgressbarType(vm.currentStep)}}">
+        <span style="color:black; white-space:nowrap;">
+            <span translate translate-values="{'currentStep': '{{vm.currentStep}}', 'numberOfSteps': '{{vm.numberOfSteps}}' }">
+                profile.vowizard.lbl.progress
+            </span>
+        </span>
+    </progressbar>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav nav-tabs">
+                <li ng-class="{'active': vm.currentStep == 1}"><a ng-click="vm.select(1)" translate>profile.vowizard.lbl.stepCreateVO</a></li>
+                <li ng-class="{'active': vm.currentStep == 2}"><a ng-click="vm.select(2)" translate>profile.vowizard.lbl.stepAttachService</a></li>
+                <li ng-class="{'active': vm.currentStep == 3}"><a ng-click="vm.select(3)" translate>profile.vowizard.lbl.stepCreateRoles</a></li>
+                <li ng-class="{'active': vm.currentStep == 4}"><a ng-click="vm.select(4)" translate>profile.vowizard.lbl.stepInviteMembers</a></li>
+                <li ng-class="{'active': vm.currentStep == 5}"><a ng-click="vm.select(5)" translate>profile.vowizard.lbl.stepFinish</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane" id="step1" ng-class="{'active': vm.currentStep == 1}">
+            <div hexaa-organizations-properties-widget
+                 organization="vm.organization"
+                 form-valid="vm.organizationIsValid">
+            </div>
+        </div>
+        <div class="tab-pane" id="step2" ng-class="{'active': vm.currentStep == 2}">
+            <div hexaa-organizations-entitlementcatalog-widget
+                 organization="vm.organization"
+                 entitlementpacks="vm.entitlementpacks"
+                 add-entitlementpack="vm.addEntitlementpack(entitlementpack)"
+                 remove-entitlementpack="vm.removeEntitlementpack(entitlementpack)"></div>
+        </div>
+        <div class="tab-pane" id="step3" ng-class="{'active': vm.currentStep == 3}">
+            <div>
+                <div class="clearfix">
+                    <button class="btn btn-success pull-right" ng-click="vm.newRole()"><i class="fa fa-plus"></i>
+                        {{'organizations.roles.btn.roleAdd'|translate}}
+                    </button>
+                </div>
+                <hr/>
+                <div hexaa-organizations-roles-widget
+                     organization="vm.organization"
+                     delete-role="vm.deleteRole(role)"
+                     edit-role="vm.editRole(role)">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="step4" ng-class="{'active': vm.currentStep == 4}">
+            <div>
+                <div class="clearfix">
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-success dropdown-toggle pull-right" data-toggle="dropdown">
+                            <i class="fa fa-plus"></i> {{ 'organizations.invitations.btn.invitationInvite' | translate}}
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a ng-click="vm.newMember()" translate>
+                                    organizations.invitations.btn.invitationInviteMember</a>
+                            </li>
+                            <li>
+                                <a ng-click="vm.newManager()" translate>
+                                    organizations.invitations.btn.invitationInviteManager</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr/>
+                <div hexaa-organizations-invitations-widget
+                     organization="vm.organization"
+                     delete-invitation="vm.deleteInvitation(invitation)"
+                     edit-invitation="vm.editInvitation(invitation)"
+                     resend-invitation="vm.resendInvitation(invitation)">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="step5" ng-class="{'active': vm.currentStep == 5}">
+            <div class="well" translate="profile.vowizard.lbl.finishMessage">
+
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <a class="btn btn-default btn-lg next pull-right" ng-if="vm.currentStep < vm.numberOfSteps"
+       ng-click="vm.next()" ng-disabled="!vm.organizationIsValid" translate>
+        profile.vowizard.btn.next
+    </a>
+    <a class="btn btn-danger btn-lg next pull-right" ng-if="vm.currentStep == vm.numberOfSteps"
+       ng-click="vm.finish()" ng-disabled="!vm.organizationIsValid" translate>
+        profile.vowizard.btn.finish</a>
+    <a class="btn btn-warning btn-lg next" ng-if="vm.currentStep > 1" ng-click="vm.previous()" translate>profile.vowizard.btn.back</a>
+</div>
+
+

@@ -1,0 +1,24 @@
+{
+	"profile":
+	{
+		"consents":
+		{
+			"lbl":
+			{
+				"title": "Consents",
+				"consentsTitle": "Consents",
+				"noAttributeSpecificationsAssociated" : "There are no attributespecifications associated to You",
+				"noAttributeValuesForSpecification": "No AttrbuteValuePrincipals has been found for this AttributeSpecification!"
+			},
+			"msg":
+			{
+				"consentAddError": "Failed to add consent!",
+				"consentAddSuccess": "Consent added!",
+				"consentUpdateSuccess": "Consent updated!",
+				"consentUpdateError": "Failed to update consent!",
+				"consentRemoveError": "Failed to remove consent!",
+				"consentRemoveSuccess": "Consent removed!"
+			}
+		}
+	}	
+}

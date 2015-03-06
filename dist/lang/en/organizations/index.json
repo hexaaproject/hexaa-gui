@@ -1,0 +1,42 @@
+{
+	"organizations"	:
+	{
+		"index":
+		{
+			"lbl":
+			{
+				"title": "Organizations",
+				"pleaseSelectAnOrganization": "Please select an organization from the list on the top, or add a new one!"
+			},
+			"btn":
+			{
+				"newOrganization": "New",
+				"saveOrganization": "Save Organization",
+				"deleteOrganization": "Delete"
+			},
+			"msg": {
+				"organizationDeleteSuccess": "Organization deleted!",
+				"organizationDeleteError": "Failed to delete organization! ",
+                "confirmationNeeded": "Confirmation needed",
+                "organizationDeleteConfirm": "Do you want to delete organization {{name}}?",
+                "organizationsGetError": "Couldnt retrieve organization list!"
+			},
+			"subpages": {
+                "news": "News",
+				"properties": "Properties",
+				"managers": "Managers",
+				"members": "Members",
+				"attributes": "Attribute specifications",
+				"consents": "Consents",
+				"entitlementpacks": "Connected Services",
+				"roles": "Roles",
+				"invitations": "Invitation management",
+				"principaloverview": "Users",
+				"public_catalog": "Service catalog"
+			}
+		}
+	}	
+}
+
+
+	

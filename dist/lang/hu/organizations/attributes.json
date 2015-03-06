@@ -1,0 +1,53 @@
+{
+	"organizations":
+	{
+		"attributes":
+		{
+			"lbl":
+			{
+				"title": "Attribútumok",
+				"attributesTitle" : "Attribútum értékek",
+				"noAssociatedAttributeSpecifications": "Nincsenek az attribútumhoz tartozó értékek a rendszerben.",
+				"attributeValue": "Érték",
+				"attributeIsDefault": "Alapértelmezett",
+				"attributeAssociations": "Hozzárendelések",
+				"attributeSupportingServices": "Támogatott szolgáltatások",
+				"attributeAssociatedServices": "Hozzárendelt szolgáltatások",
+				"serviceLogo": "Logo",
+				"serviceName": "Név",
+				"serviceDescription": "Leírás",
+				"attributeActions": "Műveletek",
+				"noSupportedServiceForAttributeSpecification": "Nincsen ezen attribútum specifikációt támogató szolgáltatás!"				
+
+			},
+			"btn":
+			{
+				"attributeNew": "Új",
+				"attributeEdit": "Szerkesztés",
+				"attributeRemove": "Törlés",
+				"attributeNew": "Új érték",
+				"cancel": "Mégsem",
+				"attributeSave": "Mentés"
+			},
+			"placeholder": {
+				"serviceList": "Keresés a szolgáltatók listájában"
+			},
+			"msg":
+			{
+				"editorModeNew": "Új",
+				"editorModeEdit": "Szerkesztés",
+				"attributeValueCreateSuccess": "Az érték létrejött!",
+				"attributeValueCreateError": "Nem sikerült létrehozni az értéket!",
+				"attributeValueUpdateSuccess": "Az érték frissült!",
+				"attributeValueUpdateError": "Nem sikerült frissíteni az értéket!",
+				"attributeValueRemoveError" : "Az érték törlése sikertelen {0}!",
+				"attributeValueChangesSaved" : "Minden változtatás mentésre került!",	
+				"problemOccured" : "Hiba történt",
+				"attributeSpecificationGetError": "Nem sikerült letölteni az attribútum specifkációkat!",				
+				"attributeValueGetError": "Nem tudtam letölteni a {{attrspec}}-hoz tartozó attribútum értékeket! ",
+				"supportingServicesGetError": "Nem tudtam letölteni az attribútum specifikációt támogató szolgáltatásokat! "
+			}
+		}
+	}
+	
+}

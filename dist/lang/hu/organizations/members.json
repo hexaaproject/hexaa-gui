@@ -1,0 +1,35 @@
+{
+	"organizations":
+	{
+		"members":
+		{
+			"lbl":
+			{
+				"title": "Felhasználók",
+				"allPrincipals": "Minden személy",
+				"associatedPrincipals": "Szervezet tagjai"
+			},
+			"btn":
+			{
+				"inviteMembers": "Meghívás",
+				"addMembers" : "Hozzáad",
+				"removeMembers" : "Eltávolít"
+			},
+			"placeholder":
+			{
+				"principalList": "Írjon be egy nevet",
+				"managerList": "Írjon be egy nevet"
+			},
+			"msg":
+			{
+				"principalsRetrieveError": "Nem sikerült a felhasználók listáját betölteni",
+				"memberRetrieveError": "Nem sikerült a taglistát letölteni",
+				"memberUpdateError": "Nem sikerült a taglistát menteni!",
+				"memberUpdateSuccess" :  "Taglista mentve!",
+				"problemOccured": "Hiba történt",
+				"allChangesSaved": "Minden változás mentésre került!"
+			}
+		}
+	}
+	
+}

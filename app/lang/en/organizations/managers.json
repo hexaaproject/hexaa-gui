@@ -1,0 +1,33 @@
+{
+	"organizations":
+	{
+		"managers":
+		{
+			"lbl":
+			{
+				"title": "Managers",
+				"allPrincipals": "Everybody",
+				"associatedPrincipals": "Associated managers"
+			},
+			"btn":
+			{
+				"inviteManagers": "Invite",
+				"addManagers" : "Add",
+				"removeManagers" : "Remove"
+			},
+			"placeholder":
+			{
+				"principalList": "Type a name",
+				"managerList": "Type a name"
+			},
+			"msg":
+			{
+				"managerUpdateFail": "Failed to update manager list",
+				"managerUpdateSuccess" :  "Manager list updated!",
+				"problemOccured": "Problem occured",
+				"allChangesSaved": "All changes have been saved!",
+				"principalsRetrieveError": "Unable to retrieve principals"
+			}
+		}
+	}	
+}
