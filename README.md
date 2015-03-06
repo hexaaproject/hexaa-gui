@@ -16,14 +16,14 @@ Installation
  4. Edit config.php as appropriate.
 
 > **Note:**
-**$hexaa_base_address** is the root URL of the HEXAA installation
-**$hexaa_api_address** is the URL of HEXAA installation's API
-**$hexaa_cookie_name** is the name of the cookie where the token is stored. This should be unique.
-**$hexaa_master_secret** The master secret of HEXAA. You can find it under *your_hexaa_install_dir/app/config/parameters.yaml*
-**$hexaa_logout_url** HEXAA UI will redirect you to this page on logout. It Should be the Shibboleth SingleLogout Endpoint.
-**$hexaa_env_eppn** Server attribute name of the federal unique Id. Compare it with your Shibboleth Installation.
-**$hexaa_env_mail** Server attribute name of the federal unique mail. Compare it with your Shibboleth Installation.
-**$hexaa_dont_check_ssl_certificate**: Set it to true if your installation does not use HTTPS protocol.
+* **$hexaa_base_address** is the root URL of the HEXAA installation
+* **$hexaa_api_address** is the URL of HEXAA installation's API
+* **$hexaa_cookie_name** is the name of the cookie where the token is stored. This should be unique.
+* **$hexaa_master_secret** The master secret of HEXAA. You can find it under * *your_hexaa_install_dir/app/config/parameters.yaml*
+* **$hexaa_logout_url** HEXAA UI will redirect you to this page on logout. It Should be the Shibboleth SingleLogout Endpoint.
+* **$hexaa_env_eppn** Server attribute name of the federal unique Id. Compare it with your Shibboleth Installation.
+* **$hexaa_env_mail** Server attribute name of the federal unique mail. Compare it with your Shibboleth Installation.
+* **$hexaa_dont_check_ssl_certificate**: Set it to true if your installation does not use HTTPS protocol.
 
 
 ----------
