@@ -120,13 +120,13 @@
                  */
                 function onQueryCompleted(service) {
                     return function (data) {
-                        var attrspecs = data[0].data;
+                        var attrspecs = data[0].data.items;
                         var consent = data[1].data;
 
-                        service.consent = $linq(attrspecs).where("x=>x.maintainer == 'user'").toArray()
+                        service.consent = $linq(attrspecs).where("x=>x.attribute_spec.maintainer == 'user'").toArray()
                             .map(function (attrspec) {
-                                attrspec.consented = $linq(consent.enabled_attribute_spec_ids).indexOf("x => x == " + attrspec.id) != -1;
-                                return attrspec;
+                                attrspec.attribute_spec.consented = $linq(consent.enabled_attribute_spec_ids).indexOf("x => x == " + attrspec.attribute_spec.id) != -1;
+                                return attrspec.attribute_spec;
                             });
 
                         service.entitlements = consent.enable_entitlements;
