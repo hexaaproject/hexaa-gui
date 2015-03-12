@@ -21,7 +21,7 @@
                         <td translate>profile.attributes.lbl.serviceDescription</td>
                     </tr>
                     <tr ng-repeat="service in attspec.supportingServices">
-                        <td><img src="{{service.logo | imageFormatter}}" class="servicelogo"/></td>
+                        <td><img ng-src="{{service.logo | imageFormatter}}" class="servicelogo"/></td>
                         <td>{{service.name}}</td>
                         <td>{{service.description}}</td>
                     </tr>

@@ -94,7 +94,7 @@
                  */
                 function onGetRelatedServicesSuccess(services) {
                     $scope.profile.relatedServices = angular.copy(services.data.items);
-                    $scope.pager.totalItems = angular.copy(services.data.item_number);
+                    $scope.pager.totalItems = services.data.item_number;
                 }
 
                 function onAddConsentSuccess(data) {

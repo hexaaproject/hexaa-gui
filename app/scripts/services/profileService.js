@@ -119,7 +119,7 @@ function PrincipalProxyService(PrincipalProxy, HexaaService, baseAddr, $rootScop
     function onGetPrincipalSuccess(data) {
         angular.copy(data.data, profile);
         angular.extend(profile, profileOperations);
-        HexaaService.setIsAdmin(data.data.isAdmin);
+        setIsAdmin(false); //by default even an administrator acts as a simple user until he or she doesnt changes it
     }
 
     function setIsAdmin(isAdmin) {

@@ -55,7 +55,7 @@
                 function refreshImage($files) {
 
                     return $upload.upload({
-                        url: baseAddr + '/api/services/' + $scope.properties.id + '/logos.json',
+                        url: baseAddr + '/api/services/' + $scope.properties.id + '/logos.json?admin='+$scope.profile.isAdmin,
                         method: 'POST',
                         headers: {'X-HEXAA-AUTH': securityService.getToken()},
                         file: $files[0],

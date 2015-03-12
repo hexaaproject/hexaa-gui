@@ -85,6 +85,18 @@
             function onGetManagersSuccess(data) {
                 $scope.service.managers = angular.copy(data.data.items);
                 $scope.service.managers.saveMemento();
+
+                if ($linq($scope.principals).intersect($scope.service.managers, "(x,y) => x.fedid == y.fedid")
+                        .toArray().length != $scope.service.managers.length )
+                {
+                    /* A few managers are not in the principal list (they might have been deleted or the a
+                        manager isnt admin so we need to put the managers into the principal array
+                     */
+
+                    $scope.principals = $linq($scope.principals).union( $scope.service.managers, "(x,y) => x.fedid == y.fedid")
+                        .toArray();
+                }
+
             }
 
             function onGetManagersError(error) {

@@ -1,9 +1,9 @@
 'use strict';
 angular.module('hexaaApp.services')
     .service('startupService', ['$rootScope', '$translate', 'HexaaService', 'events', 'hexaaCookieName', 'PrincipalProxy',
-        'securityService', '$cookies', '$timeout', '$location', 'profileService',
+        'securityService', '$cookies', '$timeout', '$location', 'profileService','$route',
         function ($rootScope, $translate, HexaaService, events, hexaaCookieName, PrincipalProxy,
-                  securityService, $cookies, $timeout, $location, profileService) {
+                  securityService, $cookies, $timeout, $location, profileService,$route) {
 
             function run() {
                 //Attach global functions to rooTscope
@@ -28,7 +28,7 @@ angular.module('hexaaApp.services')
             }
 
             function onUserPermissionChanged(event) {
-                navigate("#" + $location.url());
+                $route.reload();
             }
 
             function onGetApiPropertiesSuccess(data) {
