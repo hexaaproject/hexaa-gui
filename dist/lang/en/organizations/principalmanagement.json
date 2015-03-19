@@ -11,7 +11,8 @@
 				"principalActions": "Actions",
 				"principalIsManager": "Manager",
 				"principalIsActive": "Active",
-				"principalIsInvited": "Invitation pending"
+				"principalIsInvited": "Invitation pending",
+				"isolatedVO": "This VO is isolated so you are not able to see the members of it."
 			},
 			"btn":
 			{
@@ -23,7 +24,10 @@
 				"invitationCancel": "Cancel",
 				"invitationInvite": "Invite",
 				"inviteMember": "Invite member",
-				"inviteManager": "Invite manager"
+				"inviteManager": "Invite manager",
+				"sendMail": "Send mail",
+				"sendMailToManagers": "Send mail to Managers",
+				"sendMailToUsers": "Send mail to Users"
 			},
 			"msg":
 			{

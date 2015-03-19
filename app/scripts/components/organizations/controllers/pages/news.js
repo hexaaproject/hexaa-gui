@@ -55,7 +55,7 @@
                     });
 
                     angular.forEach(tags, function (tag) {
-                        this.push(tag);
+                        this.push(angular.copy(tag));
                     }, $scope.tagSources);
 
                     $scope.tagSources.push({
@@ -141,8 +141,10 @@
                  * @param oldValue
                  */
                 function onItemPerPageChanged(newValue, oldValue) {
-                    if ($scope.organization.id != -1)
-                        refreshFeed($scope.organization);
+                    if (oldValue !== newValue) {
+                        if ($scope.organization.id != -1)
+                            refreshFeed($scope.organization);
+                    }
                 }
 
                 /**
@@ -163,8 +165,10 @@
                  * @param oldValue
                  */
                 function onCurrentPageChanged(newValue, oldValue) {
-                    if ($scope.organization.id != -1)
-                        refreshFeed($scope.organization);
+                    if (oldValue !== newValue) {
+                        if ($scope.organization.id != -1)
+                            refreshFeed($scope.organization);
+                    }
                 }
             }]);
 

@@ -39,11 +39,14 @@ function InvitationFactory($injector) {
 
     /*PARENT*/
     Invitation.prototype = ResourceEntity.new();
+    Invitation.prototype.constructor = Invitation;
 
     /*INTERFACE*/
     Invitation.prototype.resend = resend;
     Invitation.prototype.save = save;
     Invitation.prototype.delete = remove;
+
+    InvitationFactory.class = Invitation;
 
     /*STATIC */
     Invitation.new = create;

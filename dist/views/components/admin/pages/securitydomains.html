@@ -1,0 +1,76 @@
+<div ng-controller="AdminSecurityDomainsCtrl as vm" class="container-fluid row">
+
+
+    <div class="panel panel-default panel-heading clearfix">
+        <form>
+            <div class="row">
+                <div class="col-xs-4">
+                <span class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+                    <input type="text" ng-model="vm.filterText" class="form-control" placeholder="Filter"/>
+                </span>
+                </div>
+
+                <div class="col-xs-4">
+                    <span class="input-group">
+                        <span class="input-group-addon">Page size:</span>
+                        <select class="form-control" ng-model="vm.pager.itemPerPage">
+                            <option>1</option>
+                            <option>5</option>
+                            <option>10</option>
+                            <option>25</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="col-xs-4">
+                    <Button class="btn btn-default pull-right" ng-click="vm.newSecurityDomain()">New</Button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <table class="table table-condensed table-striped">
+        <tr class="row">
+            <th class="col-md-1" translate>admin.securityDomains.lbl.securityDomainName</th>
+            <th class="col-md-3" translate>admin.securityDomains.lbl.securityDomainDescription</th>
+            <th class="col-md-1" translate>admin.securityDomains.lbl.securityDomainScopedKey</th>
+            <th class="col-md-3" translate>admin.securityDomains.lbl.securityDomainOrganizations</th>
+            <th class="col-md-3" translate>admin.securityDomains.lbl.securityDomainServices</th>
+            <th class="col-md-2" translate>admin.securityDomains.lbl.securityDomainActions</th>
+        </tr>
+        <tr class="row" ng-repeat="securitydomain in vm.securitydomains | filter: vm.filterText | pager: vm.pager">
+            <td class="col-md-1">{{securitydomain.name}}</td>
+            <td class="col-md-3"><span class="truncate">{{securitydomain.description}}</span></td>
+            <td class="col-md-1"><span class="truncate">{{securitydomain.scoped_key}}</span></td>
+            <td class="col-md-3"><span class="truncate">
+                <ul>
+                    <li ng-repeat="organization in securitydomain.organizations">{{organization.name}}</li>
+                </ul>
+            </span>
+            </td>
+            <td class="col-md-3"><span class="truncate">
+                <ul>
+                    <li ng-repeat="service in securitydomain.services">{{service.name}}</li>
+                </ul>
+            </span>
+            </td>
+            <td class="col-md-2">
+                <button class="btn btn-default" title="{{'admin.principals.lbl.editorModeEdit'|translate}}"
+                        ng-click="vm.edit(securitydomain)"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger"
+                        ng-click="vm.deleteSecurityDomain(securitydomain)"
+                        title="{{'admin.principals.btn.securityDomainDelete'|translate}}"><i class="fa fa-trash"> </i>
+                </button>
+            </td>
+        </tr>
+    </table>
+
+
+    <pagination total-items="vm.pager.totalItems" page="vm.pager.currentPage" max-size="vm.pager.maxSize"
+                class="pagination-sm"
+                boundary-links="true" rotate="false" num-pages="vm.pager.numPages"
+                items-per-page="vm.pager.itemPerPage"></pagination>
+    <pre>Page: {{vm.pager.currentPage}} / {{vm.pager.numPages}}</pre>
+
+</div>

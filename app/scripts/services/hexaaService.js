@@ -88,22 +88,26 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
         getOrganization: function (id, tag) {
             return HexaaService.doRequest('GET', '/organizations/' + id + '.json', token, null, tag);
         },
-        addOrganization: function (name, desc, url) {
+        addOrganization: function (name, desc, url, isolate_members, isolate_role_members) {
             var postData = new Jobject();
             postData.prop("name", name);
             postData.prop("description", desc);
             postData.prop("url", url);
+            postData.prop("isolate_members", isolate_members);
+            postData.prop("isolate_role_members", isolate_role_members);
             return HexaaService.doRequest('POST', '/organizations.json', token, JSON.stringify(postData));
         },
         deleteOrganization: function (id) {
             return HexaaService.doRequest('DELETE', '/organizations/' + id + '.json', token, null);
         },
-        updateOrganization: function (id, name, desc, url, default_role) {
+        updateOrganization: function (id, name, desc, url, default_role, isolate_members, isolate_role_members) {
             var postData = new Jobject();
             postData.prop("name", name);
             postData.prop("description", desc);
             postData.prop("url", url);
             postData.prop("default_role", default_role);
+            postData.prop("isolate_members", isolate_members);
+            postData.prop("isolate_role_members", isolate_role_members);
             return HexaaService.doRequest('PUT', '/organizations/' + id + '.json', token, JSON.stringify(postData));
         },
         getPrincipals: function () {
@@ -507,9 +511,9 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
         getInvitation: function (id) {
             return HexaaService.doRequest('GET', '/invitations/' + id + '.json', token, null);
         },
-        getServiceInvitations: function (id,offset,limit) {
+        getServiceInvitations: function (id, offset, limit) {
             var url = new QueryStringBuilder('/services/' + id + '/invitations.json')
-                .set("offset",offset||0)
+                .set("offset", offset || 0)
                 .set("limit", limit);
 
             return HexaaService.doRequest('GET', url.toString(), token, null);
@@ -663,6 +667,50 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
         },
         getPrincipalEntitlements: function () {
             return HexaaService.doRequest('GET', '/principal/entitlementpack/related.json?verbose=expanded&offset=0', token, null);
+        },
+        sendMail: function (subject, message, target, organization, role, service) {
+            var postData = new Jobject()
+                .prop("subject", subject)
+                .prop("message", message)
+                .prop("target", target)
+                .prop("organization", organization)
+                .prop("role", role)
+                .prop("service", service);
+            return HexaaService.doRequest('PUT', '/message.json', token, angular.toJson(postData));
+        },
+        getScopedKeys: function () {
+            return HexaaService.doRequest('GET', '/scopedkeys.json?offset=0', token, null);
+        },
+        getSecurityDomains: function () {
+            return HexaaService.doRequest('GET', '/securitydomains.json?offset=0&verbose=expanded', token, null);
+        },
+        addSecurityDomain: function (name, scoped_key, description) {
+            var postData = new Jobject()
+                .prop("name", name)
+                .prop("scoped_key", scoped_key)
+                .prop("description", description);
+
+            return HexaaService.doRequest('POST', '/securitydomains.json', token, angular.toJson(postData));
+        },
+        updateSecurityDomain: function (id, name, scoped_key, description) {
+            var postData = new Jobject()
+                .prop("name", name)
+                .prop("scoped_key", scoped_key)
+                .prop("description", description);
+            return HexaaService.doRequest('PUT', '/securitydomains/'+id+'.json', token, angular.toJson(postData));
+        },
+        deleteSecurityDomain:function(id) {
+            return HexaaService.doRequest('DELETE', '/securitydomains/'+id+'.json', token, null);
+        },
+        setOrganizationsOfSecurityDomain:function(id,organizations) {
+            var postData = new Jobject()
+                .prop("organizations", organizations);
+            return HexaaService.doRequest('PUT', '/securitydomains/'+id+'/organizations.json', token, angular.toJson(postData));
+        },
+        setServicesOfSecurityDomain:function(id,services) {
+            var postData = new Jobject()
+                .prop("services", services);
+            return HexaaService.doRequest('PUT', '/securitydomains/'+id+'/services.json', token, angular.toJson(postData));
         }
 
     };

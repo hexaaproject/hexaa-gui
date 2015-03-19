@@ -65,8 +65,14 @@
                  */
                 function onDataReady(data) {
                     //everything fine
-                    $scope.properties = angular.copy(data.organization.data);
-                    $scope.properties.roles = angular.copy(data.roles.data.items);
+                    if (data.organization !== undefined)
+                    {
+                        $scope.properties = angular.copy(data.organization.data);
+                    }
+                    if (data.roles != undefined)
+                    {
+                        $scope.properties.roles = angular.copy(data.roles.data.items);
+                    }
                 }
 
 

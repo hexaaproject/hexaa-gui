@@ -37,6 +37,7 @@ function EntitlementpackFactory($injector) {
 
     //Inheritance
     Entitlementpack.prototype = ResourceEntity.new();
+    Entitlementpack.prototype.constructor = Entitlementpack;
 
     /* INTERFACE */
     Entitlementpack.prototype.getToken = getToken;
@@ -45,6 +46,7 @@ function EntitlementpackFactory($injector) {
 
     Entitlementpack.prototype.save = save;
 
+    EntitlementpackFactory.class = Entitlementpack;
 
     /*STATIC */
     Entitlementpack.new = create;

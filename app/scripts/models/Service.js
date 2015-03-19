@@ -17,7 +17,7 @@
 'use strict';
 
 
-function SercviceFactory($injector) {
+function ServiceFactory($injector) {
 
     var ResourceEntity = $injector.get("ResourceEntity");
     var defaultProperties = {
@@ -38,12 +38,15 @@ function SercviceFactory($injector) {
     }
 
     Service.prototype = ResourceEntity.new();
+    Service.prototype.constructor = Service;
 
     Service.prototype.save = save;
     Service.prototype.getLogo = getLogo;
     Service.prototype.delete = remove;
     Service.prototype.setLogo = setLogo;
     Service.new = create;
+
+    ServiceFactory.class = Service;
 
     function create(data) {
         return new Service(data);
@@ -78,4 +81,4 @@ function SercviceFactory($injector) {
     return Service;
 }
 
-angular.module('hexaaApp.models').factory('SercviceFactory', ['$injector', SercviceFactory]);
+angular.module('hexaaApp.models').factory('SercviceFactory', ['$injector', ServiceFactory]);

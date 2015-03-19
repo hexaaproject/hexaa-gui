@@ -35,6 +35,9 @@
             $scope.selectionChanged = selectionChanged;
             $scope.deleteService = deleteService;
             $scope.openServiceChanger = openServiceChanger;
+            $scope.contact = contact;
+
+            $scope.MailTargetEnum = MailTargetEnum;
 
             /*IMPLEMENTATION*/
 
@@ -211,6 +214,11 @@
                     }
                 });
                 modalInstance.result.then(onServiceChangerClosed, onServiceChangerDismissed);
+            }
+
+            function contact(target,recipient)
+            {
+                dialogService.showMailer(target,recipient);
             }
 
         }]);

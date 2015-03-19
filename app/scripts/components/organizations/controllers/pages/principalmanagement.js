@@ -29,11 +29,13 @@
 
             vm.organization = {};
             vm.profile = {};
+            vm.MailTargetEnum = MailTargetEnum;
 
             /* INTERFACE */
             vm.revoke = revoke;
             vm.propose = propose;
             vm.remove = remove;
+            vm.sendMail = sendMail;
 
 
             /* IMPLEMENTATION */
@@ -109,8 +111,23 @@
             function onOrganizationsSelectionChanged(event, selectedOrganization) {
                 vm.organization = {id: selectedOrganization};
 
+
                 if (selectedOrganization != undefined) {
-                    OrganizationsProxy.getPrincipals(selectedOrganization)
+                    OrganizationsProxy.getOrganization(selectedOrganization)
+                        .then(onGetOrganizationSuccess);
+                }
+            }
+
+            /**
+             * Invoked when getting organization data success
+             * @param data
+             */
+            function onGetOrganizationSuccess(data)
+            {
+                vm.organization = data.data;
+                if (!data.data.isolate_members || vm.profile.isManagerOfOrganization(vm.organization.id))
+                {
+                    OrganizationsProxy.getPrincipals(data.data.id)
                         .then(onGetPrincipalsSuccess)
                         .catch(onGetPrincipalError);
                 }
@@ -224,6 +241,11 @@
                             .catch(onRemoveManagerError);
                     }
                 }
+            }
+
+            function sendMail(target)
+            {
+                dialogService.showMailer(vm.organization,target);
             }
 
 

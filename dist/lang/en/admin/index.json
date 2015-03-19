@@ -12,7 +12,9 @@
 				"attributespecifications": "Attribute specifications",
 				"principals": "Principals",
 				"entityidrequests": "Entity ID Requests",
-                "entityids": "Entity IDs"
+                "entityids": "Entity IDs",
+                "contactAdmins": "Contact admins",
+                "securitydomains": "Security domains"
 			}
 		}
 	}	

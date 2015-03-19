@@ -15,6 +15,8 @@ $hexaa_master_secret = "insertYourSecretHere";
 // Logout URL
 $hexaa_logout_url = $hexaa_base_address."/Shibboleth.sso/Logout?return=".$hexaa_base_address;
 
+$hexaa_force_https = true; 
+
 $hexaa_env_eppn = "eppn";
 $hexaa_env_mail = "mail";
 

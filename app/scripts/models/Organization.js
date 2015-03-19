@@ -24,6 +24,8 @@ function OrganizationFactory($injector) {
         default_role: null,
         members: [],
         managers: [],
+        isolate_members: false,
+        isolate_role_members: false,
         invitations: [],
         role: {
             name: "default"
@@ -39,6 +41,7 @@ function OrganizationFactory($injector) {
     }
 
     Organization.prototype = ResourceEntity.new();
+    Organization.prototype.constructor = Organization;
 
     /* INTERFACE */
     Organization.prototype.delete = remove;
@@ -46,6 +49,8 @@ function OrganizationFactory($injector) {
 
     /* STATIC */
     Organization.new = create;
+
+    OrganizationFactory.class = Organization;
 
     function create(data) {
         return new Organization(data);

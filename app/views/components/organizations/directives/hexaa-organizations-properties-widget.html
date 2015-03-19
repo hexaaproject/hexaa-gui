@@ -12,5 +12,20 @@
         <input type="text" class="form-control" ng-model="organization.role.name" id="role"
                placeholder="{{'organizations.new.placeholder.organizationDefaultRole' | translate}}" required notifyuierror/>
 
+        <div class="form-group">
+            <div class="checkbox">
+                <label for="isolate_members">
+                    <input type="checkbox" ng-model="organization.isolate_members" id="isolate_members"/>
+                    <b translate>organizations.new.lbl.organizationIsolateMembers</b>
+                </label>
+            </div>
+
+            <div class="checkbox">
+                <label for="isolate_role_members">
+                    <input  type="checkbox"  ng-model="organization.isolate_role_members" id="isolate_role_members"/>
+                    <b translate>organizations.new.lbl.organizationIsolateRoleMembers</b>
+                </label>
+            </div>
+        </div>
     </form>
 </div>

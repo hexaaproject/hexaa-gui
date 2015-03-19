@@ -18,14 +18,15 @@
     'use strict';
 
     angular.module('hexaaApp.components.admin.controllers.pages')
-        .controller('AdminCtrl', ['$scope', '$route', 'pageTitleService', '$translate',
-            function ($scope, $route, pageTitleService, $translate) {
+        .controller('AdminCtrl', ['$scope', '$route', 'pageTitleService', '$translate','dialogService',
+            function ($scope, $route, pageTitleService, $translate,dialogService) {
 
                 //Namespace for language files
                 var namespace = "admin.index.";
 
                 //Child page to be loaded
                 $scope.page = $route.current.params["page"];
+                $scope.contactAdmins = contactAdmins;
 
 
                 /**
@@ -44,9 +45,12 @@
                     //set up page title
                     pageTitleService.setPageTitle($translate.instant(namespace + "lbl.title"));
                 }
-
-
                 activate();
+
+                function contactAdmins()
+                {
+                    dialogService.showMailer(null, MailTargetEnum.Admin);
+                }
 
             }]);
 

@@ -3,46 +3,57 @@
     <h2 translate>profile.news.lbl.news</h2>
 
     <div class="panel panel-default panel-heading">
-        <div class="form-inline form-group">
-                    <label for="entityFilter" translate>profile.news.lbl.searchIn</label>
-                    <div id="entityFilter"
-                         multi-select
-                         input-model="dataSources"
-                         button-label="name"
-                         item-label="name"
-                         tick-property="ticked"
-                         orientation="vertical"
-                         group-property="multiSelectGroup"
-                         static-label="Search destination">
-                    </div>
-                    <label for="entityFilter" translate>profile.news.lbl.taggedWith</label>
-                    <div    id="tagFilter"
-                            multi-select
-                            input-model="tagSources"
-                            button-label="name"
-                            item-label="name"
-                            tick-property="ticked"
-                            orientation="vertical"
-                            group-property="multiSelectGroup"
-                            static-label="Select tags">
-                    </div>
-                    <label for="pageSize"></label> <b translate>profile.news.lbl.pageSize</b>
-                    <select id="pageSize" class="form-control" ng-model="pager.itemPerPage">
-                        <option>5</option>
-                        <option>10</option>
-                        <option>25</option>
-                        <option>50</option>
-                        <option>100</option>
-                    </select>
+        <div class="form-inline ">
+            <div class="form-group">
+                <label for="entityFilter" translate>profile.news.lbl.searchIn</label>
+
+                <div id="entityFilter"
+                     multi-select
+                     input-model="dataSources"
+                     button-label="name"
+                     item-label="name"
+                     tick-property="ticked"
+                     orientation="vertical"
+                     group-property="multiSelectGroup"
+                     static-label="Search destination">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tagFilter" translate>profile.news.lbl.taggedWith</label>
+
+                <div id="tagFilter"
+                     multi-select
+                     input-model="tagSources"
+                     button-label="name"
+                     item-label="name"
+                     tick-property="ticked"
+                     orientation="vertical"
+                     group-property="multiSelectGroup"
+                     static-label="Select tags">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pageSize"></label> <b translate>profile.news.lbl.pageSize</b>
+                <select id="pageSize" class="form-control" ng-model="pager.itemPerPage">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
             </div>
         </div>
+    </div>
     <div>
-        <div hexaa-shared-news-widget news = "me.news"></div>
+        <div hexaa-shared-news-widget news="me.news"></div>
     </div>
 
     <pagination total-items="pager.totalItems" page="pager.currentPage" max-size="pager.maxSize" class="pagination-sm"
-                boundary-links="true" rotate="false" num-pages="pager.numPages" items-per-page="pager.itemPerPage"></pagination>
-    </div>
+                boundary-links="true" rotate="false" num-pages="pager.numPages"
+                items-per-page="pager.itemPerPage"></pagination>
+</div>
 
 
 </div>

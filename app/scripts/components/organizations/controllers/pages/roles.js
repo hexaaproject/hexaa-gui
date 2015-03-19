@@ -37,6 +37,7 @@
             vm.deleteRole = deleteRole;
             vm.undoRole = undoRole;
             vm.saveRole = saveRole;
+            vm.sendMail = sendMail;
             vm.profile = profileService.getProfile();
 
             /* Pager settings */
@@ -105,7 +106,7 @@
                         }
                     }
                 });
-                modalInstance.result.then(onNewRoleModalClosed,null);
+                modalInstance.result.then(onNewRoleModalClosed, null);
             }
 
 
@@ -195,20 +196,37 @@
                 if (selectedOrganization != undefined) {
                     //create object by id
                     vm.organization = OrganizationsProxy.new({id: selectedOrganization});
+
+                    OrganizationsProxy.getOrganization(selectedOrganization)
+                        .then(onGetOrganizationSuccess);
+
+
+                }
+            }
+
+            function onGetOrganizationSuccess(organization) {
+                if (organization.data != undefined) {
+                    vm.organization = organization.data;
+
                     //Query Roles for the selected organization
                     loadRoles();
                     //Get the members of It
-                    OrganizationsProxy.getMembers(selectedOrganization)
-                        .then(onOrganizationGetMembersSuccess);
+
+                    if (!vm.organization.isolate_members || vm.profile.isManagerOfOrganization(vm.organization.id)) {
+                        OrganizationsProxy.getMembers(vm.organization.id)
+                            .then(onOrganizationGetMembersSuccess);
+                    }
+
                     //Get the entitlements it has
-                    OrganizationsProxy.getEntitlements(selectedOrganization)
+                    OrganizationsProxy.getEntitlements(vm.organization.id)
                         .then(onOrganizationGetEntitlementsSuccess);
                 }
+
             }
 
             /* Undo Role modifications on role */
             function undoRole(role) {
-                role.undo();
+
             }
 
             /**
@@ -320,6 +338,10 @@
              */
             function onRoleSaveError(data) {
                 dialogService.showMessage($translate.instant(namespace + "msg.roleSaveError"));
+            }
+
+            function sendMail(role) {
+                dialogService.showMailer(role,MailTargetEnum.User);
             }
 
         }]);

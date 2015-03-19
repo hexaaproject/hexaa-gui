@@ -8,7 +8,9 @@
 				"organizationNew": "Új szervezet",
 				"organizationName": "Név",
 				"organizationDescription": "Leírás",
-				"organizationDefaultRole": "Alapértelmezett szerepkör"
+				"organizationDefaultRole": "Alapértelmezett szerepkör",
+				"organizationIsolateRoleMembers": "Ne lássák a többi szerepkört a tagok",
+				"organizationIsolateMembers": "Ne lássák egymást a tagok"
 			},
 			"msg": 
 			{

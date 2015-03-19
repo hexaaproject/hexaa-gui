@@ -11,7 +11,9 @@
 				"entitlements": "Permissions",
 				"entitlementpacks" : "Permission sets",
 				"connectedEntitlementpacks" : "Connected Organizations",
-				"invitations" : "Invitation management"
+				"invitations" : "Invitation management",				
+				"contactAdmin": "Contact Admin",
+				"contactServiceManagers": "Contact Managers"
 			},
 			"msg":
 			{
@@ -20,7 +22,7 @@
                 "confirmationNeeded": "Confirmation needed",
                 "serviceDeleteConfirm": "Do you want to delete {{name}} service?",
                 "serviceSPNotifySuccess" : "EntityId authorization e-mail has been resent!",
-                "serviceSPNotifyError" : "Failed to resend authorization e-mail!"
+                "serviceSPNotifyError" : "Failed to resend authorization e-mail!"                
 			},
 			"lbl":{
 				"title": "Services",

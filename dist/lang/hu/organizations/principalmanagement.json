@@ -12,7 +12,8 @@
 				"principalActions": "Műveletek",
 				"principalIsManager": "Manager",
 				"principalIsActive": "Aktív",
-				"principalIsInvited": "Meghívás alatt"
+				"principalIsInvited": "Meghívás alatt",
+				"isolatedVO": "A VO menedzserének kérésére Ön nem láthatja a taglistát."
 			},
 			"btn":
 			{
@@ -24,7 +25,10 @@
 				"invitationCancel": "Visszavon",
 				"invitationInvite": "Új meghívó",
 				"inviteMember": "Tag meghívása",
-				"inviteManager": "Menedzser meghívása"
+				"inviteManager": "Menedzser meghívása",
+				"sendMail": "Levél küldése",
+				"sendMailToManagers": "Levél küldése a menedzsereknek",
+				"sendMailToUsers": "Levél küldése a felhasználóknak"
 			},
 			"msg":
 			{

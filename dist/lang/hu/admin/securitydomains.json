@@ -1,0 +1,27 @@
+{
+	"admin": {
+		"securityDomains": {
+			"lbl": {
+				"title": "Biztonsági domének",
+				"securityDomainName": "Név",
+				"securityDomainDescription": "Leírás",
+				"securityDomainScopedKey": "Scoped Key",
+				"securityDomainOrganizations": "Szervezetek",
+				"securityDomainServices": "Szolgáltatások",
+				"securityDomainActions": "Műveletek"
+			},
+			"btn": {
+				"btnNew": "Új",
+				"btnEdit": "Szerkesztés",
+				"btnDelete": "Törlés"
+			},
+			"msg": {
+				"confirmationNeeded": "Megerősítés szükséges",
+				"securityDomainConfirm": "Biztosan törli a {{name}} domaint?",
+				"securityDomainDeleteSuccess": "Domain törölve!",
+				"securityDomainDeleteError": "Domain törlése sikertelen!",
+				"securityDomainGetError": "Biztonsági domainek lekérése sikertelen."
+			}
+		}
+	}
+}

@@ -230,20 +230,12 @@
                 $toCookie = array(
                     "token" => $responseData['token']
                 );
-
-
-                if (strpos($hexaa_ui_address, "https://") !== FALSE) {
-                    $secure = TRUE;
-                } else if (strpos($hexaa_ui_address, "http://") !== FALSE) {
-                    $secure = FALSE;
-                } else {
-                    $secure = FALSE;
-                }
+            
 
                 $domain = parse_url($hexaa_ui_address, PHP_URL_HOST);
                 $path = parse_url($hexaa_ui_address, PHP_URL_PATH);
 
-                setCookie($hexaa_cookie_name, json_encode($toCookie), 0, $path, $domain, $secure, FALSE);
+                setCookie($hexaa_cookie_name, json_encode($toCookie), 0, $path, $domain, $hexaa_force_https, FALSE);
 
                 if (isset($_GET["action"]) && isset($_GET["token"])) {
                     $message = "Authentication done. Opening invitation...";
@@ -299,8 +291,8 @@
 <script src="../bower_components//json3/lib/json3.min.js"></script>
 <![endif]-->
 
-<script src="scripts/c2893760.vendor.js"></script>
+<script src="scripts/ceeed7c7.vendor.js"></script>
 
-<script src="scripts/c433dc41.scripts.js"></script>
+<script src="scripts/4f5c66f6.scripts.js"></script>
     </body>
 </html>

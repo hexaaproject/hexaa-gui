@@ -1,0 +1,27 @@
+{
+	"admin": {
+		"securityDomains": {
+			"lbl": {
+				"title": "Security Domains",
+				"securityDomainName": "Name",
+				"securityDomainDescription": "Description",
+				"securityDomainScopedKey": "Scoped Key",
+				"securityDomainOrganizations": "Organizations",
+				"securityDomainServices": "Services",
+				"securityDomainActions": "Actions"
+			},
+			"btn": {
+				"btnNew": "New",
+				"btnEdit": "Edit",
+				"btnDelete": "Delete"
+			},
+			"msg": {
+				"confirmationNeeded": "Confirmation needed",
+				"securityDomainConfirm": "Are you sure you want to delete  domain {{name}}?",
+				"securityDomainDeleteSuccess": "Domain removed!",
+				"securityDomainDeleteError": "Failed to remove domain!",
+				"securityDomainGetError": "Failed to get domains!"
+			}
+		}
+	}
+}

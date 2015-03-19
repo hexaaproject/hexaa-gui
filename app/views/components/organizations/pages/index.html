@@ -8,8 +8,10 @@
                     <li ng-class="{active: page=='properties'}"
                         ng-click="navigate('#/organizations/properties')" ><a translate="organizations.index.subpages.properties" href=""></a></li>
                     <li ng-class="{active: page=='principalmanagement'}"
+                        ng-show="profile.isManagerOfOrganization(selectedOrganization.id) || !selectedOrganization.isolate_members"
                         ng-click="navigate('#/organizations/principalmanagement')"><a href="" translate="organizations.index.subpages.principaloverview"></a></li>
-
+                    <li ng-class="{active: page=='managers'}"
+                        ng-click="navigate('#/organizations/managers')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.managers" href=""></a></li>
                     <li class="list-group-item" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)">Management</li>
                     <li ng-class="{active: page=='invitations'}"
                         ng-click="navigate('#/organizations/invitations')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.invitations" href=""></a></li>
@@ -25,8 +27,6 @@
                     <li class="list-group-item" ng-show="profile.isAdmin">
                         Administration
                     </li>
-                    <li ng-class="{active: page=='managers'}"
-                        ng-click="navigate('#/organizations/managers')" ng-show="profile.isAdmin"><a translate="organizations.index.subpages.managers" href=""></a></li>
                     <li ng-class="{active: page=='members'}"
                         ng-click="navigate('#/organizations/members')" ng-show="profile.isAdmin"><a translate="organizations.index.subpages.members" href=""></a></li>
                 </ul>

@@ -1,0 +1,22 @@
+{
+	"shared": {
+		"modals": {
+			"mailDialog": {
+				"lbl": {
+					"title": "Üzenet küldése",
+					"recipient": "Címzett",
+					"subject": "Tárgy",
+					"message": "Üzenet",
+					"recipients": "{{recipient}}-ek a {{target}}-ból"
+				},
+				"msg": {
+					"sendMailSuccess": "Üzenet elküldve!"
+				},
+				"btn": {
+					"dialogClose": "Bezárás",
+					"send": "Küldés"
+				}
+			}
+		}
+	}
+}

@@ -46,6 +46,7 @@
         $translatePartialLoaderProvider.addPart('modals/newEntitlementpackDialog');
         $translatePartialLoaderProvider.addPart('modals/invitation');
         $translatePartialLoaderProvider.addPart('modals/confirmationDialog');
+        $translatePartialLoaderProvider.addPart('modals/mailDialog');
         $translatePartialLoaderProvider.addPart('modals/loading');
         $translatePartialLoaderProvider.addPart('modals/organizationDetails');
         $translatePartialLoaderProvider.addPart('modals/serviceDetails');
@@ -56,6 +57,7 @@
         $translatePartialLoaderProvider.addPart('admin/index');
         $translatePartialLoaderProvider.addPart('admin/principals');
         $translatePartialLoaderProvider.addPart('admin/entityids');
+        $translatePartialLoaderProvider.addPart('admin/securitydomains');
         $translatePartialLoaderProvider.addPart('admin/modals/newAttrspecDialog');
         $translatePartialLoaderProvider.addPart('profile/index');
         $translatePartialLoaderProvider.addPart('profile/attributes');

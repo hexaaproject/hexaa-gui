@@ -24,8 +24,10 @@
                     </select>
                 </span>
                 </div>
-                <div class="col-xs-4">
-                    <button class="btn btn-success pull-right" ng-click="vm.btnNewRole()"><i class="fa fa-plus"></i> {{'organizations.roles.btn.roleAdd'|translate}}</button>
+                <div class="col-xs-4" ng-if="vm.profile.isManagerOfOrganization(vm.organization.id)">
+                    <button class="btn btn-success pull-right" ng-click="vm.btnNewRole()">
+                        <i class="fa fa-plus"></i> {{'organizations.roles.btn.roleAdd'|translate}}
+                    </button>
                 </div>
             </div>
         </form>
@@ -36,7 +38,8 @@
          filter-by="vm.filterText"
          page-by="vm.pager"
          delete-role="vm.deleteRole(role)"
-         edit-role="vm.editRole(role)">
+         edit-role="vm.editRole(role)"
+         send-mail="vm.sendMail(role)">
 
     </div>
 

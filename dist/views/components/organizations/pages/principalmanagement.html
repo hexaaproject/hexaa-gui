@@ -1,29 +1,49 @@
+
 <div ng-controller="OrganizationPrincipalManagement as vm" >
-    <div class="row">
-        <div class="col-sm-10">
-            <div class="form-group input-group">
-                <span class="input-group-addon"><i class="fa fa-filter"></i></span>
-                <input type="text" class="form-control" name="filterText" ng-model="vm.filterText" placeholder="Filter"/>
+    <span ng-if="vm.organization.isolate_members && !vm.profile.isManagerOfOrganization(vm.organization.id)" translate>
+        organizations.principalmanagement.lbl.isolatedVO
+    </span>
+
+    <div ng-if="!vm.organization.isolate_members || vm.profile.isManagerOfOrganization(vm.organization.id)">
+        <div class="row" >
+            <div class="col-sm-9">
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+                    <input type="text" class="form-control" name="filterText" ng-model="vm.filterText" placeholder="Filter"/>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <span class="btn-group">
+                    <button class="btn btn-default dropdown-toggle" title="{{ 'organizations.principalmanagement.btn.sendMail' | translate}}"
+                            data-toggle="dropdown">
+                        <i class="fa fa-envelope"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ><a ng-if="vm.profile.isManagerOfOrganization(vm.organization.id)" ng-click="vm.sendMail(vm.MailTargetEnum.User)" translate>organizations.principalmanagement.btn.sendMailToUsers</a></li>
+                        <li ><a ng-click="vm.sendMail(vm.MailTargetEnum.Manager)" translate>organizations.principalmanagement.btn.sendMailToManagers</a></li>
+                    </ul>
+                </span>
+                <span class="btn-group pull-right" ng-if="vm.profile.isManagerOfOrganization(vm.organization.id)">
+                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-plus"></i> {{ 'organizations.principalmanagement.btn.invitationInvite' | translate}} <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ng-controller="InviteOrganizationMembersCtrl"><a ng-click="inviteMembers(vm.organization)" translate>organizations.principalmanagement.btn.inviteMember</a></li>
+                        <li ng-controller="InviteOrganizationManagersCtrl"><a ng-click="inviteManagers(vm.organization)" translate>organizations.principalmanagement.btn.inviteManager</a></li>
+                    </ul>
+                </span>
             </div>
         </div>
-        <div class="col-sm-2">
-            <button class="btn btn-success dropdown-toggle pull-right" data-toggle="dropdown">
-                <i class="fa fa-plus"></i> {{ 'organizations.principalmanagement.btn.invitationInvite' | translate}} <i class="fa fa-caret-down"></i>
-            </button>
-            <ul class="dropdown-menu">
-                <li ng-controller="InviteOrganizationMembersCtrl"><a ng-click="inviteMembers(organization)" translate>organizations.principalmanagement.btn.inviteMember</a></li>
-                <li ng-controller="InviteOrganizationManagersCtrl"><a ng-click="inviteManagers(organization)" translate>organizations.principalmanagement.btn.inviteManager</a></li>
-            </ul>
+
+        <div>
+            <div hexaa-organizations-users-widget
+                 organization="vm.organization"
+                 filter-text="vm.filterText"
+                 revoke-principal="vm.revoke(principal)"
+                 remove-principal="vm.remove(principal)"
+                 propose-principal="vm.propose(principal)">
+            </div>
         </div>
     </div>
 
-    <div>
-        <div hexaa-organizations-users-widget
-                organization="vm.organization"
-                filter-text="vm.filterText"
-                revoke-principal="vm.revoke(principal)"
-                remove-principal="vm.remove(principal)"
-                propose-principal="vm.propose(principal)">
-        </div>
-    </div>
 </div>

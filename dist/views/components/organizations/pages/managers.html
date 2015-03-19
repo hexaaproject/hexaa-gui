@@ -3,7 +3,7 @@
 
         <div class="col-xs-12 col-md-12" >
             <div id="managersbox" angular-duallistbox elements="principals"
-                 ng-show="profile.isAdmin"
+                 ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"
                  selected="organization.managers" element-display="'fedid'" element-value="'id'"
                  non-selected-list-label="'organizations.managers.lbl.allPrincipals' | translate"
                  selected-list-label="'organizations.managers.lbl.associatedPrincipals' | translate"

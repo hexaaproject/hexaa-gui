@@ -33,7 +33,7 @@ function AttributeSpecificationFactory($injector) {
 
     //Ingerit from ResourceEntity
     AttributeSpecification.prototype = ResourceEntity.new();
-    AttributeSpecification.constructor = AttributeSpecification;
+    AttributeSpecification.prototype.constructor = AttributeSpecification;
 
     /* INTERFACE */
     AttributeSpecification.prototype.save = save;
@@ -42,6 +42,7 @@ function AttributeSpecificationFactory($injector) {
     /* STATIC */
     AttributeSpecification.new = create;
 
+    AttributeSpecificationFactory.class = AttributeSpecification;
 
     /* IMPLEMENTATION */
 

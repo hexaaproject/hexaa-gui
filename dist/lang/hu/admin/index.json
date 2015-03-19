@@ -12,7 +12,10 @@
 				"attributespecifications": "Attribútumok",
 				"principals": "Felhasználók",
 				"entityidrequests": "Entity ID kérvények",
-                                "entityids": "Entity ID-k"
+                "entityids": "Entity ID-k",
+                "contactAdmins": "Kapcsoaltfelvétel az adminokkal",
+                "securitydomains": "Biztonsági domének"
+
 			}
 		}
 	}	

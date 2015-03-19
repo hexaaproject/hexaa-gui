@@ -39,11 +39,7 @@
                     $scope.$on(events.organizationsSelectionChanged, onOrganizationsSelectionChanged);
                     $scope.$on(events.organizationSave, onOrganizationSave);
                     //load principals
-                    if ($scope.profile.isAdmin) {
-                        PrincipalProxy.getPrincipals()
-                            .then(onPrincipalsLoaded)
-                            .catch(onPrincipalLoadError);
-                    }
+
                     pageTitleService.setSubPageTitle($translate.instant(namespace + "lbl.title"));
 
                 }
@@ -123,9 +119,14 @@
                 function onOrganizationsSelectionChanged(event, selectedOrganization) {
                     $scope.organization = {id: selectedOrganization};
 
-                    if ($scope.profile.isAdmin &&
+                    if (
                         (selectedOrganization != -1) &&
                         $scope.profile.isManagerOfOrganization(selectedOrganization)) {
+
+                        OrganizationsProxy.getMembers(selectedOrganization)
+                            .then(onPrincipalsLoaded)
+                            .catch(onPrincipalLoadError);
+
                         OrganizationsProxy.getManagers(selectedOrganization)
                             .then(onManagersLoaded)
                             .catch(onManagersLoadError);

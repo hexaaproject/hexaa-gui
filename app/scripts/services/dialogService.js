@@ -20,80 +20,100 @@ angular.module('hexaaApp.services')
         function ($rootScope, $q, $modal, toastr, events) {
 
 
-    var confirm = function (title, body) {
-        var deferred = $q.defer();
+            var confirm = function (title, body) {
+                var deferred = $q.defer();
 
-        var modalInstance = $modal.open({
-            templateUrl: 'views/shared/modals/confirmationDialog.html',
-            controller: "ConfirmationDialogCtrl",
-            backdrop: false,
-            resolve: {
-                title: function () {
-                    return title;
-                },
-                body: function () {
-                    return body;
+                var modalInstance = $modal.open({
+                    templateUrl: 'views/shared/modals/confirmationDialog.html',
+                    controller: "ConfirmationDialogCtrl",
+                    backdrop: false,
+                    resolve: {
+                        title: function () {
+                            return title;
+                        },
+                        body: function () {
+                            return body;
+                        }
+                    }
+                });
+
+                modalInstance.result.then(function (answer) {
+                    deferred.resolve(answer);
+                });
+
+
+                return deferred.promise;
+            };
+
+            function showMessage(title, body) {
+                var modalInstance = $modal.open({
+                    templateUrl: 'views/shared/modals/message.html',
+                    controller: "ModalMessageCtrl",
+                    backdrop: false,
+                    resolve: {
+                        title: function () {
+                            return title;
+                        },
+                        body: function () {
+                            return body;
+                        }
+                    }
+                });
+            }
+
+
+            /**
+             * invokes when error happened, displays tooltip to the corresponding element.
+             * @param data - Collection of errors
+             */
+            function notifyUIError(data) {
+                if (data !== undefined) {
+                    $rootScope.$broadcast(events.notifyUIError, data);
                 }
             }
-        });
 
-        modalInstance.result.then(function (answer) {
-            deferred.resolve(answer);
-        });
-
-
-        return deferred.promise;
-    };
-
-    function showMessage(title, body) {
-        var modalInstance = $modal.open({
-            templateUrl: 'views/shared/modals/message.html',
-            controller: "ModalMessageCtrl",
-            backdrop: false,
-            resolve: {
-                title: function () {
-                    return title;
-                },
-                body: function () {
-                    return body;
-                }
+            function success(message) {
+                toastr.success(message);
             }
-        });
-    }
 
-    /**
-     * invokes when error happened, displays tooltip to the corresponding element.
-     * @param data - Collection of errors
-     */
-    function notifyUIError(data) {
-        if (data !== undefined) {
-            $rootScope.$broadcast(events.notifyUIError, data);
-        }
-    }
+            function warning(message) {
+                toastr.warning(message);
+            }
 
-    function success(message) {
-        toastr.success(message);
-    }
+            function info(message) {
+                toastr.info(message);
+            }
 
-    function warning(message) {
-        toastr.warning(message);
-    }
+            function error(message) {
+                toastr.error(message);
+            }
 
-    function info(message) {
-        toastr.info(message);
-    }
+            function showMailer(target, recipient)
+            {
+                var modalInstance = $modal.open({
+                    templateUrl: 'views/shared/modals/mailDialog.html',
+                    controller: "MailDialogCtrl as vm",
+                    resolve: {
+                        recipient: function() {
+                            return recipient;
+                        },
+                        target: function() {
+                            return target;
+                        }
+                    }
+                });
 
-    function error(message) {
-        toastr.error(message);
-    }
+                return modalInstance;
+            }
 
-    return {
-        confirm: confirm,
-        success: success,
-        warning: warning,
-        info: info,
-        error: error,
-        notifyUIError: notifyUIError,
-        showMessage: showMessage
-    };
-}]);
+            return {
+                confirm: confirm,
+                success: success,
+                warning: warning,
+                info: info,
+                error: error,
+                notifyUIError: notifyUIError,
+                showMessage: showMessage,
+                showMailer: showMailer
+            };
+        }]);

@@ -59,7 +59,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> {{profile.fedid}}<span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> {{profile.fedid}}<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li ng-class="{active: (isActiveTab('/profile') == true) }"  >
                                     <a href="#/profile/">
@@ -212,6 +212,7 @@
 <script src="scripts/shared/controllers/modals/invitation.js"></script>
 <script src="scripts/shared/controllers/modals/message.js"></script>
 <script src="scripts/shared/controllers/modals/confirmationDialog.js"></script>
+<script src="scripts/shared/controllers/modals/mailDialog.js"></script>
 <script src="scripts/components/organizations/controllers/modals/organizationDetails.js"></script>
 <script src="scripts/components/services/controllers/modals/serviceDetails.js"></script>
 <script src="scripts/components/organizations/controllers/modals/organizationChangerDialog.js"></script>
@@ -250,6 +251,8 @@
 <script src="scripts/components/admin/controllers/modals/newPrincipalDialog.js"></script>
 <script src="scripts/components/admin/controllers/pages/principals.js"></script>
 <script src="scripts/components/admin/controllers/pages/entityids.js"></script>
+<script src="scripts/components/admin/controllers/pages/securitydomains.js"></script>
+<script src="scripts/components/admin/controllers/modals/newSecurityDomainDialog.js"></script>
 <script src="scripts/services/hexaaService.js"></script>
 <script src="scripts/services/facades/Roles.js"></script>
 <script src="scripts/services/facades/Consents.js"></script>
@@ -259,6 +262,7 @@
 <script src="scripts/services/facades/Services.js"></script>
 <script src="scripts/services/facades/Organizations.js"></script>
 <script src="scripts/services/facades/Entitlementpacks.js"></script>
+<script src="scripts/services/facades/SecurityDomains.js"></script>
 <script src="scripts/models/Resource.js"></script>
 <script src="scripts/models/Organization.js"></script>
 <script src="scripts/models/Service.js"></script>
@@ -267,6 +271,8 @@
 <script src="scripts/models/Invitation.js"></script>
 <script src="scripts/models/Entitlementpack.js"></script>
 <script src="scripts/models/AttributeSpecification.js"></script>
+<script src="scripts/models/Mail.js"></script>
+<script src="scripts/models/SecurityDomain.js"></script>
 <script src="scripts/services/requestNotificationChannel.js"></script>
 <script src="scripts/services/dialogService.js"></script>
 <script src="scripts/services/themeService.js"></script>

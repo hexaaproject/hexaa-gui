@@ -8,7 +8,9 @@
 				"organizationNew": "New organization",
 				"organizationName": "Name",
 				"organizationDescription": "Description",
-				"organizationDefaultRole": "Default role"
+				"organizationDefaultRole": "Default role",
+				"organizationIsolateRoleMembers": "Isolate role members",
+				"organizationIsolateMembers": "Isolate members"
 			},
 			"msg": 
 			{

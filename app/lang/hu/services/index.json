@@ -13,7 +13,9 @@
 				"entitlements": "Jogkörök",
 				"entitlementpacks" : "Jogosultság csomagok",
 				"connectedEntitlementpacks" : "Használt jogosultságcsomagok",
-				"invitations" : "Meghívók"
+				"invitations" : "Meghívók",
+				"contactAdmin": "Kapcsolatfelvétel az Adminnal",
+				"contactServiceManagers": "Kapcsolatfelvétel a managerekkel"
 			},
 			"msg":
 			{
@@ -23,10 +25,10 @@
                 "serviceDeleteConfirm": "Tényleg törölni kívánja a {{name}} szolgáltatást?",
                 "serviceSPNotifySuccess" : "Engedélyező e-mail újraküldve!",
                 "serviceSPNotifyError" : "Engedélyező e-mail újraküldése sikertelen!"
-			},
+            },
 			"lbl":{
 				"noServiceSelected": "Kérem válasszon egy szolgáltatást a listából, vagy hozzon létre egy újat!",
-				"serviceNotEnabled": "Ez a szolgáltatás még nincs engedélyezve az SP adminisztrátora által!"
+				"serviceNotEnabled": "Ez a szolgáltatás még nincs engedélyezve az SP adminisztrátora által!"				
 			},
 			"btn":{
 				"serviceSave" : "Mentés",

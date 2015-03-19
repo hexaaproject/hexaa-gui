@@ -30,12 +30,15 @@ function PrincipalFactory($injector) {
     }
 
     Principal.prototype = ResourceEntity.new();
+    Principal.prototype.constructor = Principal;
     /* INTERFACE */
     Principal.prototype.save = save;
     Principal.prototype.delete = remove;
 
     /* STATIC */
     Principal.new = create;
+
+    PrincipalFactory.class = Principal;
 
     function create(data) {
         return new Principal(data);

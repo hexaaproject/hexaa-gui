@@ -5,7 +5,9 @@
 
     <progressbar max="vm.numberOfSteps" value="vm.currentStep" type="{{vm.getProgressbarType(vm.currentStep)}}">
         <span style="color:black; white-space:nowrap;">
-            <span translate translate-values="{'currentStep': '{{vm.currentStep}}', 'numberOfSteps': '{{vm.numberOfSteps}}' }">
+            <span translate
+                    translate-value-current-step="{{vm.currentStep}}"
+                    translate-value-number-of-steps="{{vm.numberOfSteps}}">
                 profile.vowizard.lbl.progress
             </span>
         </span>

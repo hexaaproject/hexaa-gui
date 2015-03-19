@@ -21,7 +21,14 @@
                         ng-click="navigate('#/services/connectedpacks')" ><a translate="services.index.subpages.connectedEntitlementpacks" href=""></a></li>
                     <li ng-class="{active: page=='invitations'}"
                         ng-click="navigate('#/services/invitations')" ><a translate="services.index.subpages.invitations" href=""></a></li>
+                    <li ng-click="contact(null,MailTargetEnum.Admin)" ><a translate="services.index.subpages.contactAdmin"></a></li>
                     <li class="danger" ng-click="deleteService(selectedService)"><a translate="services.index.btn.serviceDelete"></a></li>
+                    <li class="list-group-item" ng-if="profile.isAdmin">
+                        Administration
+                    </li>
+                    <li ng-show="profile.isAdmin"
+                            ng-click="contact(selectedService,MailTargetEnum.Manager)"><a translate="services.index.subpages.contactServiceManagers" href=""></a></li>
+
                 </ul>
             </div>
         </div>

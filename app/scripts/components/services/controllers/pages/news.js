@@ -70,7 +70,7 @@
                     });
 
                     angular.forEach(tags, function (tag) {
-                        this.push(tag);
+                        this.push(angular.copy(tag));
                     }, $scope.tagSources);
 
                     $scope.tagSources.push({
@@ -86,8 +86,11 @@
                 }
 
                 function onCurrentPageChanged(oldValue, newValue) {
-                    if ($scope.service.id != -1)
-                        refreshFeed($scope.service);
+                    if (oldValue !== undefined) {
+                        if ($scope.service.id != -1) {
+                            refreshFeed($scope.service);
+                        }
+                    }
                 }
 
                 function onServicesSelectionChanged(event, selectedService) {
@@ -109,8 +112,11 @@
                 }
 
                 function onItemPerPageChanged(oldValue, newValue) {
-                    if ($scope.service.id != -1)
-                        refreshFeed($scope.service);
+                    if (oldValue !== undefined) {
+                        if ($scope.service.id != -1) {
+                            refreshFeed($scope.service);
+                        }
+                    }
                 }
 
                 function onGetNewsSuccess(news) {
@@ -120,8 +126,7 @@
 
                 function onGetNewsError(error) {
                     if (error.data !== undefined &&
-                        error.data.message !== undefined)
-                    {
+                        error.data.message !== undefined) {
                         dialogService.error(error.data.message);
                     }
                 }

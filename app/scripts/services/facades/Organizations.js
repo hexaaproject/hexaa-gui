@@ -33,8 +33,11 @@ angular.module('hexaaApp.services.facades').factory('OrganizationsProxy', ['$htt
 
             getRoles.then(function (data) {
                 angular.forEach(data.data.items, function (role) {
-                    for (var i = 0; i < role.principals.length; i++) {
-                        role.principals[i] = role.principals[i].principal;
+                    if (role.principals != null)
+                    {
+                        for (var i = 0; i < role.principals.length; i++) {
+                            role.principals[i] = role.principals[i].principal;
+                        }
                     }
                     roles.push(RolesProxy.new(role));
                 });
@@ -121,12 +124,12 @@ angular.module('hexaaApp.services.facades').factory('OrganizationsProxy', ['$htt
             return HexaaService.getOrganizationNews(id, skip, take, tags);
         },
         updateOrganization: function (organization) {
-            return HexaaService.updateOrganization(organization.id, organization.name, organization.description, organization.url, organization.default_role_id);
+            return HexaaService.updateOrganization(organization.id, organization.name, organization.description, organization.url, organization.default_role_id,organization.isolate_members,organization.isolate_role_members);
         },
         createOrganization: function (organization) {
             var deferred = $q.defer();
 
-            HexaaService.addOrganization(organization.name, organization.description, organization.url)
+            HexaaService.addOrganization(organization.name, organization.description, organization.url, organization.isolate_members,organization.isolate_role_members)
                 .success(function (data, status, headers, config) {
                     organization.id = headers("Location").match("(.*)/api/organizations/(.*)")[2];
 
@@ -135,7 +138,7 @@ angular.module('hexaaApp.services.facades').factory('OrganizationsProxy', ['$htt
                             organization.role.description, organization.role.start_date, organization.role.end_date)
                             .success(function (data, status, headers, config) {
                                 organization.role.id = headers("Location").match("(.*)/api/roles/(.*)")[2];
-                                HexaaService.updateOrganization(organization.id, organization.name, organization.description, organization.url, organization.role.id)
+                                HexaaService.updateOrganization(organization.id, organization.name, organization.description, organization.url, organization.role.id,organization.isolate_members,organization.isolate_role_members)
                                     .success(function (data, status, headers, config) {
                                         deferred.resolve(wrapResponse(organization, status, headers, config));
                                     })

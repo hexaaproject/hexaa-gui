@@ -21,7 +21,7 @@
     angular.module('hexaaApp.components.profile.controllers.pages')
         .controller('ProfileNewsCtrl',
         ['$scope', 'HexaaService', '$translate', 'events', 'PrincipalProxy', 'ServicesProxy', 'OrganizationsProxy', 'tags', 'dialogService', 'pageTitleService',
-            function ($scope,  HexaaService, $translate, events, PrincipalProxy, ServicesProxy, OrganizationsProxy, tags, dialogService, pageTitleService) {
+            function ($scope, HexaaService, $translate, events, PrincipalProxy, ServicesProxy, OrganizationsProxy, tags, dialogService, pageTitleService) {
 
                 var namespace = "profile.news.";
 
@@ -72,7 +72,7 @@
                     });
 
                     angular.forEach(tags, function (tag) {
-                        this.push(tag);
+                        this.push(angular.copy(tag));
                     }, $scope.tagSources);
 
                     $scope.tagSources.push({
@@ -124,19 +124,23 @@
                     })
                 }
 
-                function onCurrentPageChanged() {
-                    var organizations = $linq($scope.dataSources).where("x=>x.type=='organization' && x.ticked==true").select("x=>x.id").toArray();
-                    var services = $linq($scope.dataSources).where("x=>x.type=='service' && x.ticked==true").select("x=>x.id").toArray();
-                    refreshFeed(services, organizations);
+                function onCurrentPageChanged(oldValue, newValue) {
+
+                    if (oldValue !== undefined) {
+                        var organizations = $linq($scope.dataSources).where("x=>x.type=='organization' && x.ticked==true").select("x=>x.id").toArray();
+                        var services = $linq($scope.dataSources).where("x=>x.type=='service' && x.ticked==true").select("x=>x.id").toArray();
+                        refreshFeed(services, organizations);
+                    }
                 }
 
-                function onDataSourceChanged() {
-                    var organizations = $linq($scope.dataSources).where("x=>x.type=='organization' && x.ticked==true").select("x=>x.id").toArray();
-                    var services = $linq($scope.dataSources).where("x=>x.type=='service' && x.ticked==true").select("x=>x.id").toArray();
+                function onDataSourceChanged(oldValue, newValue) {
+                    if (oldValue !== undefined) {
+                        var organizations = $linq($scope.dataSources).where("x=>x.type=='organization' && x.ticked==true").select("x=>x.id").toArray();
+                        var services = $linq($scope.dataSources).where("x=>x.type=='service' && x.ticked==true").select("x=>x.id").toArray();
 
-                    $scope.pager.currentPage = 1;
-                    refreshFeed(services, organizations);
-
+                        $scope.pager.currentPage = 1;
+                        refreshFeed(services, organizations);
+                    }
                 }
 
                 function onGetNewsSuccess(news) {
@@ -151,7 +155,7 @@
 
                 function refreshFeed(servicesFilter, organizationsFilter) {
 
-                    var tags = $linq($scope.tagSources).where("x=>x.ticked==true").toArray();
+                    var tags = $linq($scope.tagSources).where("x=>x.ticked==true").select("x => x.name").toArray();
                     PrincipalProxy.getNews(($scope.pager.currentPage - 1) * $scope.pager.itemPerPage, $scope.pager.itemPerPage, tags, servicesFilter, organizationsFilter).
                         then(onGetNewsSuccess)
                         .catch(onGetNewsError);

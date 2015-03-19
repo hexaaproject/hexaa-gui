@@ -1,0 +1,39 @@
+<div class="modal-header clearfix" xmlns="http://www.w3.org/1999/html">
+    <span class="pull-right">
+        <button class="btn" ng-click="vm.close()"
+                title="{{'admin.modals.newSecurityDomainDialog.btn.dialogClose' | translate}}">
+            <i class="fa fa-times"></i>
+        </button>
+    </span>
+
+    <h3 class="modal-title" translate>admin.modals.newSecurityDomainDialog.lbl.title</h3>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <form name="newSecurityDomainDialogForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" ng-model="vm.securitydomain.name" required/>
+            <label for="scoped_key">Scoped key</label>
+            <select id="scoped_key" ng-model="vm.securitydomain.scoped_name" class="form-control" required ng-options="o as o for o in vm.scoped_keys">
+            </select>
+            <label for="description">Description</label>
+            <input type="text" id="description" ng-model="vm.securitydomain.description" class="form-control"/>
+
+            <div id="organizationsbox" angular-duallistbox elements="vm.organizations" selected="vm.securitydomain.organizations"  element-display="'name'" element-value="'id'"
+                 non-selected-list-label="'admin.modals.newSecurityDomainDialog.lbl.organizations' | translate"
+                 selected-list-label="'admin.modals.newSecurityDomainDialog.lbl.attachedOrganizations' | translate"
+                 filter-place-holder="Filter">
+            </div>
+
+            <div id="servicesbox" angular-duallistbox elements="vm.services" selected="vm.securitydomain.services"  element-display="'name'" element-value="'id'"
+                 non-selected-list-label="'admin.modals.newSecurityDomainDialog.lbl.services' | translate"
+                 selected-list-label="'admin.modals.newSecurityDomainDialog.lbl.attachedServices' | translate"
+                 filter-place-holder="Filter">
+            </div>
+
+            <div style="display: block">
+                <button class="btn btn-primary pull-right" ng-disabled="newSecurityDomainDialogForm.$invalid" ng-click="vm.save()">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

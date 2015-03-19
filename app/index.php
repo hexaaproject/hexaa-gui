@@ -240,20 +240,12 @@
                 $toCookie = array(
                     "token" => $responseData['token']
                 );
-
-
-                if (strpos($hexaa_ui_address, "https://") !== FALSE) {
-                    $secure = TRUE;
-                } else if (strpos($hexaa_ui_address, "http://") !== FALSE) {
-                    $secure = FALSE;
-                } else {
-                    $secure = FALSE;
-                }
+            
 
                 $domain = parse_url($hexaa_ui_address, PHP_URL_HOST);
                 $path = parse_url($hexaa_ui_address, PHP_URL_PATH);
 
-                setCookie($hexaa_cookie_name, json_encode($toCookie), 0, $path, $domain, $secure, FALSE);
+                setCookie($hexaa_cookie_name, json_encode($toCookie), 0, $path, $domain, $hexaa_force_https, FALSE);
 
                 if (isset($_GET["action"]) && isset($_GET["token"])) {
                     $message = "Authentication done. Opening invitation...";
@@ -407,6 +399,7 @@
 <script src="scripts/shared/controllers/modals/invitation.js"></script>
 <script src="scripts/shared/controllers/modals/message.js"></script>
 <script src="scripts/shared/controllers/modals/confirmationDialog.js"></script>
+<script src="scripts/shared/controllers/modals/mailDialog.js"></script>
 <script src="scripts/components/organizations/controllers/modals/organizationDetails.js"></script>
 <script src="scripts/components/services/controllers/modals/serviceDetails.js"></script>
 <script src="scripts/components/organizations/controllers/modals/organizationChangerDialog.js"></script>
@@ -445,6 +438,8 @@
 <script src="scripts/components/admin/controllers/modals/newPrincipalDialog.js"></script>
 <script src="scripts/components/admin/controllers/pages/principals.js"></script>
 <script src="scripts/components/admin/controllers/pages/entityids.js"></script>
+<script src="scripts/components/admin/controllers/pages/securitydomains.js"></script>
+<script src="scripts/components/admin/controllers/modals/newSecurityDomainDialog.js"></script>
 <script src="scripts/services/hexaaService.js"></script>
 <script src="scripts/services/facades/Roles.js"></script>
 <script src="scripts/services/facades/Consents.js"></script>
@@ -454,6 +449,7 @@
 <script src="scripts/services/facades/Services.js"></script>
 <script src="scripts/services/facades/Organizations.js"></script>
 <script src="scripts/services/facades/Entitlementpacks.js"></script>
+<script src="scripts/services/facades/SecurityDomains.js"></script>
 <script src="scripts/models/Resource.js"></script>
 <script src="scripts/models/Organization.js"></script>
 <script src="scripts/models/Service.js"></script>
@@ -462,6 +458,8 @@
 <script src="scripts/models/Invitation.js"></script>
 <script src="scripts/models/Entitlementpack.js"></script>
 <script src="scripts/models/AttributeSpecification.js"></script>
+<script src="scripts/models/Mail.js"></script>
+<script src="scripts/models/SecurityDomain.js"></script>
 <script src="scripts/services/requestNotificationChannel.js"></script>
 <script src="scripts/services/dialogService.js"></script>
 <script src="scripts/services/themeService.js"></script>

@@ -1,0 +1,22 @@
+{
+	"shared": {
+		"modals": {
+			"mailDialog": {
+				"lbl": {
+					"title": "Send message",
+					"recipient": "Recipient",
+					"subject": "Subject",
+					"message": "Message",
+					"recipients": "{{recipient}} of {{target}}"
+				},
+				"msg": {
+					"sendMailSuccess": "Mail sent!"
+				},
+				"btn": {
+					"dialogClose": "Close",
+					"send": "Send"
+				}
+			}
+		}
+	}
+}

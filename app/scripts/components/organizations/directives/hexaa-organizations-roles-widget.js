@@ -27,7 +27,8 @@
                     pageBy: '=',
                     organization: '=',
                     deleteRole: '&deleteRole',
-                    editRole: '&editRole'
+                    editRole: '&editRole',
+                    sendMail: '&sendMail'
                 }
 
                 var directive = {
@@ -47,6 +48,7 @@
 
                     scope.delete = remove;
                     scope.edit = edit;
+                    scope.sendmail = sendmail;
 
                     function remove(role) {
                         if (scope.deleteRole !== undefined) {
@@ -57,6 +59,12 @@
                     function edit(role) {
                         if (scope.editRole !== undefined) {
                             scope.editRole({role: role});
+                        }
+                    }
+
+                    function sendmail(role) {
+                        if (scope.sendMail !== undefined) {
+                            scope.sendMail({role: role});
                         }
                     }
                 }

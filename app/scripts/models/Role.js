@@ -33,11 +33,14 @@ function RoleFactory($injector) {
     }
 
     Role.prototype = ResourceEntity.new();
+    Role.prototype.constructor = Role;
     /* INTERFACE */
     Role.prototype.save = save;
     Role.prototype.delete = remove;
     /*STATIC*/
     Role.new = create;
+
+    RoleFactory.class = Role;
 
     /* IMPLEMENTATION */
 

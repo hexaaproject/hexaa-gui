@@ -34,6 +34,8 @@ function ResourceFactory() {
     Resource.prototype.commit = commit;
     Resource.new = create;
 
+    ResourceFactory.class = Resource;
+
     /* IMPLEMENTATION */
     function commit() {
         this["_original"] = angular.copy(this);
