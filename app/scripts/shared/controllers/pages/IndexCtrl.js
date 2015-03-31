@@ -54,25 +54,25 @@
 
             function onBadRequest(event, error) {
                 if (error  && error.message ) {
-                    dialogService.error(traverseErrorThree(error.errors));
+                    dialogService.error(traverseErrorThree(error.errors) || error.message);
                 }
             }
 
             function traverseErrorThree(three)
             {
                 var message = "";
-                if (three.children) {
+                if (three && three.children) {
                     for (var k in three.children)
                     {
                         message += traverseErrorThree(three.children[k]);
                     }
                 }
-                else if (three.errors)
+                else if (three && three.errors)
                 {
                     return three.errors.join('\n');
 
                 }
-                return message;
+                return message === "" ? null : message;
             }
 
             activate();

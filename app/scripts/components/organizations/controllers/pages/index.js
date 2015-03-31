@@ -128,7 +128,7 @@
                 if ($route.current.params["id"] !== undefined) {
                     var selected = $linq($scope.organizations).where("x=>x.id==" + $route.current.params["id"]).singleOrDefault(undefined);
                 }
-                else if (settingsService.get("selectedOrganization")) {
+                else if (settingsService.get("selectedOrganization") != null) {
                     //set selected according to cookie
                     var selected = $linq($scope.organizations).where("x=>x.id==" + settingsService.get("selectedOrganization")).singleOrDefault(undefined);
                 }
@@ -158,6 +158,7 @@
                     dialogService.success($translate.instant(namespace + "msg.organizationDeleteSuccess"));
                     //remove organization from list
                     $scope.organizations.removeAt($linq($scope.organizations).indexOf("x => x.id == " + organization.id));
+                    settingsService.set("selectedOrganization", null);
                     $scope.navigate("#/");
                 }
             }

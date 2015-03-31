@@ -106,7 +106,7 @@
                     var selected = $linq($scope.services).where("x=>x.id==" + $route.current.params["id"]).singleOrDefault(undefined);
                     $scope.selectionChanged(selected);
                 }
-                else if (settingsService.get("selectedService") ) {
+                else if (settingsService.get("selectedService") != null ) {
                     //carry selected service between sites
                     var selected = $linq($scope.services).where("x=>x.id==" + settingsService.get("selectedService")).singleOrDefault(undefined);
                     $scope.selectionChanged(selected);
@@ -163,7 +163,7 @@
                 return function (data) {
                     //service removed
                     dialogService.success($translate.instant(namespace + "msg.serviceDeleteSuccess"));
-                    settingsService.set("selectedService", undefined);
+                    settingsService.set("selectedService", null);
                     //remove from list
                     var index = $linq($scope.services).indexOf("x=>x.id==" + service.id);
                     $scope.services.removeAt(index);

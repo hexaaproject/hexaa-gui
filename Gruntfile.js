@@ -227,7 +227,7 @@ module.exports = function (grunt) {
     // additional tasks can operate on them
     useminPrepare: {
       html: ['<%= yeoman.app %>/index.html'],
-      js: '<%= yeoman.dist %>/scripts/themeService.js',      
+      js: ['<%= yeoman.dist %>/scripts/themeService.js','<%= yeoman.dist %>/scripts/imageFormatter.js'],      
       options: {
         dest: '<%= yeoman.dist %>',
         flow: {
@@ -251,7 +251,8 @@ module.exports = function (grunt) {
           assetsDirs: ['<%= yeoman.dist %>'],
           patterns: {
                   js: [
-                      [ /((styles|bower_components)\/.*?\.(?:css))/gm, 'Update the JS to reference our revved styles']
+                      [ /((styles|bower_components)\/.*?\.(?:css))/gm, 'Update the JS to reference our revved styles'],
+                      [/((images)\/.*?\.(?:png))/gm, 'Update the JS to reference our revved images']
                   ]
               }
         }     

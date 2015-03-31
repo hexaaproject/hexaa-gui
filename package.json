@@ -1,6 +1,6 @@
 {
   "name": "hexaaui",
-  "version": "0.26.4",
+  "version": "0.26.5",
   "dependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",

@@ -25,6 +25,19 @@ Installation
 * **$hexaa_env_mail** Server attribute name of the federal unique mail. Compare it with your Shibboleth Installation.
 * **$hexaa_dont_check_ssl_certificate**: Set it to true if your installation does not use HTTPS protocol.
 
+
+----------
+
+
+Expected new features in the future
+-------------
+
+There are a few features from the latest backend (0.27.6) that the current frontend (version 0.27)  does not support yet. This are:
+
+ 1. Mass e-mail sending
+ 2. Security Context
+ 3. VO Isolation
+
 ----
 
 Development
