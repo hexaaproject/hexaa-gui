@@ -57,6 +57,14 @@
                 vm.removeEntitlementpack = removeEntitlementpack;
 
                 /*STEP 3*/
+                vm.roleFilter = "";
+                vm.rolePager = {
+                    itemPerPage: 25, //How many items will appear on a single page?
+                    maxSize: 5,  //Size of pagers visile counters [1,2,3,4,5....last]
+                    totalItems: 0, //Num of total items
+                    currentPage: 1,  //Currently selected page
+                    numPages: 0
+                };
                 vm.editRole = editRole;
                 vm.deleteRole = deleteRole;
                 vm.newRole = newRole;
@@ -123,6 +131,7 @@
                 function onNewRoleModalClosed(role) {
                     role.id = Math.floor((Math.random() * 1000) + 1); //assign temporaly id to give the ability to edit and remove it
                     vm.organization.roles.push(role);
+                    vm.rolePager.totalItems++;
                 }
 
                 function onEditRoleModalClosed(role) {
@@ -137,6 +146,7 @@
                     else {
                         var index = $linq(vm.organization.roles).indexOf("x => x.id == " + role.id);
                         vm.organization.roles.removeAt(index);
+                        vm.rolePager.totalItems--;
                     }
                 }
 
@@ -247,6 +257,7 @@
                         default_role.name = vm.organization.role.name;
                         default_role.is_default = true;
                         vm.organization.roles.push(default_role);
+                        vm.rolePager.totalItems++;
                     }
                     else {
                         vm.organization.roles[index].name = vm.organization.role.name;
@@ -320,7 +331,7 @@
                 function onAddRoleSuccess(role, correspondingInvitations) {
                     return function (data, status, headers, config) {
                         dialogService.success($translate.instant(namespace + "msg.roleAddSuccess", {role: role.name}));
-                        if (correspondingInvitations !== undefined) {
+                        if (correspondingInvitations) {
                             angular.forEach(correspondingInvitations, function (invitation) {
                                 var index = $linq(vm.organization.invitations).indexOf("x => x.id == " + invitation.id);
                                 if (index !== -1) {

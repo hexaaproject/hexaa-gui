@@ -13,7 +13,7 @@
         <!--
         <script src="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js" ></script>
         -->
-        <link rel="stylesheet" href="styles/9e10d365.vendor.css"/>
+        <link rel="stylesheet" href="styles/a3fc2f14.vendor.css"/>
         <link rel="stylesheet" href="styles/6a0b0a6a.main.css"/>
     </head>
     <body>
@@ -112,9 +112,8 @@
             echo '<p class="lead text-center">Redirection in progress. If you see this window for more than a few seconds, click <a href="' . $destination . '">here</a>.</p> <meta http-equiv="refresh" content="3;URL=' . $destination . '" />';
         }
 
-        function invite($token, $action, $mail, $hexaa_cookie_name, $hexaa_base_address,$hexaa_api_address, $hexaa_dont_check_ssl_certificate) {
-            $hexaaData = json_decode($_COOKIE[$hexaa_cookie_name], true);
-            $apiToken = $hexaaData["token"];
+        function invite($token, $action, $mail, $hexaa_cookie_name, $hexaa_base_address,$hexaa_api_address, $hexaa_dont_check_ssl_certificate) {            
+            $apiToken = $_COOKIE[$hexaa_cookie_name];
 
             // Setup cURL
             if (!$mail) {
@@ -168,8 +167,7 @@
         }
 
         function enableService($token, $hexaa_cookie_name, $hexaa_base_address, $hexaa_api_address, $hexaa_dont_check_ssl_certificate) {
-            $hexaaData = json_decode($_COOKIE[$hexaa_cookie_name], true);
-            $apiToken = $hexaaData["token"];
+            $apiToken = $_COOKIE[$hexaa_cookie_name];            
             $ch = curl_init($hexaa_api_address . '/services/' . $token . '/enable.json');
 
             curl_setopt_array($ch, array(
@@ -235,7 +233,7 @@
                 $domain = parse_url($hexaa_ui_address, PHP_URL_HOST);
                 $path = parse_url($hexaa_ui_address, PHP_URL_PATH);
 
-                setCookie($hexaa_cookie_name, json_encode($toCookie), 0, $path, $domain, $hexaa_force_https, FALSE);
+                setCookie($hexaa_cookie_name, $responseData['token'], 0, "/", $domain, $hexaa_force_https, TRUE); //to be fixed: restrict to path
 
                 if (isset($_GET["action"]) && isset($_GET["token"])) {
                     $message = "Authentication done. Opening invitation...";
@@ -285,14 +283,5 @@
         <div class="footer row">
 
         </div>
-
-<!--[if lt IE 9]>
-<script src="../bower_components//es5-shim/es5-shim.js"></script>
-<script src="../bower_components//json3/lib/json3.min.js"></script>
-<![endif]-->
-
-<script src="scripts/ceeed7c7.vendor.js"></script>
-
-<script src="scripts/4f5c66f6.scripts.js"></script>
     </body>
 </html>

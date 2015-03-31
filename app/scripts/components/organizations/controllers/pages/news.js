@@ -90,7 +90,7 @@
                  * @param organization
                  */
                 function refreshFeed(organization) {
-                    if (organization.id !== undefined) {
+                    if (organization.id) {
                         //Get selected tags
                         var tags = $linq($scope.tagSources).where("x=>x.ticked==true").select("x => x.name").toArray();
 

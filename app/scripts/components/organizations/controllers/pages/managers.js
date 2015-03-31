@@ -54,7 +54,7 @@
                  * @param selectedOrganization
                  */
                 function onOrganizationSave(event, selectedOrganization) {
-                    if (($scope.organization.id != -1) && (selectedOrganization != undefined)) {
+                    if (($scope.organization.id != -1) && (selectedOrganization )) {
                         OrganizationsProxy.updateManagers($scope.organization)
                             .then(onUpdateManagersSuccess)
                             .catch(onUpdateManagersError);

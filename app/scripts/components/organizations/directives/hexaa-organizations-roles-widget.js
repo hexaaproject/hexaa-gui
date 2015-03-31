@@ -18,9 +18,10 @@
 
 (function () {
     'use strict';
-    angular.module('hexaaApp.components.organizations.directives').directive('hexaaOrganizationsRolesWidget',
-        ['profileService',
-            function (profileService) {
+    angular.module('hexaaApp.components.organizations.directives')
+        .directive('hexaaOrganizationsRolesWidget',
+        ['profileService','$filter',
+            function (profileService,$filter) {
 
                 var scope = {
                     filterBy: '=',
@@ -42,9 +43,19 @@
 
                     function activate() {
                         scope.profile = profileService.getProfile();
+                        scope.$watch("filterBy", onFilterChanged);
                     }
 
                     activate();
+
+                    function onFilterChanged(newValue,oldValue)
+                    {
+                        if(newValue )
+                        {
+                            scope.pageBy.totalItems = $filter("filter")(scope.organization.roles,scope.filterBy).length;
+                            scope.pageBy.currentPage = 1;
+                        }
+                    }
 
                     scope.delete = remove;
                     scope.edit = edit;

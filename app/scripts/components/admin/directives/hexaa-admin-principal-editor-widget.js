@@ -38,7 +38,7 @@
                 scope.save = save;
 
                 function save() {
-                    if (scope.savePrincipal !== undefined) {
+                    if (scope.savePrincipal) {
                         scope.savePrincipal(scope.principal);
                     }
                 }

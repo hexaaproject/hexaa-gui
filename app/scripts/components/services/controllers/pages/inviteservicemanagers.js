@@ -25,7 +25,7 @@
         }
 
         function onServicesSelectionChanged(event, selectedService) {
-            if (selectedService != undefined) {
+            if (selectedService ) {
                 ServicesProxy.getService(selectedService)
                     .then(onGetServiceSuccess);
             }

@@ -78,7 +78,7 @@
              */
             function onServiceSave(event, selectedService) {
                 if (($scope.service.id != -1) &&
-                    (selectedService != undefined)) {
+                    (selectedService )) {
                     angular.forEach($scope.service.public_attrspecs, function (a) {
                         a.is_public = true;
                     });
@@ -98,7 +98,7 @@
             }
 
             function onGetServiceAttributeSpeficiationsSuccess(data) {
-                if (data.data != undefined) {
+                if (data.data ) {
                     //Public attrspecs
                     $scope.service.public_attrspecs = $linq(data.data.items).where("x=>x.is_public==true").select("x => x.attribute_spec").toArray();
                     $scope.service.public_attrspecs.saveMemento();
@@ -114,7 +114,7 @@
              */
             function onServiceSelectionChanged(event, selectedService) {
                 $scope.service = {id: selectedService};
-                if (selectedService != undefined) {
+                if (selectedService ) {
                     //load defined attrspecs
                     ServicesProxy.getAttributeSpecifications(selectedService).then(onGetServiceAttributeSpeficiationsSuccess);
                 }

@@ -75,7 +75,7 @@ function OrganizationFactory($injector) {
     function onOrganizationCreated(organization) {
         return function (data) {
             organization.default_role = angular.fromJson(data.config.data).default_role;
-            if (data.config.url.match("(.*)/api/organizations/(.*).json") != null)
+            if (data.config.url.match("(.*)/api/organizations/(.*).json") )
                 organization.id = data.config.url.match("(.*)/api/organizations/(.*).json")[2];
             else
                 organization.id = data.headers("Location").match("(.*)/api/organizations/(.*)")[2];

@@ -47,8 +47,7 @@
 
                 function send()
                 {
-                    if (vm.target !== undefined &&
-                        vm.target !== null)
+                    if (vm.target )
                     {
                         if (vm.target.constructor === OrganizationFactory.class) {
                             vm.mail.organization = vm.target.id;

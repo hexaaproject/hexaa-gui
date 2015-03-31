@@ -31,7 +31,7 @@
  * --------------------------------------------------------------------------------
  */
 
-angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeout', function ($sce, $timeout) {
+angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeout','$sanitize', function ($sce, $timeout,$sanitize) {
     return {
         restrict: 'AE',
 
@@ -533,7 +533,7 @@ angular.module('multi-select', ['ng']).directive('multiSelect', ['$sce', '$timeo
                 if (type.toUpperCase() === 'BUTTONLABEL') {
                     return label;
                 }
-                return $sce.trustAsHtml(label);
+                return $sce.trustAsHtml($sanitize(label));
             };
 
             // UI operations to show/hide checkboxes based on click event..

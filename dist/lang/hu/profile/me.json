@@ -13,7 +13,9 @@
 				"profileDisplayName": "Megjelenítendő név",
 				"profileTheme": "Téma",
 				"profileBasic": "Általános",
-				"profileUI": "Felhasználói felület"
+				"profileUI": "Felhasználói felület",
+				"dataStoreInformation": "Az Ön által itt megadott információkat csak belső felhasználás céljából tároljuk. Harmadik félnek nem adjuk ki azt."
+
 			},
 			"msg": {
 				"profileUpdateSuccessful" : "Profil frissítve!",

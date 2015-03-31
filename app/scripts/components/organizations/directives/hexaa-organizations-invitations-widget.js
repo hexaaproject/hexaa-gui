@@ -49,7 +49,7 @@
             scope.keyCount = keyCount;
 
             function keyCount(obj) {
-                if (obj !== undefined) {
+                if (obj ) {
                     return Object.keys(obj).length;
                 }
                 else return 0;

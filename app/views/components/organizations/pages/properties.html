@@ -33,17 +33,22 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-2" translate>organizations.new.lbl.organizationIsolateMembers</label>
+                <div class="form-inline" ng-if="profile.isManagerOfOrganization(properties.id)">
+                    <label class="col-sm-2 control-label" translate>organizations.new.lbl.organizationIsolateMembers</label>
                     <div class="col-sm-10">
-                        <input type="checkbox" class="form-control " ng-model="properties.isolate_members" id="isolate_members" ng-disabled="!profile.isManagerOfOrganization(properties.id)"/>
+                        <label class="checkbox">
+                            <switch type="checkbox" ng-model="properties.isolate_members" id="isolate_members" on="On" off="Off" class="green" />
+                        </label>
+
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label col-sm-2" translate>organizations.new.lbl.organizationIsolateRoleMembers</label>
+                <div class="form-inline" ng-if="profile.isManagerOfOrganization(properties.id)">
+                    <label class="col-sm-2 control-label" translate>organizations.new.lbl.organizationIsolateRoleMembers</label>
                     <div class="col-sm-10 ">
-                        <input type="checkbox" class="form-control" ng-model="properties.isolate_role_members" id="isolate_members" ng-disabled="!profile.isManagerOfOrganization(properties.id)"/>
+                        <label class="checkbox">
+                            <switch on="On" off="Off" class="green" type="checkbox" class="form-control" ng-model="properties.isolate_role_members" id="isolate_members"/>
+                        </label>
                     </div>
                 </div>
 

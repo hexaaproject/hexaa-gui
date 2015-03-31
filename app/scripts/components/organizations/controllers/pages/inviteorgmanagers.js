@@ -115,7 +115,7 @@
          * @param selectedOrganization
          */
         function onOrganizationsSelectionChanged(event, selectedOrganization) {
-            if (selectedOrganization != undefined) {
+            if (selectedOrganization ) {
                 OrganizationsProxy.getOrganization(selectedOrganization).then(onGetOrganizationSuccess);
             }
         }

@@ -19,7 +19,8 @@
 				"serviceName": "Name",
 				"serviceLogo": "Logo",
 				"serviceDescription": "Description",
-				"noSupportedServiceForAttributeSpecification": "There is no supporting service for this attribute specification!"
+				"noSupportedServiceForAttributeSpecification": "There is no supporting service for this attribute specification!",
+				"dataStoreInformation": "All the values you provide here, will be stored in our databases. We do not share these information with anybody else, until you do not consent it."
 			},			
 			"btn" :
 			{

@@ -46,7 +46,7 @@
             function selectionChanged(item) {
                 $scope.selectedOrganization = item;
 
-                if (item != undefined) {
+                if (item) {
                     $scope.$broadcast(events.organizationsSelectionChanged, item.id);
                     settingsService.set("selectedOrganization", item.id);
                 }
@@ -64,7 +64,7 @@
              * delete currently selected organization
              */
             function deleteOrganization(organization) {
-                if (organization !== undefined && organization !== null) {
+                if (organization) {
                     dialogService.confirm($translate.instant(namespace + "msg.confirmationNeeded"),
                         $translate.instant(namespace + "msg.organizationDeleteConfirm", {name: organization.name}))
                         .then(onDeleteOrganizationDialogAnswered(organization));
@@ -128,7 +128,7 @@
                 if ($route.current.params["id"] !== undefined) {
                     var selected = $linq($scope.organizations).where("x=>x.id==" + $route.current.params["id"]).singleOrDefault(undefined);
                 }
-                else if (settingsService.get("selectedOrganization") != undefined) {
+                else if (settingsService.get("selectedOrganization")) {
                     //set selected according to cookie
                     var selected = $linq($scope.organizations).where("x=>x.id==" + settingsService.get("selectedOrganization")).singleOrDefault(undefined);
                 }

@@ -37,7 +37,7 @@
                 scope.save = save;
 
                 function save() {
-                    if (scope.saveAttributeSpecification !== undefined) {
+                    if (scope.saveAttributeSpecification) {
                         scope.saveAttributeSpecification();
                     }
                 }

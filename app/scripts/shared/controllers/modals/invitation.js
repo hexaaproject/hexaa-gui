@@ -79,7 +79,7 @@
         }
 
         function activate() {
-            if (invitation !== undefined) {
+            if (invitation ) {
                 if ($scope.invitation.emails !== undefined
                     && $scope.invitation.emails.isArray) {
                     $scope.invitation.emails = invitation.emails.join(',');

@@ -24,27 +24,14 @@ angular.module('hexaaApp.services.facades').factory('AttributeSpecificationsProx
             getSupportingServices: function (attrspec) {
                 var deferred = $q.defer();
 
-                var list = [];
-
                 HexaaService.getServicesLinkedToAttributeSpecification(attrspec.id)
-                    .success(function (data, status, headers, config) {
-
-                        data.items.forEach(function (item, i) {
-                            HexaaService.getService(item.service_id)
-                                .then(function (data) {
-                                    if (list == undefined) list = [];
-
-                                    list.push(data.data);
-                                })
-                                .finally(function () {
-                                    if (i == list.length - 1) {
-                                        deferred.resolve(wrapResponse({
-                                            items: list,
-                                            item_number: data.item_number
-                                        }, status, headers, config));
-                                    }
-                                });
-                        });
+                    .success(function (data)
+                    {
+                        var list = data.items.map(function(item) { return item.service });
+                        deferred.resolve(wrapResponse({
+                            items: list,
+                            item_number: data.item_number
+                        }));
                     })
                     .error(function (data, status, headers, config) {
                         deferred.reject(wrapResponse(data, status, headers, config));
@@ -54,7 +41,7 @@ angular.module('hexaaApp.services.facades').factory('AttributeSpecificationsProx
             },
             getAttributeSpecifications: function (pager) {
                 var promise = null;
-                if (pager !== undefined) {
+                if (pager ) {
                     promise = HexaaService.getAttributeSpecifications((pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage);
                 }
                 else {

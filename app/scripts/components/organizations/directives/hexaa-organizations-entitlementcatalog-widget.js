@@ -46,7 +46,7 @@
             scope.showService = showService;
 
             function isAttached(epack) {
-                if (scope.organization.entitlementpacks !== undefined && epack !== undefined) {
+                if (scope.organization.entitlementpacks && epack ) {
                     var pos = $linq(scope.organization.entitlementpacks).indexOf("x => x.id == " + epack.id);
                     return (pos >= 0);
                 }

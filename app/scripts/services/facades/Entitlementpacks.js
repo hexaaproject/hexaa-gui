@@ -24,7 +24,7 @@ angular.module('hexaaApp.services.facades').factory('EntitlementpacksProxy', ['$
                 return HexaaService.generateEntitlementpackToken(id);
             },
             getPublicEntitlementpacks: function (pager) {
-                if (pager !== undefined) {
+                if (pager ) {
                     return HexaaService.getPublicEntitlementpacks((pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage);
                 }
                 else {

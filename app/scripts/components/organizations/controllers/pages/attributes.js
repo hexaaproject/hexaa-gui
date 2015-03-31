@@ -50,7 +50,7 @@
              * @param selectedOrganization selected organization
              */
             function organizationsSelectionChanged(event, selectedOrganization) {
-                if (selectedOrganization != undefined) {
+                if (selectedOrganization) {
                     if ($scope.profile.isManagerOfOrganization(selectedOrganization)) {
 
                         $scope.organization = {id: selectedOrganization};
@@ -207,7 +207,7 @@
              * @param error Server response
              */
             function onGetSupportingServicesError(error) {
-                dialogService.error($translate.instant(namespace + "msg.supportingServicesGetError") + error.data.message);
+                dialogService.error($translate.instant(namespace + "msg.supportingServicesGetError"));
             }
 
             /**
@@ -228,7 +228,7 @@
              */
             function onGetAttributeValueOrganizationsError(attrspec) {
                 return function (error) {
-                    dialogService.error($translate.instant(namespace + "msg.attributeValueGetError", {attrspec: attrspec.name}) + error.data.message);
+                    dialogService.error($translate.instant(namespace + "msg.attributeValueGetError", {attrspec: attrspec.name}));
                 }
             }
 
@@ -252,7 +252,7 @@
              */
             function onAttributeValueOrganizationSaveError(error) {
                 dialogService.notifyUIError(error.data.errors);
-                dialogService.error($translate.instant(namespace + "msg.attributeValueCreateError") + error.data.message);
+                dialogService.error($translate.instant(namespace + "msg.attributeValueCreateError"));
             }
 
             /**
@@ -274,7 +274,7 @@
              * @param error Server response
              */
             function onAttributeValueOrganizationUpdateError(error) {
-                if (error.data !== undefined) {
+                if (error.data) {
                     dialogService.notifyUIError(error.data.errors);
                 }
                 dialogService.error($translate.instant(namespace + "msg.attributeValueUpdateError"));
@@ -285,7 +285,7 @@
              * @param error Server response
              */
             function onGetAttributeSpecificationError(error) {
-                dialogService.error($translate.instant(namespace + "msg.attributeSpecificationGetError") + error.data.message);
+                dialogService.error($translate.instant(namespace + "msg.attributeSpecificationGetError") );
             }
 
             activate();

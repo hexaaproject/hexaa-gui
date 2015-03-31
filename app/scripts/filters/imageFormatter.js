@@ -23,11 +23,14 @@ function imageFormatterFilter(baseAddr, baseUIAddr) {
      */
     return function (logo_path) {
 
-        if (logo_path === undefined || logo_path === null || logo_path === "") {
-            return baseUIAddr + "/images/default.png";
+        if (logo_path
+            && logo_path !== "null"
+            && logo_path !== "") {
+            return baseAddr + '/' + logo_path;
+
         }
-        else {
-            return baseAddr + '/' + this.logo_path;
+        else  {
+            return baseUIAddr + "/images/default.png";
         }
     };
 }

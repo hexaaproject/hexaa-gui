@@ -18,42 +18,49 @@
 
     angular.module('hexaaApp.components.services.controllers.modals')
         .controller('ServiceChangerController',
-        ['$modalInstance', 'services', function ($modalInstance, services) {
-        var namespace = "modals.serviceChanger.";
+        ['$modalInstance', 'services','$scope','$filter', function ($modalInstance, services,$scope,$filter) {
+            var namespace = "modals.serviceChanger.";
 
-        var vm = this;
+            var vm = this;
 
-        /*INTERFACE*/
-        vm.close = close;
-        vm.services = services;
-        vm.select = select;
+            /*INTERFACE*/
+            vm.close = close;
+            vm.services = services;
+            vm.select = select;
 
-        /* Pager settings */
-        vm.pager = {
-            itemPerPage: 5, //How many items will appear on a single page?
-            maxSize: 5,  //Size of pagers visile counters [1,2,3,4,5....last]
-            totalItems: services.length, //Num of total items
-            currentPage: 1,  //Currently selected page
-            numPages: 0
-        };
+            /* Pager settings */
+            vm.pager = {
+                itemPerPage: 5, //How many items will appear on a single page?
+                maxSize: 5,  //Size of pagers visile counters [1,2,3,4,5....last]
+                totalItems: services.length, //Num of total items
+                currentPage: 1,  //Currently selected page
+                numPages: 0
+            };
 
 
-        /*IMPLEMENTATION*/
+            /*IMPLEMENTATION*/
 
-        function activate() {
+            function onFilterChanged(newValue, oldValue) {
+                if (oldValue) {
+                    vm.pager.totalItems = $filter("filter")(vm.services, vm.serviceFilter).length;
+                    vm.pager.currentPage = 1;
+                }
+            }
 
-        }
+            function activate() {
+                $scope.$watch("vm.serviceFilter", onFilterChanged);
+            }
 
-        activate();
+            activate();
 
-        function close() {
-            $modalInstance.dismiss();
-        }
+            function close() {
+                $modalInstance.dismiss();
+            }
 
-        function select(service) {
-            $modalInstance.close(service);
-        }
+            function select(service) {
+                $modalInstance.close(service);
+            }
 
-    }]);
+        }]);
 
 }());

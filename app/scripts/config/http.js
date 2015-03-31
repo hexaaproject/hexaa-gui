@@ -60,7 +60,6 @@
             }
 
             //https://code.angularjs.org/1.3.10/docs/api/ng/service/$http
-
             if (response.status === 401) {
                 notificationChannel.tokenExpired();
             }
@@ -85,7 +84,7 @@
     function httpProvider($httpProvider) {
         var $http,
             interceptor = ['$q', '$injector', httpInterceptor];
-        if ($httpProvider.interceptors !== undefined) //responseInterceptors
+        if ($httpProvider.interceptors) //responseInterceptors
         {
             $httpProvider.interceptors.push(interceptor); //responseInterceptors
         }

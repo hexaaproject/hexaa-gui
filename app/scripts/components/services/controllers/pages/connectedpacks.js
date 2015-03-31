@@ -78,7 +78,7 @@
         function onServicesSelectionChanged(event, selectedService) {
             $scope.service = {id: selectedService};
 
-            if (selectedService != undefined) {
+            if (selectedService ) {
                 //load managers for the newly selected service
                 ServicesProxy.getLinkedOrganizations(selectedService)
                     .then(onGetLinkedOrganizationsSuccess)

@@ -48,19 +48,19 @@
             scope.remove = remove;
 
             function revoke(principal) {
-                if (scope.revokePrincipal !== undefined) {
+                if (scope.revokePrincipal ) {
                     scope.revokePrincipal({principal: principal});
                 }
             }
 
             function propose(principal) {
-                if (scope.proposePrincipal !== undefined) {
+                if (scope.proposePrincipal) {
                     scope.proposePrincipal({principal: principal});
                 }
             }
 
             function remove(principal) {
-                if (scope.removePrincipal !== undefined) {
+                if (scope.removePrincipal ) {
                     scope.removePrincipal({principal: principal});
                 }
             }

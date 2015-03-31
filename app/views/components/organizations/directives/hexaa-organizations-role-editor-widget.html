@@ -23,7 +23,7 @@
     </div>
     </p>
     <!-- Entitlements -->
-    <div ng-if="organization.entitlements !== undefined && organization.entitlements.length != 0">
+    <div ng-if="organization.entitlements && organization.entitlements.length != 0">
         <h4 translate>organizations.roles.lbl.roleEntitlements</h4>
         <div class="container-fluid row"  ng-hide="organization.entitlements.length == 0">
             <div id="entitlementsbox" angular-duallistbox elements="organization.entitlements" selected="role.entitlements"  element-display="'scoped_name'" element-value="'id'"
@@ -37,7 +37,7 @@
 
     <!-- Members -->
 
-    <div ng-if="organization.principals != undefined && organization.principals.length != 0">
+    <div ng-if="organization.principals && organization.principals.length != 0">
         <h4 translate>organizations.roles.lbl.roleMembers</h4>
         <div class="container-fluid row">
             <div id="membersbox" angular-duallistbox elements="organization.principals" selected="role.principals"

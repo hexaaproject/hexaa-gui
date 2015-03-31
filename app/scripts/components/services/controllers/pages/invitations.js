@@ -126,7 +126,7 @@
             }
 
             $scope.keyCount = function (obj) {
-                if (obj !== undefined) {
+                if (obj ) {
                     return Object.keys(obj).length;
                 }
                 else return 0;
@@ -159,7 +159,7 @@
              * User changed his selection in Services. Its time to refresh our data
              */
             function onServicesSelectionChanged(event, selectedService) {
-                if (selectedService != undefined) {
+                if (selectedService ) {
                     $scope.service = {id: selectedService};
                     refreshInvitations();
                 }

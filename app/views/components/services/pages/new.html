@@ -20,7 +20,7 @@
             </select>
         </span>
 
-        <div id="contacts" ng-if="entityids[new.entityid] !== undefined">
+        <div id="contacts" ng-if="entityids[new.entityid]">
             <h4>Choose contact:</h4>
             <div ng-repeat="(id,contact) in entityids[new.entityid]">
                 <div>

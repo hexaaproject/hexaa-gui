@@ -90,7 +90,7 @@
             }
 
             function addPrefix(uri) {
-                if (uri !== undefined) {
+                if (uri ) {
                     if (uri.indexOf(vm.prefix) !== -1) {
                         return uri;
                     }
@@ -141,7 +141,7 @@
              * User services selection changed
              */
             function onServicesSelectionChanged(event, selectedService) {
-                if (selectedService != undefined) {
+                if (selectedService ) {
 
                     vm.service = {id: selectedService};
                     //Get Service entitlements

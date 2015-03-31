@@ -8,7 +8,8 @@
 				"title": "Consents",
 				"consentsTitle": "Consents",
 				"noAttributeSpecificationsAssociated" : "There are no attributespecifications associated to You",
-				"noAttributeValuesForSpecification": "No AttrbuteValuePrincipals has been found for this AttributeSpecification!"
+				"noAttributeValuesForSpecification": "No AttrbuteValuePrincipals has been found for this AttributeSpecification!",
+				"consentInformation": "By checking a checkbox you have us consent to share the according attribute with {{name}}."
 			},
 			"msg":
 			{

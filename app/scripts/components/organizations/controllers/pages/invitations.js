@@ -217,7 +217,7 @@
              */
             function onOrganizationsSelectionChanged(event, selectedOrganization) {
 
-                if (selectedOrganization != undefined) {
+                if (selectedOrganization) {
                     vm.organization.id = selectedOrganization;
                     loadInvitations();
                 }

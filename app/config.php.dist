@@ -5,7 +5,7 @@ $hexaa_base_address = "https://your.hexaa.install";
 
 $hexaa_api_address = "https://your.hexaa.install/api";
 
-$hexaa_cookie_name = "hexaa_cookie_name";
+$hexaa_cookie_name = "hexaa_auth";
 
 $hexaa_ui_address = "https//your.hexaa.install/hexaaui";
 

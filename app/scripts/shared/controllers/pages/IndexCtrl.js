@@ -53,9 +53,26 @@
             }
 
             function onBadRequest(event, error) {
-                if (error !== null && error.message !== undefined) {
-                    dialogService.error(error.message.toString());
+                if (error  && error.message ) {
+                    dialogService.error(traverseErrorThree(error.errors));
                 }
+            }
+
+            function traverseErrorThree(three)
+            {
+                var message = "";
+                if (three.children) {
+                    for (var k in three.children)
+                    {
+                        message += traverseErrorThree(three.children[k]);
+                    }
+                }
+                else if (three.errors)
+                {
+                    return three.errors.join('\n');
+
+                }
+                return message;
             }
 
             activate();

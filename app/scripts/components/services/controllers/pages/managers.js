@@ -52,7 +52,7 @@
             function onServicesSelectionChanged(event, selectedService) {
                 $scope.service = {id: selectedService};
 
-                if (selectedService != undefined) {
+                if (selectedService ) {
                     //load managers for the newly selected service
                     ServicesProxy.getManagers(selectedService)
                         .then(onGetManagersSuccess)
@@ -65,7 +65,7 @@
              * Save current service data
              */
             function onServiceSave(event, selectedService) {
-                if ((selectedService != undefined) &&
+                if ((selectedService ) &&
                     ($scope.service.id != -1)) {
                     ServicesProxy.updateManagers($scope.service)
                         .success(onUpdateManagersSuccess)

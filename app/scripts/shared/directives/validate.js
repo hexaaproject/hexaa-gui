@@ -41,7 +41,7 @@ angular.module('hexaaApp.shared.directives').directive('validate', ['$compile', 
             if (!element[0].hasAttribute("tooltipVisible")) {
                 var msg = element[0].validationMessage;
 
-                if (msg !== undefined) {
+                if (msg ) {
                     element.data('bs.tooltip', false).tooltip({
                         placement: "left",
                         trigger: "manual",

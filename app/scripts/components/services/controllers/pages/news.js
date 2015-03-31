@@ -86,7 +86,7 @@
                 }
 
                 function onCurrentPageChanged(oldValue, newValue) {
-                    if (oldValue !== undefined) {
+                    if (oldValue ) {
                         if ($scope.service.id != -1) {
                             refreshFeed($scope.service);
                         }

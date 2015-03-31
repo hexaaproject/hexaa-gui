@@ -10,10 +10,10 @@
         <div class="input-group">
             <label for="recipient" translate>shared.modals.mailDialog.lbl.recipient</label>
             <p id="recipient">
-                    <span ng-if="vm.target == null">
+                    <span ng-if="!vm.target">
                         {{vm.recipient}}
                     </span>
-                    <span ng-if="vm.target != null">
+                    <span ng-if="vm.target">
                         <span translate
                                 translate-value-recipient="{{vm.recipient}}"
                                 translate-value-target="{{vm.target.name}}">

@@ -20,9 +20,9 @@
                         <i ng-repeat="(key,value) in invitation.statuses"> {{key}}<i ng-if="$index+1 != keyCount(invitation.statuses)">,</i>
                         </i>
                     </span>
-                    <span ng-show="invitation.counter != null || invitation.limit != null">
-                        <b> (<b ng-if="invitation.counter != null">{{invitation.counter }} </b>
-                            <b ng-if="invitation.counter == null">0</b>
+                    <span ng-show="invitation.counter || invitation.limit ">
+                        <b> (<b ng-if="invitation.counter">{{invitation.counter }} </b>
+                            <b ng-if="invitation.counter">0</b>
                             / {{invitation.limit}} )
                         </b>
                     </span>

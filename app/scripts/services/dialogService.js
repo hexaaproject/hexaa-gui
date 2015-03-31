@@ -67,7 +67,7 @@ angular.module('hexaaApp.services')
              * @param data - Collection of errors
              */
             function notifyUIError(data) {
-                if (data !== undefined) {
+                if (data ) {
                     $rootScope.$broadcast(events.notifyUIError, data);
                 }
             }
@@ -106,6 +106,24 @@ angular.module('hexaaApp.services')
                 return modalInstance;
             }
 
+            /**
+             * Opens a dialog with service details
+             * @param id the id of the service
+             */
+            function showServiceDetails(id) {
+                var modalInstance = $modal.open({
+                    templateUrl: 'views/shared/modals/serviceDetails.html',
+                    controller: "ServiceDetailsCtrl",
+                    size: 'lg',
+                    resolve: {
+                        serviceId: function () {
+                            return id;
+                        }
+                    }
+                });
+            }
+
+
             return {
                 confirm: confirm,
                 success: success,
@@ -114,6 +132,7 @@ angular.module('hexaaApp.services')
                 error: error,
                 notifyUIError: notifyUIError,
                 showMessage: showMessage,
-                showMailer: showMailer
+                showMailer: showMailer,
+                showServiceDetails: showServiceDetails
             };
         }]);

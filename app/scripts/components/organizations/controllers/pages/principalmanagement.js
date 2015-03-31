@@ -112,7 +112,7 @@
                 vm.organization = {id: selectedOrganization};
 
 
-                if (selectedOrganization != undefined) {
+                if (selectedOrganization ) {
                     OrganizationsProxy.getOrganization(selectedOrganization)
                         .then(onGetOrganizationSuccess);
                 }

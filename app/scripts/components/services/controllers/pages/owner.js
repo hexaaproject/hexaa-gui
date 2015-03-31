@@ -20,8 +20,8 @@
 
     angular.module('hexaaApp.components.services.controllers.pages')
         .controller('ServiceOwnerCtrl',
-        ['$scope',  'ServicesProxy',  '$translate', 'events', '$upload', 'baseAddr', 'securityService', '$q', 'dialogService', 'pageTitleService',
-        function ($scope, ServicesProxy, $translate, events, $upload, baseAddr, securityService, $q, dialogService, pageTitleService) {
+        ['$scope',  'ServicesProxy',  '$translate', 'events', '$upload', '$q', 'dialogService', 'pageTitleService',
+        function ($scope, ServicesProxy, $translate, events, $upload, $q, dialogService, pageTitleService) {
 
             var namespace = "services.owner.";
 
@@ -80,7 +80,7 @@
              * Save current service
              */
             function onServiceSave(event, selectedService) {
-                if ((selectedService != undefined ) && ($scope.ownerForm.$valid)) {
+                if ((selectedService  ) && ($scope.ownerForm.$valid)) {
                     ServicesProxy.updateService($scope.owner)
                         .then(onUpdateServiceSuccess)
                         .catch(onUpdateServiceError);

@@ -10,20 +10,20 @@
             <h3>{{service.name}}</h3>
         </div>
         <div class="col-md-6">
-            <img class="servicelogo" ng-src="{{service.getLogo()}}"/>
+            <img class="servicelogo" ng-src="{{service.logo_path | imageFormatter}}"/>
         </div>
     </div>
     <dl>
-        <dt ng-if="service.description != null"><b translate="modals.serviceDetails.lbl.serviceDescription"></b></dt>
-        <dd ng-if="service.description != null" style="margin-left:20px;">{{service.description}}</dd>
+        <dt ng-if="service.description"><b translate="modals.serviceDetails.lbl.serviceDescription"></b></dt>
+        <dd ng-if="service.description" style="margin-left:20px;">{{service.description}}</dd>
 
-        <dt ng-if="service.org_name != null"><b translate="modals.serviceDetails.lbl.serviceOwnerName"></b></dt>
-        <dd ng-if="service.org_name != null" style="margin-left:20px;">
+        <dt ng-if="service.org_name"><b translate="modals.serviceDetails.lbl.serviceOwnerName"></b></dt>
+        <dd ng-if="service.org_name" style="margin-left:20px;">
             <a href="{{service.org_url}}">{{service.org_name}}</a>
         </dd>
 
-        <dt ng-if="service.priv_description != null"><b translate="modals.serviceDetails.lbl.servicePrivacyDesc"></b></dt>
-        <dd ng-if="service.priv_description != null" style="margin-left:20px;">{{service.priv_description}}</dd>
+        <dt ng-if="service.priv_description"><b translate="modals.serviceDetails.lbl.servicePrivacyDesc"></b></dt>
+        <dd ng-if="service.priv_description" style="margin-left:20px;">{{service.priv_description}}</dd>
     </dl>
-    <a ng-if="service.priv_url != null" href="{{service.priv_url}}" target="_blank" translate>modals.serviceDetails.lbl.servicePrivacyUrl</a>
+    <a ng-if="service.priv_url" href="{{service.priv_url}}" target="_blank" translate>modals.serviceDetails.lbl.servicePrivacyUrl</a>
 </div>

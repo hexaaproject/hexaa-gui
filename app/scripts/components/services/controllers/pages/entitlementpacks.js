@@ -145,7 +145,7 @@
                  * @param id
                  */
                 function onServicesSelectionChanged(event, selectedService) {
-                    if ($scope.selectedService != undefined) {
+                    if ($scope.selectedService ) {
                         $scope.service = {id: selectedService};
                         //Query entitlementpacks of service
                         refreshEntitlementpacks();

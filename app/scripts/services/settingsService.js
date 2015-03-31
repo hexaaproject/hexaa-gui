@@ -5,7 +5,7 @@ angular.module('hexaaApp.services').service('settingsService', ['$cookieStore', 
 
     /* GETS an item from the settings cookie */
     var get = function (prop) {
-        if (hexaaCookie !== undefined) {
+        if (hexaaCookie ) {
             return hexaaCookie[prop];
         }
         else {

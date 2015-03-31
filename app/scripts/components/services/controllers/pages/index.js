@@ -102,11 +102,11 @@
             function getServicesSuccess(data) {
                 //assign data to the bound variable
                 $scope.services = angular.copy(data.data.items);
-                if ($route.current.params["id"] !== undefined) {
+                if ($route.current.params["id"] ) {
                     var selected = $linq($scope.services).where("x=>x.id==" + $route.current.params["id"]).singleOrDefault(undefined);
                     $scope.selectionChanged(selected);
                 }
-                else if (settingsService.get("selectedService") != undefined) {
+                else if (settingsService.get("selectedService") ) {
                     //carry selected service between sites
                     var selected = $linq($scope.services).where("x=>x.id==" + settingsService.get("selectedService")).singleOrDefault(undefined);
                     $scope.selectionChanged(selected);
@@ -123,7 +123,7 @@
             function selectionChanged(item) {
                 $scope.selectedService = item;
 
-                if ($scope.selectedService !== null) {
+                if ($scope.selectedService ) {
                     settingsService.set("selectedService", item.id);
                     $scope.$broadcast(events.servicesSelectionChanged, item.id);
                 }
@@ -133,7 +133,7 @@
              * delete currently selected services
              */
             function deleteService(service) {
-                if (service != undefined) {
+                if (service ) {
 
                     dialogService.confirm($translate.instant(namespace + "msg.confirmationNeeded"),
                         $translate.instant(namespace + "msg.serviceDeleteConfirm", {name: service.name}))

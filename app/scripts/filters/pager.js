@@ -23,8 +23,8 @@
  * @returns {*}
  */
 function pagerFilter(input, pagerSettings) {
-    if (input !== undefined) {
-        if (pagerSettings !== undefined) {
+    if (input ) {
+        if (pagerSettings ) {
             return $linq(input).skip((pagerSettings.currentPage - 1) * pagerSettings.itemPerPage).take(pagerSettings.itemPerPage).toArray();
         }
         else {

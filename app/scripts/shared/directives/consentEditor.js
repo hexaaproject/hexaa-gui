@@ -70,7 +70,7 @@
 
                 /*Notify state changed*/
                 function notify(consent) {
-                    if (scope.on_change != undefined) {
+                    if (scope.on_change ) {
                         scope.on_change({'consent': consent});
                     }
                 }

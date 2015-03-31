@@ -1,6 +1,10 @@
 <div class="container-fluid" ng-controller="ProfileAttributesCtrl">
     <h2 translate>profile.attributes.lbl.attributesTitle</h2>
 
+    <blockquote>
+        {{'profile.attributes.lbl.dataStoreInformation' | translate}}
+    </blockquote>
+
     <div ng-show="profile.attributeSpecifications.length == 0">
         <h4 translate>profile.attributes.lbl.noAttributespecificationsAssociated</h4>
     </div>
@@ -22,7 +26,7 @@
                     </tr>
                     <tr ng-repeat="service in attspec.supportingServices">
                         <td><img ng-src="{{service.logo | imageFormatter}}" class="servicelogo"/></td>
-                        <td>{{service.name}}</td>
+                        <td><a ng-click="showServiceDetails(service.id)">{{service.name}}</a></td>
                         <td>{{service.description}}</td>
                     </tr>
                 </table>

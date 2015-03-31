@@ -45,7 +45,7 @@
                     }
 
                     function save() {
-                        if (scope.saveAttribute !== undefined) {
+                        if (scope.saveAttribute) {
                             scope.saveAttribute({attribute: scope.attribute});
                         }
                     }

@@ -24,7 +24,7 @@ angular.module('hexaaApp.services.facades').factory('OrganizationsProxy', ['$htt
             var roles = [];
 
             var getRoles = null;
-            if (pager !== undefined) {
+            if (pager ) {
                 getRoles = HexaaService.getOrganizationRoles(organizationId, (pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage);
             }
             else {
@@ -33,7 +33,7 @@ angular.module('hexaaApp.services.facades').factory('OrganizationsProxy', ['$htt
 
             getRoles.then(function (data) {
                 angular.forEach(data.data.items, function (role) {
-                    if (role.principals != null)
+                    if (role.principals )
                     {
                         for (var i = 0; i < role.principals.length; i++) {
                             role.principals[i] = role.principals[i].principal;
@@ -133,7 +133,7 @@ angular.module('hexaaApp.services.facades').factory('OrganizationsProxy', ['$htt
                 .success(function (data, status, headers, config) {
                     organization.id = headers("Location").match("(.*)/api/organizations/(.*)")[2];
 
-                    if (organization.role != undefined) {
+                    if (organization.role ) {
                         HexaaService.addRoleToOrganization(organization.id, organization.role.name,
                             organization.role.description, organization.role.start_date, organization.role.end_date)
                             .success(function (data, status, headers, config) {

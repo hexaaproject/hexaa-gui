@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/angular-multi-select.css">
     <link rel="stylesheet" href="../bower_components/angular-toastr/dist/angular-toastr.css">
     <link rel="stylesheet" href="../bower_components/bootstrap-duallistbox/dist/bootstrap-duallistbox.css">
-    <link rel="stylesheet" href="../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css">
+    <link rel="stylesheet" href="../bower_components/angular-ui-switch/angular-ui-switch.css">
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <!--<link rel="stylesheet" href="styles/main.css"> -->
@@ -109,11 +109,6 @@
 </div>
 
 
-<!--[if lt IE 9]>
-<script src="../bower_components//es5-shim/es5-shim.js"></script>
-<script src="../bower_components//json3/lib/json3.min.js"></script>
-<![endif]-->
-
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="../bower_components/es5-shim/es5-shim.js"></script>
@@ -135,7 +130,7 @@
 <script src="../bower_components/ng-file-upload/angular-file-upload.js"></script>
 <script src="../bower_components/angular-toastr/dist/angular-toastr.js"></script>
 <script src="../bower_components/bootstrap-duallistbox/src/jquery.bootstrap-duallistbox.js"></script>
-<script src="../bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+<script src="../bower_components/angular-ui-switch/angular-ui-switch.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -214,7 +209,7 @@
 <script src="scripts/shared/controllers/modals/confirmationDialog.js"></script>
 <script src="scripts/shared/controllers/modals/mailDialog.js"></script>
 <script src="scripts/components/organizations/controllers/modals/organizationDetails.js"></script>
-<script src="scripts/components/services/controllers/modals/serviceDetails.js"></script>
+<script src="scripts/shared/controllers/modals/serviceDetails.js"></script>
 <script src="scripts/components/organizations/controllers/modals/organizationChangerDialog.js"></script>
 <script src="scripts/components/organizations/controllers/modals/attributeEditorDialog.js"></script>
 <script src="scripts/components/services/controllers/modals/serviceChangerDialog.js"></script>
@@ -276,7 +271,6 @@
 <script src="scripts/services/requestNotificationChannel.js"></script>
 <script src="scripts/services/dialogService.js"></script>
 <script src="scripts/services/themeService.js"></script>
-<script src="scripts/services/securityService.js"></script>
 <script src="scripts/services/profileService.js"></script>
 <script src="scripts/services/settingsService.js"></script>
 <script src="scripts/services/startupService.js"></script>

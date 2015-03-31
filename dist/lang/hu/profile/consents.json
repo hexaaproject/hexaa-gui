@@ -8,7 +8,8 @@
 				"title": "Jóváhagyások",
 				"consentsTitle": "Jóváhagyások",
 				"noAttributeSpecificationsAssociated" : "Nem találhatóak rád érvényes attribútumok.",
-				"noAttributeValuesForSpecification": "Nem találhatóak értékek, ehhez az attribútumhoz!"
+				"noAttributeValuesForSpecification": "Nem találhatóak értékek, ehhez az attribútumhoz!",
+				"consentInformation": "Egy jelölőnégyzet kipipálásával Ön hozzájárulást ad Nekünk, hogy az érintett attribútumát megosszuk a {{name}} szolgáltatással."
 			},
 			"msg":
 			{

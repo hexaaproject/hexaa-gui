@@ -44,7 +44,7 @@
             }
 
             function save() {
-                if (scope.saveEntitlementpack !== undefined) {
+                if (scope.saveEntitlementpack) {
                     scope.saveEntitlementpack({entitlementpack: vm.entitlementpack});
                 }
             }

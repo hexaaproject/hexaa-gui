@@ -33,7 +33,7 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
         return $http({
             method: method,
             url: apiAddr + url.toString(),
-            headers: {'X-HEXAA-AUTH': token},
+            withCredentials: true,
             data: postData,
             tag: tag
         });
@@ -476,7 +476,7 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
             return HexaaService.doRequest('PUT', '/attributevalueorganizations/' + id + '.json', token, angular.toJson(postData));
         },
         getServicesLinkedToAttributeSpecification: function (asid) {
-            return HexaaService.doRequest('GET', '/attributespecs/' + asid + '/services.json?offset=0', token, null);
+            return HexaaService.doRequest('GET', '/attributespecs/' + asid + '/services.json?verbose=expanded&offset=0', token, null);
         },
         getAttributeValueOrganizationConsents: function (id) {
             return HexaaService.doRequest('GET', '/attributevalueorganizations/' + id + '/consents.json?offset=0', token, null);

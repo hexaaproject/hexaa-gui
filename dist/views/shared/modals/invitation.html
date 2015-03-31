@@ -7,12 +7,12 @@
 <div class="modal-body">
     <form class="form-group" name="invitationForm" ng-model="invitationForm" novalidate>
 
-        <div class="checkbox">
-            <label for="useEmail">
-                <b translate="modals.invitation.lbl.inviteByEmail"></b>
-                <input type="checkbox" name="useEmail" id="useEmail"
-                       ng-model="prop.useEmail" />
+        <div class="form-inline">
+            <label class="checkbox">
+                <switch type="checkbox" name="useEmail" id="useEmail" on="Yes" off="No" class="green"
+                        ng-model="prop.useEmail" />
             </label>
+            <label><b translate="modals.invitation.lbl.inviteByEmail"></b></label>
         </div>
 
         <span ng-show="prop.useEmail">

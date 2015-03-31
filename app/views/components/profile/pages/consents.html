@@ -1,30 +1,55 @@
 <div ng-controller="ProfileConsentsCtrl">
     <h2 translate>profile.consents.lbl.consentsTitle</h2>
+
     <div ng-show="profile.relatedServices.length == 0">
         <h4 translate>profile.consents.lbl.noAttributeSpecificationsAssociated</h4>
     </div>
     <accordion close-others="oneAtATime">
-        <accordion-group ng-repeat="service in profile.relatedServices | orderBy: 'name' | pager: pager" close-others="oneAtATime">
+        <accordion-group ng-repeat="service in profile.relatedServices | orderBy: 'name' | pager: pager"
+                         close-others="oneAtATime">
             <accordion-heading>
                 <div ng-click="load(service)">
                     {{service.name}}
                 </div>
             </accordion-heading>
-
             <div>
-                <span ng-repeat="attrSpec in service.consent">
-                    <p><b>{{attrSpec.name}}</b> <input type="checkbox"  name="cb_{{attrSpec.name}}" ng-model="attrSpec.consented"/></p>
+                <div class="clearfix">
+                    <button class="btn btn-default pull-right" ng-click="showServiceDetails(service.id)">
+                        <i class="fa fa-info"></i>
+                    </button>
+                    <blockquote
+                            translate="profile.consents.lbl.consentInformation"
+                            translate-value-name="{{service.name}}">
+                    </blockquote>
+                </div>
+
+
+                <div ng-repeat="attrSpec in service.consent">
+                    <span class="form-inline">
+                        <label class="checkbox">
+                            <switch type="checkbox" name="cb_{{attrSpec.name}}" ng-model="attrSpec.consented" on="On"
+                                    off="Off" class="green" />
+                        </label>
+                        <label class="control-label" >{{attrSpec.name}}</label>
+                    </span>
+                </div>
+
+                <span class="form-inline">
+                    <label class="checkbox">
+                        <switch name="cb_entitlements" ng-model="service.entitlements" on="On" off="Off" class="green"/>
+                    </label>
+                    <label class="control-label">Entitlements</label>
                 </span>
 
-                <span>
-                    <p><b>Entitlements</b> <input type="checkbox"  name="cb_entitlements" ng-model="service.entitlements"/></p>
-                </span>
-
-                <button ng-click="save(service)">Save</button>
+                <div class="clearfix">
+                    <button class="btn btn-primary pull-right" ng-click="save(service)">Save</button>
+                </div>
             </div>
 
         </accordion-group>
     </accordion>
-    <pagination total-items="pager.totalItems" page="pager.currentPage" max-size="pager.maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="pager.numPages" items-per-page="pager.itemPerPage"></pagination>
+    <pagination total-items="pager.totalItems" page="pager.currentPage" max-size="pager.maxSize" class="pagination-sm"
+                boundary-links="true" rotate="false" num-pages="pager.numPages"
+                items-per-page="pager.itemPerPage"></pagination>
     <pre>Page: {{pager.currentPage}} / {{pager.numPages}}</pre>
 </div>

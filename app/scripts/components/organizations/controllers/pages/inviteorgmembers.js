@@ -128,7 +128,7 @@
             function onSelectedOrganizationChanged(event, selectedOrganization) {
                 $scope.organization = {id: selectedOrganization};
 
-                if (selectedOrganization != undefined) {
+                if (selectedOrganization ) {
                     OrganizationsProxy.getOrganization(selectedOrganization).then(onSelectedOrganizationDownloaded);
                     OrganizationsProxy.getRoles(selectedOrganization).then(onOrganizationRolesDownloaded);
                 }

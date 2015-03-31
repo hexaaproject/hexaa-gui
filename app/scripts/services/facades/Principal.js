@@ -113,7 +113,7 @@ angular.module('hexaaApp.services.facades').factory('PrincipalProxy', ['$http', 
                 return HexaaService.deleteAttributeValuePrincipal(aid);
             },
             getRelatedServices: function (pager) {
-                if (pager !== undefined)
+                if (pager )
                     return HexaaService.getPrincipalRelatedServices((pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage);
                 else
                     return HexaaService.getPrincipalRelatedServices();

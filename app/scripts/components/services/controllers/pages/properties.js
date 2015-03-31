@@ -19,8 +19,8 @@
 
     angular.module('hexaaApp.components.services.controllers.pages')
         .controller('ServicePropertiesCtrl',
-        ['$scope', 'ServicesProxy', '$translate', 'events', '$upload', 'baseAddr', 'securityService', '$q', 'dialogService', 'pageTitleService',
-            function ($scope, ServicesProxy, $translate, events, $upload, baseAddr, securityService, $q, dialogService, pageTitleService) {
+        ['$scope', 'ServicesProxy', '$translate', 'events', '$upload', 'baseAddr', '$q', 'dialogService', 'pageTitleService',
+            function ($scope, ServicesProxy, $translate, events, $upload, baseAddr, $q, dialogService, pageTitleService) {
 
                 var namespace = "services.properties.";
 
@@ -57,7 +57,7 @@
                     return $upload.upload({
                         url: baseAddr + '/api/services/' + $scope.properties.id + '/logos.json?admin='+$scope.profile.isAdmin,
                         method: 'POST',
-                        headers: {'X-HEXAA-AUTH': securityService.getToken()},
+                        withCredentials: true,
                         file: $files[0],
                         fileFormDataName: "logo"
                     }).progress(onUploadProgressChanged);
@@ -83,10 +83,10 @@
                  */
                 function onSaveService(event, selectedService) {
                     if ($scope.servicePropertiesForm.$valid) {
-                        if ((selectedService != undefined ) && ($scope.properties.id != -1)) {
+                        if ((selectedService  ) && ($scope.properties.id != -1)) {
                             var tasks = [];
 
-                            if ($scope.service.logo != undefined) {
+                            if ($scope.service.logo ) {
                                 tasks.push(
                                     refreshImage($scope.service.logo).catch(onFileUploadError)
                                 );

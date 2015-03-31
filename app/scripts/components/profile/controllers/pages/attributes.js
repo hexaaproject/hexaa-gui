@@ -33,6 +33,7 @@
             $scope.newAttribute = newAttribute;
             $scope.removeAttribute = removeAttribute;
             $scope.editAttribute = newAttribute;
+            $scope.showServiceDetails = dialogService.showServiceDetails;
 
             /**
              * Invoked when controller created

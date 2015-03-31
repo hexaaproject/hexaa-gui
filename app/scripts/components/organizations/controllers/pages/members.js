@@ -35,7 +35,7 @@
                  */
                 function onOrganizationsSelectionChanged(event, selectedOrganization) {
                     if ($scope.profile.isAdmin
-                        && (selectedOrganization != undefined)) {
+                        && (selectedOrganization )) {
                         $scope.organization = {id: selectedOrganization};
 
                         OrganizationsProxy.getMembers(selectedOrganization)

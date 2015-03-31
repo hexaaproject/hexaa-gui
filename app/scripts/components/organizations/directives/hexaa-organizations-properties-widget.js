@@ -37,7 +37,8 @@
                 scope.$watch("newOrganizationForm.$valid", onFormValidationChanged);
 
                 function onFormValidationChanged(newValue, oldValue) {
-                    if (scope.formValid !== undefined) {
+                    if (newValue !== undefined)
+                    {
                         scope.formValid = newValue;
                     }
                 }

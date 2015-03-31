@@ -32,7 +32,7 @@
             vm.undo = undo;
 
             function removePrefix(uri) {
-                if (uri !== undefined) {
+                if (uri ) {
                     return uri.replace(vm.prefix, "");
                 }
                 else {

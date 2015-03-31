@@ -17,7 +17,7 @@
 'use strict';
 
 
-function ServiceFactory($injector) {
+function ServiceFactory($injector,baseUIAddr) {
 
     var ResourceEntity = $injector.get("ResourceEntity");
     var defaultProperties = {
@@ -81,4 +81,4 @@ function ServiceFactory($injector) {
     return Service;
 }
 
-angular.module('hexaaApp.models').factory('SercviceFactory', ['$injector', ServiceFactory]);
+angular.module('hexaaApp.models').factory('SercviceFactory', ['$injector','baseUIAddr', ServiceFactory]);

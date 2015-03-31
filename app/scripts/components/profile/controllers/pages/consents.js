@@ -40,6 +40,7 @@
                 /* INTERFACE */
                 $scope.load = load;
                 $scope.save = save;
+                $scope.showServiceDetails = dialogService.showServiceDetails;
 
                 /* IMPLEMENTATION*/
 

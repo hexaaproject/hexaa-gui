@@ -40,7 +40,7 @@
                  * @param token The token thats given in the inputbox
                  */
                 function link(token) {
-                    if (token != undefined) {
+                    if (token) {
                         OrganizationsProxy.linkPrivateEntitlementpack($scope.organization, token)
                             .then(onLinkPrivateEntitlementSuccess)
                             .catch(onLinkPrivateEntitlementpackError);
@@ -102,7 +102,7 @@
                  */
                 function onOrganizationSelectionChanged(event, selectedOrganization) {
 
-                    if (selectedOrganization != undefined) {
+                    if (selectedOrganization) {
                         $scope.organization = {id: selectedOrganization};
 
                         if ($scope.profile.isManagerOfOrganization(selectedOrganization)) {

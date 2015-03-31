@@ -157,7 +157,10 @@
              */
             function onEditRoleModalDismissed(role) {
                 if (role !== undefined) {
-                    role.undo();
+                    if (role.undo !== undefined)
+                    {
+                        role.undo();
+                    }
                 }
             }
 
@@ -193,7 +196,7 @@
              * @param selectedOrganization
              */
             function onOrganizationsSelectionChanged(event, selectedOrganization) {
-                if (selectedOrganization != undefined) {
+                if (selectedOrganization ) {
                     //create object by id
                     vm.organization = OrganizationsProxy.new({id: selectedOrganization});
 
@@ -205,7 +208,7 @@
             }
 
             function onGetOrganizationSuccess(organization) {
-                if (organization.data != undefined) {
+                if (organization.data ) {
                     vm.organization = organization.data;
 
                     //Query Roles for the selected organization

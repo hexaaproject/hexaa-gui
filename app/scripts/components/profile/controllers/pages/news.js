@@ -20,8 +20,10 @@
 
     angular.module('hexaaApp.components.profile.controllers.pages')
         .controller('ProfileNewsCtrl',
-        ['$scope', 'HexaaService', '$translate', 'events', 'PrincipalProxy', 'ServicesProxy', 'OrganizationsProxy', 'tags', 'dialogService', 'pageTitleService',
-            function ($scope, HexaaService, $translate, events, PrincipalProxy, ServicesProxy, OrganizationsProxy, tags, dialogService, pageTitleService) {
+        ['$scope', 'HexaaService', '$translate', 'events', 'PrincipalProxy', 'ServicesProxy', 'OrganizationsProxy',
+            'tags', 'dialogService', 'pageTitleService','$q',
+            function ($scope, HexaaService, $translate, events, PrincipalProxy, ServicesProxy, OrganizationsProxy,
+                      tags, dialogService, pageTitleService,$q) {
 
                 var namespace = "profile.news.";
 
@@ -44,18 +46,25 @@
                 /* INTERFACE */
                 $scope.refreshFeed = refreshFeed;
 
+                $scope.watches = {};
+
                 /*IMPLEMENTATION*/
 
                 function activate() {
                     buildTagBox();
                     $scope.$emit(events.organizationCanBeSaved, false);
-                    ServicesProxy.getServices().then(onGetServicesSuccess);
-                    OrganizationsProxy.getOrganizations().then(onGetOrganizationsSuccess);
-                    $scope.$watch('dataSources', onDataSourceChanged, true);
-                    $scope.$watch('tagSources', onDataSourceChanged, true);
+
+                    $q.all([
+                        ServicesProxy.getServices().then(onGetServicesSuccess),
+                        OrganizationsProxy.getOrganizations().then(onGetOrganizationsSuccess)
+                    ])
+                        .then(function()
+                        {
+                            $scope.$watch('dataSources', onDataSourceChanged, true)
+                        });
+
                     $scope.$watch("pager.currentPage", onCurrentPageChanged);
                     $scope.$watch("pager.itemPerPage", onCurrentPageChanged);
-                    refreshFeed();
 
                     pageTitleService.setSubPageTitle($translate.instant(namespace + "lbl.title"));
                 }
@@ -66,6 +75,11 @@
                  * Build tagbox
                  */
                 function buildTagBox() {
+
+                    if ($scope.watches.tagSources){
+                        $scope.watches.tagSources();
+                    }
+
                     $scope.tagSources.push({
                         name: '<strong>Tags</strong>',
                         multiSelectGroup: true
@@ -78,6 +92,8 @@
                     $scope.tagSources.push({
                         multiSelectGroup: false
                     });
+
+                    $scope.watches.tagSources = $scope.$watch('tagSources', onDataSourceChanged, true);
                 }
 
                 function onGetServicesSuccess(services) {
@@ -125,8 +141,7 @@
                 }
 
                 function onCurrentPageChanged(oldValue, newValue) {
-
-                    if (oldValue !== undefined) {
+                    if (oldValue !== newValue) {
                         var organizations = $linq($scope.dataSources).where("x=>x.type=='organization' && x.ticked==true").select("x=>x.id").toArray();
                         var services = $linq($scope.dataSources).where("x=>x.type=='service' && x.ticked==true").select("x=>x.id").toArray();
                         refreshFeed(services, organizations);
@@ -134,7 +149,7 @@
                 }
 
                 function onDataSourceChanged(oldValue, newValue) {
-                    if (oldValue !== undefined) {
+                    if (oldValue !== newValue) {
                         var organizations = $linq($scope.dataSources).where("x=>x.type=='organization' && x.ticked==true").select("x=>x.id").toArray();
                         var services = $linq($scope.dataSources).where("x=>x.type=='service' && x.ticked==true").select("x=>x.id").toArray();
 

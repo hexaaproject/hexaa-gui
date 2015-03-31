@@ -19,7 +19,8 @@
 				"serviceName": "Név",
 				"serviceLogo": "Logo",
 				"serviceDescription": "Leírás",
-				"noSupportedServiceForAttributeSpecification": "Nincsen ezen attribútum specifikációt támogató szolgáltatás!"
+				"noSupportedServiceForAttributeSpecification": "Nincsen ezen attribútum specifikációt támogató szolgáltatás!",
+				"dataStoreInformation": "Minden információt amit ezen oldalon megad, eltárolódásra kerül az adatbázisunkban. Ezen információkat mindaddig nem szolgáltatjuk ki harmadik félnek, amíg Ön azt jóvá nem hagyja."
 			},		
 			"btn": 
 			{

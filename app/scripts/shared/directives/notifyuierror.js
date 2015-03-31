@@ -25,7 +25,7 @@ angular.module('hexaaApp.shared.directives').directive('notifyuierror', ['events
     function onNotifyUIError(elem) {
         return function (event, error) {
             //Ellenőrizzük, hogy biztosan kaptunk-e konkrét hibaüzenetet (500-as hiba esetén nem kapunk)
-            if ((error !== undefined) && (error !== null) && (error.children !== undefined)) {
+            if (error && error.children) {
 
                 //A tooltipet el is kell majd rejteni, ehhez definialok egy fuggvenyt
                 var hide = function () {
@@ -34,8 +34,8 @@ angular.module('hexaaApp.shared.directives').directive('notifyuierror', ['events
                 //Melyik adatmezőhöz tartozik a direktíva?
                 var error_type = $(elem).attr("id");
                 //Az adott mezővel kapcsolatban történt-e validációs hiba?
-                if ((error.children[error_type] !== undefined) &&
-                    (error.children[error_type].errors !== undefined) &&
+                if ((error.children[error_type] ) &&
+                    (error.children[error_type].errors ) &&
                     (error.children[error_type].errors.length > 0)) {
                     //Létrehozunk egy tooltipet az input HTML elemre
                     $(elem).prop("data-toggle", "tooltip");

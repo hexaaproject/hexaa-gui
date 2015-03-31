@@ -26,6 +26,7 @@ angular.module('hexaaApp', [
     'multi-select',
     'angularFileUpload',
     'toastr',
+    'uiSwitch',
     //First party modules
     'hexaaApp.constants',
     'hexaaApp.config',
@@ -68,6 +69,7 @@ angular.module('hexaaApp', [
 //Constant for baseAddr
     angular.module('hexaaApp.constants').constant("baseAddr", baseAddr);
     angular.module('hexaaApp.constants').constant("apiAddr", apiAddr);
+    angular.module('hexaaApp.constants').constant("logoutUrl", logoutUrl);
     angular.module('hexaaApp.constants').constant("hexaaCookieName", hexaaCookieName);
     angular.module('hexaaApp.constants').constant("settingsCookieName", "hexaaUISettings");
     angular.module('hexaaApp.constants').constant("baseUIAddr", hexaaUIAddr);

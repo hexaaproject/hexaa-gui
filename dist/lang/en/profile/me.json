@@ -13,7 +13,8 @@
 				"profileDisplayName": "Display Name",
 				"profileTheme": "Theme",
 				"profileBasic": "Basic",
-				"profileUI": "User Interface"
+				"profileUI": "User Interface",
+				"dataStoreInformation": "All the information you provide, will be stored in our database. We do not share these information with anybody else."
 			},
 			"msg": {
 				"profileUpdateSuccessful" : "Profile updated!",

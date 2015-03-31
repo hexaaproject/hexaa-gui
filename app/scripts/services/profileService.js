@@ -1,8 +1,8 @@
 'use strict';
 angular.module('hexaaApp.services')
-    .service('profileService', ['PrincipalProxy', 'HexaaService', 'baseAddr', '$rootScope', 'events', PrincipalProxyService]);
+    .service('profileService', ['PrincipalProxy', 'HexaaService', 'logoutUrl', '$rootScope', 'events', PrincipalProxyService]);
 
-function PrincipalProxyService(PrincipalProxy, HexaaService, baseAddr, $rootScope, events) {
+function PrincipalProxyService(PrincipalProxy, HexaaService, logoutUrl, $rootScope, events) {
 
     var profile = null;
 
@@ -24,7 +24,7 @@ function PrincipalProxyService(PrincipalProxy, HexaaService, baseAddr, $rootScop
 
 
     function logout() {
-        var redirectUrl = baseAddr + "/Shibboleth.sso/Logout?return=" + baseAddr;
+        var redirectUrl = logoutUrl;
         var encoded = btoa(redirectUrl);
         location.href = "logout.php?redirect=" + encoded;
     }
@@ -64,9 +64,9 @@ function PrincipalProxyService(PrincipalProxy, HexaaService, baseAddr, $rootScop
      * @returns {boolean}
      */
     function isManagerOfService(sid) {
-        if (sid !== undefined) {
-            if (profile !== undefined) {
-                return profile.isAdmin || ($linq(profile.managedServices).indexOf("x=>x.id==" + sid) >= 0);
+        if (sid ) {
+            if (profile ) {
+                return (sid === -1) || profile.isAdmin || ($linq(profile.managedServices).indexOf("x=>x.id==" + sid) >= 0);
             }
             else {
                 return false;
@@ -84,8 +84,8 @@ function PrincipalProxyService(PrincipalProxy, HexaaService, baseAddr, $rootScop
      */
     function isManagerOfOrganization(oid) {
         if (oid !== undefined) {
-            if (profile !== undefined) {
-                var ismanager = ($linq(profile.managedOrganizations).indexOf("x=>x.id==" + oid) >= 0);
+            if (profile) {
+                var ismanager = (oid === -1) || ($linq(profile.managedOrganizations).indexOf("x=>x.id==" + oid) >= 0);
                 return profile.isAdmin || ismanager;
             }
             else {
@@ -104,7 +104,7 @@ function PrincipalProxyService(PrincipalProxy, HexaaService, baseAddr, $rootScop
      */
     function isMemberOfOrganization(oid) {
         if (oid !== undefined) {
-            if (profile !== undefined) {
+            if (profile ) {
                 return profile.isAdmin || ($linq(profile.memberships).indexOf("x=>x.id==" + oid) >= 0);
             }
             else {

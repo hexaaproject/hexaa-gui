@@ -30,7 +30,7 @@
                 vm.organization = {};
 
                 /* INTERFACES */
-                vm.showServiceDetails = showServiceDetails;
+                vm.showServiceDetails = dialogService.showServiceDetails;
                 vm.add = add;
                 vm.remove = remove;
 
@@ -100,22 +100,6 @@
                         .catch(onDeleteEntitlementpackError);
                 }
 
-                /**
-                 * Opens a dialog with service details
-                 * @param id the id of the service
-                 */
-                function showServiceDetails(id) {
-                    var modalInstance = $modal.open({
-                        templateUrl: 'views/components/services/modals/serviceDetails.html',
-                        controller: "ServiceDetailsCtrl",
-                        size: 'lg',
-                        resolve: {
-                            serviceId: function () {
-                                return id;
-                            }
-                        }
-                    });
-                }
 
                 /* CALLBACK */
 
@@ -168,7 +152,7 @@
                  * @param selectedOrganization
                  */
                 function onOrganizationsSelectionChanged(event, selectedOrganization) {
-                    if (selectedOrganization !== undefined) {
+                    if (selectedOrganization) {
                         vm.organization = {id: selectedOrganization};
 
                         OrganizationsProxy.getEntitlementpacks(selectedOrganization)

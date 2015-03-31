@@ -1,17 +1,15 @@
 'use strict';
 angular.module('hexaaApp.services')
     .service('startupService', ['$rootScope', '$translate', 'HexaaService', 'events', 'hexaaCookieName', 'PrincipalProxy',
-        'securityService', '$cookies', '$timeout', '$location', 'profileService','$route',
+        '$cookies', '$timeout', '$location', 'profileService','$route',
         function ($rootScope, $translate, HexaaService, events, hexaaCookieName, PrincipalProxy,
-                  securityService, $cookies, $timeout, $location, profileService,$route) {
+                  $cookies, $timeout, $location, profileService,$route) {
 
             function run() {
                 //Attach global functions to rooTscope
                 $rootScope.navigate = navigate;
                 $rootScope.isActiveTab = isActiveTab;
                 //attach eventhandling
-                $rootScope.$on(events.authenticated, onAuthenticated);
-                $rootScope.$on(events.authError, onAuthError);
                 $rootScope.$on(events.tokenExpired, onTokenExpired);
                 $rootScope.$on(events.languageChanged, onLanguageChanged);
                 //activate
@@ -20,9 +18,8 @@ angular.module('hexaaApp.services')
 
             function activate() {
                 //When app loads, authenticate the user
-                securityService.authenticate($cookies[hexaaCookieName]);
                 HexaaService.getApiProperties().then(onGetApiPropertiesSuccess);
-
+                profileService.run();
                 $rootScope.$on(events.onUserPermissionChanged, onUserPermissionChanged);
 
             }
@@ -37,26 +34,12 @@ angular.module('hexaaApp.services')
                 $rootScope.hexaa_properties.public_attribute_spec_enabled = data.data.public_attribute_spec_enabled;
             }
 
-            /**
-             * Executes when somebody gets authenticated
-             */
-            function onAuthenticated(event, token) {
-                HexaaService.setToken(token);
-                profileService.run();
-            }
 
             /*
              * Executes when user changes the site language
              */
             function onLanguageChanged(event, lang) {
                 $translate.use(lang);
-            }
-
-            /*
-             * Executes when authentication error occours, or token has expired
-             */
-            function onAuthError(event) {
-                navigate("index.php");
             }
 
 
