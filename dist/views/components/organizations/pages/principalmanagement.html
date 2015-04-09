@@ -15,11 +15,12 @@
             <div class="col-sm-3">
                 <span class="btn-group">
                     <button class="btn btn-default dropdown-toggle" title="{{ 'organizations.principalmanagement.btn.sendMail' | translate}}"
+                            ng-if="vm.profile.isManagerOfOrganization(vm.organization.id)"
                             data-toggle="dropdown">
                         <i class="fa fa-envelope"></i>
                     </button>
                     <ul class="dropdown-menu">
-                        <li ><a ng-if="vm.profile.isManagerOfOrganization(vm.organization.id)" ng-click="vm.sendMail(vm.MailTargetEnum.User)" translate>organizations.principalmanagement.btn.sendMailToUsers</a></li>
+                        <li ><a ng-click="vm.sendMail(vm.MailTargetEnum.User)" translate>organizations.principalmanagement.btn.sendMailToUsers</a></li>
                         <li ><a ng-click="vm.sendMail(vm.MailTargetEnum.Manager)" translate>organizations.principalmanagement.btn.sendMailToManagers</a></li>
                     </ul>
                 </span>

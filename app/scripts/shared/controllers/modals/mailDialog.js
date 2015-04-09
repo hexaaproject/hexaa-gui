@@ -69,13 +69,13 @@
 
                 function onMailSendSuccess(data)
                 {
-                    dialogService.success($translate(namespace+"msg.sendMailSuccess"));
+                    dialogService.success($translate.instant(namespace+"msg.sendMailSuccess"));
                     $modalInstance.close(angular.copy(vm.mail));
                 }
 
                 function onMailSendError(error)
                 {
-                    dialogService.error(error.data.message);
+                    dialogService.error($translate.instant(namespace+"msg.sendMailError"));
                     $modalInstance.dismiss();
                 }
             }]);

@@ -10,7 +10,8 @@
 					"recipients": "{{recipient}} of {{target}}"
 				},
 				"msg": {
-					"sendMailSuccess": "Mail sent!"
+					"sendMailSuccess": "Mail sent!",
+					"sendMailError": "Failed to send message!"
 				},
 				"btn": {
 					"dialogClose": "Close",

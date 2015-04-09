@@ -10,7 +10,8 @@
 					"recipients": "{{recipient}}-ek a {{target}}-ból"
 				},
 				"msg": {
-					"sendMailSuccess": "Üzenet elküldve!"
+					"sendMailSuccess": "Üzenet elküldve!",
+					"sendMailError": "Üzenet küldése sikertelen!"
 				},
 				"btn": {
 					"dialogClose": "Bezárás",
