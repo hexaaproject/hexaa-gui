@@ -187,7 +187,7 @@
                         if (answer == 'yes') {
                             EntitlementpacksProxy.remove(
                                 entitlementpack.id
-                            ).success(onEntitlementpackRemoveSuccess(entitlementpack.id)).
+                            ).success(onEntitlementpackRemoveSuccess(entitlementpack)).
                                 error(onEntitlementpackRemoveError);
 
                         }
