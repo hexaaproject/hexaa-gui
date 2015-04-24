@@ -105,7 +105,7 @@ function PrincipalProxyService(PrincipalProxy, HexaaService, logoutUrl, $rootSco
     function isMemberOfOrganization(oid) {
         if (oid !== undefined) {
             if (profile ) {
-                return profile.isAdmin || ($linq(profile.memberships).indexOf("x=>x.id==" + oid) >= 0);
+                return profile.isAdmin || ($linq(profile.memberships).indexOf("x=>x.id==" + oid) >= 0) || isManagerOfOrganization(oid);
             }
             else {
                 return false;
