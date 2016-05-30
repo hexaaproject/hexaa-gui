@@ -49,7 +49,7 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
             return HexaaService.doRequest('GET', '/services.json?offset=0', token, null);
         },
         getService: function (id) {
-            return HexaaService.doRequest('GET', '/services/' + id + '.json', token, null);
+            return HexaaService.doRequest('GET', '/services/' + id + '.json?verbose=expanded', token, null);
         },
         addService: function (name, url, entity, desc, org_name, org_short_name, org_url, org_description, priv_url, priv_description) {
             var postData = new Jobject();
@@ -244,8 +244,11 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
         deleteRole: function (id) {
             return HexaaService.doRequest('DELETE', '/roles/' + id + '.json', token, null);
         },
-        getServiceEntitlements: function (id) {
-            return HexaaService.doRequest('GET', '/services/' + id + '/entitlements.json?offset=0', token, null);
+        getServiceEntitlements: function (id, offset, limit) {
+            var url = new QueryStringBuilder('/services/' + id + '/entitlements.json?offset=0')
+                .set("offset", offset || 0)
+                .set("limit", limit);
+            return HexaaService.doRequest('GET', url.toString(), token, null);
         },
         addServiceEntitlement: function (id, uri, name, description) {
             var postData = new Jobject().prop("name", name).prop("uri", uri).prop("description", description);
@@ -288,8 +291,11 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
                 .set("limit", limit);
             return HexaaService.doRequest('GET', url.toString(), token, null);
         },
-        getEntitlementsOfEntitlementPack: function (id) {
-            return HexaaService.doRequest('GET', '/entitlementpacks/' + id + '/entitlements.json?offset=0', token, null);
+        getEntitlementsOfEntitlementPack: function (id, offset, limit) {
+            var url = new QueryStringBuilder('/entitlementpacks/' + id + '/entitlements.json?offset=0')
+                .set("offset", offset || 0)
+                .set("limit", limit);
+            return HexaaService.doRequest('GET',url.toString() , token, null);
         },
         inviteOrganizationManager: function (oid, email, msg, landing_url, start_date, end_date, limit, locale) {
             var postData = new Jobject();
@@ -711,6 +717,27 @@ angular.module('hexaaApp.services').factory('HexaaService', ['$http', '$rootScop
             var postData = new Jobject()
                 .prop("services", services);
             return HexaaService.doRequest('PUT', '/securitydomains/'+id+'/services.json', token, angular.toJson(postData));
+        },
+        addHook: function(name, description, url, type, service) {
+            var postData = new Jobject()
+                .prop("name", name)
+                .prop("description", description)
+                .prop("url", url)
+                .prop("type", type)
+                .prop("service", service);
+            return HexaaService.doRequest('POST', '/hooks.json', token, angular.toJson(postData));
+        },
+        updateHook: function(id, name, description, url, type, service) {
+            var postData = new Jobject()
+                .prop("name", name)
+                .prop("description", description)
+                .prop("url", url)
+                .prop("type", type)
+                .prop("service", service);
+            return HexaaService.doRequest('PUT', '/hooks/'+id+'.json', token, angular.toJson(postData));
+        },
+        deleteHook: function(id) {
+            return HexaaService.doRequest('DELETE', '/hooks/'+id+'.json', token, null);
         }
 
     };

@@ -40,12 +40,12 @@
             scope.undo = undo;
 
             function undo() {
-                vm.entitlementpack.undo();
+                scope.entitlementpack.undo();
             }
 
             function save() {
                 if (scope.saveEntitlementpack) {
-                    scope.saveEntitlementpack({entitlementpack: vm.entitlementpack});
+                    scope.saveEntitlementpack();
                 }
             }
 

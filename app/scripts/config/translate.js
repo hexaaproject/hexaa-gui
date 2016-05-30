@@ -52,6 +52,7 @@
         $translatePartialLoaderProvider.addPart('modals/serviceDetails');
         $translatePartialLoaderProvider.addPart('modals/organizationChangerDialog');
         $translatePartialLoaderProvider.addPart('modals/serviceChangerDialog');
+        $translatePartialLoaderProvider.addPart('modals/hookEditor');
         $translatePartialLoaderProvider.addPart('admin/attributespecifications');
         $translatePartialLoaderProvider.addPart('admin/new_attrspec');
         $translatePartialLoaderProvider.addPart('admin/index');
@@ -84,6 +85,7 @@
         $translatePartialLoaderProvider.addPart('services/inviteservicemanagers');
         $translatePartialLoaderProvider.addPart('services/entityids');
         $translatePartialLoaderProvider.addPart('services/modals/newEntitlementDialog');
+        $translatePartialLoaderProvider.addPart('services/hooks');
 
 
         $translateProvider.useLoader('$translatePartialLoader', {

@@ -18,7 +18,11 @@
 				"manage": "Manage",
 				"actions": "Actions",
 				"new": "New"
-			}
+			},
+			"msg": 
+			{
+				"noDisplayName": "You have not specified your display name in your profile. Please replace It under \"Me\" section."
+			}			
 		}
 	}
 	

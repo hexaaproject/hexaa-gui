@@ -1,0 +1,33 @@
+{
+  "services": {
+    "hooks": {
+      "lbl": {
+        "title": "Horgonyok",
+        "hookName" : "Név",
+        "hookUrl": "URL",
+        "hookType": "Típus",
+        "hookCreated": "Létrehozva ",
+        "hookUpdated": "Frissítve".
+        "hookLastCallMessage": "Utolsó válaszüzenet"
+      },
+      "btn": {
+        "addHook": "Új horgony"
+      },
+      "msg": {
+        "hookUpdateSuccess": "Horgony frissítve!",
+        "hookUpdateError": "Nem sikerült frissíteni a horgonyt!",
+        "hookDeleteSuccess": "Horgony törölve!",
+        "hookDeleteError": "Nem sikerült törölni a horgonyt!",
+        "hookCreateSuccess": "Horgony létrehozva!",
+        "hookCreateError": "Nem sikerült létrehozni a horgonyt!",
+        "confirmationNeeded": "Megerősítés szükséges!",
+        "confirmHookRemove" : "Biztosan törli a horgonyt?"
+      },
+      "types": {
+        "user_added": "Új felhasználó lett hozzáadva",
+        "user_removed": "Felhasználó törölve lett",
+        "attribute_change": "Attribútum változás"
+      }
+    }
+  }
+}

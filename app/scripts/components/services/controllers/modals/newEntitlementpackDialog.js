@@ -26,14 +26,19 @@
                 var vm = this;
                 var namespace = "services.modals.newEntitlementpackDialog.";
 
-                vm.service = angular.copy(targetService);
-
-                vm.entitlementpack = angular.copy(targetEntitlementpack);
-
                 /* INTERFACE */
                 vm.saveEntitlementpack = saveEntitlementpack;
                 vm.close = close;
+
                 /* IMPLEMENTATION */
+
+                function activate() {
+                    vm.service = angular.copy(targetService);
+                    vm.entitlementpack = angular.copy(targetEntitlementpack);
+                    vm.entitlementpack.commit();
+                }
+
+                activate();
 
                 function close() {
                     $modalInstance.dismiss();

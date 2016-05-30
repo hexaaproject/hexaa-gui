@@ -7,43 +7,48 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <button class="btn btn-success pull-right" data-toggle="modal" href='#newConnection'><i class="fa fa-plus"></i> {{ 'organizations.entitlementpacks.btn.entitlementpackAdd' | translate}}</button>
+            <button class="btn btn-success pull-right" data-toggle="modal" href='#newConnection'><i
+                    class="fa fa-plus"></i> {{ 'organizations.entitlementpacks.btn.entitlementpackAdd' | translate}}
+            </button>
         </div>
     </div>
 
     <table class="table table-hover">
         <thead>
-            <tr>
-                <th translate>organizations.entitlementpacks.tblfield.name</th>
-                <th translate>organizations.entitlementpacks.tblfield.description</th>
-                <th translate>organizations.entitlementpacks.tblfield.permissions</th>
-                <th translate>organizations.entitlementpacks.tblfield.servicemanagers</th>
-                <th translate>organizations.entitlementpacks.tblfield.status</th>
-                <th translate class="text-right">organizations.entitlementpacks.tblfield.actions</th>
-            </tr>
+        <tr>
+            <th translate>organizations.entitlementpacks.tblfield.name</th>
+            <th translate>organizations.entitlementpacks.tblfield.description</th>
+            <th translate>organizations.entitlementpacks.tblfield.permissions</th>
+            <th translate>organizations.entitlementpacks.tblfield.servicemanagers</th>
+            <th translate>organizations.entitlementpacks.tblfield.status</th>
+            <th translate class="text-right">organizations.entitlementpacks.tblfield.actions</th>
+        </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="entitlementpack in organization.entitlementpacks">
-                <td><strong>{{ entitlementpack.entitlement_pack.service.name }}</strong> {{ entitlementpack.name }}</td>
-                <td>{{ entitlementpack.description }}</td>
-                <td>
-                    <ul ng-repeat="entitlement in entitlementpack.entitlement_pack.entitlements">
-                        <li>{{ entitlement.name }}</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul ng-repeat="manager in entitlementpack.entitlement_pack.service.managers">
-                        <li>{{manager.display_name}} &lt;{{ manager.email }}&gt;</li>
-                    </ul>
-                </td>
-                <td>
-                    <span ng-if="entitlementpack.status ===  'pending'" class="label label-warning" translate>organizations.entitlementpacks.msg.statusPending</span>
-                    <span ng-if="entitlementpack.status ===  'accepted'" class="label label-success" translate>organizations.entitlementpacks.msg.statusOk</span>
-                </td>
-                <td>
-                    <button type="button" ng-click="remove(entitlementpack)" class="btn btn-danger pull-right"><i class="fa fa-trash"></i> {{'organizations.entitlementpacks.btn.entitlementpackRemove'|translate}}</button>
-                </td>
-            </tr>
+        <tr ng-repeat="entitlementpack in organization.entitlementpacks | filter:searchFunc(filterText)">
+            <td><strong>{{ entitlementpack.entitlement_pack.service.name }}</strong> {{ entitlementpack.name }}</td>
+            <td>{{ entitlementpack.description }}</td>
+            <td>
+                <ul ng-repeat="entitlement in entitlementpack.entitlement_pack.entitlements">
+                    <li>{{ entitlement.name }}</li>
+                </ul>
+            </td>
+            <td>
+                <ul ng-repeat="manager in entitlementpack.entitlement_pack.service.managers">
+                    <li>{{manager.display_name}} &lt;{{ manager.email }}&gt;</li>
+                </ul>
+            </td>
+            <td>
+                <span ng-if="entitlementpack.status ===  'pending'" class="label label-warning" translate>organizations.entitlementpacks.msg.statusPending</span>
+                <span ng-if="entitlementpack.status ===  'accepted'" class="label label-success" translate>organizations.entitlementpacks.msg.statusOk</span>
+            </td>
+            <td>
+                <button type="button" ng-click="remove(entitlementpack)" class="btn btn-danger pull-right"><i
+                        class="fa fa-trash"></i>
+                    {{'organizations.entitlementpacks.btn.entitlementpackRemove'|translate}}
+                </button>
+            </td>
+        </tr>
         </tbody>
     </table>
     <div class="modal fade" id="newConnection">
@@ -57,11 +62,13 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="filterText" ng-model="token" placeholder="{{'organizations.entitlementpacks.placeholder.token' | translate}}"
-                                       autofocus="autofocus" />
+                                <input type="text" class="form-control" name="filterText" ng-model="token"
+                                       placeholder="{{'organizations.entitlementpacks.placeholder.token' | translate}}"
+                                       autofocus="autofocus"/>
                             <span class="input-group-btn">
                                 <button class="btn btn-primary pull-right" ng-click="link(token)">
-                                    <i class="fa fa-plus"></i> {{ 'organizations.entitlementpacks.btn.entitlementpackAdd' | translate}}
+                                    <i class="fa fa-plus"></i> {{
+                                    'organizations.entitlementpacks.btn.entitlementpackAdd' | translate}}
                                 </button>
                             </span>
                             </div>
@@ -72,13 +79,17 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <a href="#/organizations/public_catalog" type="button" class="btn btn-primary btn-block" translate>organizations.entitlementpacks.header.choosePublic</a>
+                            <a href="#/organizations/public_catalog" type="button" class="btn btn-primary btn-block"
+                               translate>organizations.entitlementpacks.header.choosePublic</a>
                         </div>
                     </div>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
 </div>
 

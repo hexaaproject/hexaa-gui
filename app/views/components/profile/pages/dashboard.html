@@ -1,7 +1,11 @@
 <div id="dashboard" ng-controller="ProfileDashboardCtrl">
     <h3 class="page-header">Dashboard</h3>
-    <div class="container-fluid">
 
+    <div class="alert alert-danger" ng-if="profile.display_name == null || profile.display_name == ''">
+        {{'profile.dashboard.msg.noDisplayName' | translate}}
+    </div>
+
+    <div class="container-fluid">
         <div class="row">
 
             <div class="col-md-6">

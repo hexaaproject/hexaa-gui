@@ -18,6 +18,10 @@
 				"manage": "Kezelés",
 				"actions": "Műveletek",
 				"new": "Új"
+			},
+			"msg": 
+			{
+				"noDisplayName": "Nem adott meg megjelenítendő nevet a beállításainál. Kérem pótolja azt az \"Én\" szekció alatt"
 			}
 		}
 	}

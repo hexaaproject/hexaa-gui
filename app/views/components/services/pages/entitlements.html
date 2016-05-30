@@ -1,5 +1,16 @@
 <div class="row" ng-controller="ServiceEntitlementsCtrl as vm">
-    <div class="panel panel-default panel-heading clearfix">
+    <div class="panel panel-default panel-heading form-group form-inline">
+        <span>
+               <label for="pageSize"></label> <b>Page size:</b>
+                <select id="pageSize" class="form-control" ng-model="vm.pager.itemPerPage">
+                    <option>1</option>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
+            </span>
         <button class="btn btn-primary pull-right" ng-click="vm.newEntitlement()" translate>
             services.entitlements.btn.entitlementAdd
         </button>
@@ -29,5 +40,9 @@
             <button class="btn btn-danger pull-right" ng-click="vm.deleteEntitlement(entitlement)"  translate>services.entitlements.btn.entitlementRemove</button>
         </div>
     </div>
-
+    <pagination total-items="vm.pager.totalItems" page="vm.pager.currentPage" max-size="vm.pager.maxSize"
+                class="pagination-sm" boundary-links="true" rotate="false" num-pages="vm.pager.numPages"
+                items-per-page="vm.pager.itemPerPage">
+    </pagination>
+    <pre>Page: {{vm.pager.currentPage}} / {{vm.pager.numPages}}</pre>
 </div>

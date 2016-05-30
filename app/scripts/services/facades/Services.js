@@ -117,19 +117,23 @@ angular.module('hexaaApp.services.facades').factory('ServicesProxy', ['$http', '
                 entitlement.name,
                 entitlement.description);
         },
-        getEntitlements: function (sid) {
+        getEntitlements: function (sid, pager) {
             var deferred = $q.defer();
             var entitlements = [];
-            HexaaService.getServiceEntitlements(sid)
-                .success(function (data, status, header, config) {
-                    angular.forEach(data.items, function (entitlement) {
-                        entitlements.push(ResourceEntity.new(entitlement));
-                    });
-                    deferred.resolve(wrapResponse({
-                        items: entitlements,
-                        item_number: data.item_number
-                    }, status, header, config));
-                })
+            var request = HexaaService.getServiceEntitlements(sid);
+            if (pager) {
+                request = HexaaService.getServiceEntitlements(sid, (pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage)
+            }
+            
+            request.success(function (data, status, header, config) {
+                angular.forEach(data.items, function (entitlement) {
+                    entitlements.push(ResourceEntity.new(entitlement));
+                });
+                deferred.resolve(wrapResponse({
+                    items: entitlements,
+                    item_number: data.item_number
+                }, status, header, config));
+            })
                 .error(function (data, status, header, config) {
                     deferred.reject(wrapResponse(data, status, header, config));
                 });
@@ -140,17 +144,21 @@ angular.module('hexaaApp.services.facades').factory('ServicesProxy', ['$http', '
         },
         getEntitlementpacks: function (sid, pager) {
             var deferred = $q.defer();
-            HexaaService.getServiceEntitlementPacks(sid, (pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage)
-                .success(function (data, status, headers, config) {
-                    var entpacks = [];
-                    angular.forEach(data.items, function (entitlementpack) {
-                        entpacks.push(EntitlementpacksProxy.new(entitlementpack));
-                    });
-                    deferred.resolve(wrapResponse({
-                        items: entpacks,
-                        item_number: data.item_number
-                    }, status, headers, config));
-                })
+            var request = HexaaService.getServiceEntitlementPacks(sid);
+            if (pager) {
+                request = HexaaService.getServiceEntitlementPacks(sid, (pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage);
+            }
+
+            request.success(function (data, status, headers, config) {
+                var entpacks = [];
+                angular.forEach(data.items, function (entitlementpack) {
+                    entpacks.push(EntitlementpacksProxy.new(entitlementpack));
+                });
+                deferred.resolve(wrapResponse({
+                    items: entpacks,
+                    item_number: data.item_number
+                }, status, headers, config));
+            })
                 .catch(function (data, status, headers, config) {
                     deferred.reject(wrapResponse(data, status, headers, config));
                 });
@@ -231,17 +239,15 @@ angular.module('hexaaApp.services.facades').factory('ServicesProxy', ['$http', '
         acceptConnectionRequest: function (id, epid) {
             return HexaaService.acceptOrganizationToEntitlementpackageRequest(id, epid);
         },
-        getInvitations: function (sid,pager) {
+        getInvitations: function (sid, pager) {
             var deferred = $q.defer();
 
             var request = null;
-            if (pager === undefined)
-            {
+            if (pager === undefined) {
                 request = HexaaService.getServiceInvitations(sid);
             }
-            else
-            {
-                request = HexaaService.getServiceInvitations(sid,(pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage);
+            else {
+                request = HexaaService.getServiceInvitations(sid, (pager.currentPage - 1) * pager.itemPerPage, pager.itemPerPage);
             }
 
             request
@@ -288,6 +294,15 @@ angular.module('hexaaApp.services.facades').factory('ServicesProxy', ['$http', '
         },
         new: function (data) {
             return SercviceFactory.new(data)
+        },
+        addHook: function(hook) {
+            return HexaaService.addHook(hook.name, hook.description, hook.url, hook.type, hook.service)
+        },
+        updateHook: function(hook) {
+            return HexaaService.updateHook(hook.id,hook.name, hook.description, hook.url, hook.type, hook.service)
+        },
+        deleteHook: function(hook) {
+            return HexaaService.deleteHook(hook.id);
         }
     };
     return Proxy;

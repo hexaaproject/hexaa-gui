@@ -32,6 +32,15 @@
                 entitlements: []
             };
 
+            /* Pager settings */
+            vm.pager = {
+                itemPerPage: 5, //How many items will appear on a single page?
+                maxSize: 5,  //Size of pagers visile counters [1,2,3,4,5....last]
+                totalItems: 0, //Num of total items
+                currentPage: 1,  //Currently selected page
+                numPages: 0
+            };
+
             /* INTERFACE */
             vm.newEntitlement = editEntitlement;
             vm.editEntitlement = editEntitlement;
@@ -44,10 +53,29 @@
             function activate() {
                 $scope.$emit(events.serviceCanBeSaved, false);
                 $scope.$on(events.servicesSelectionChanged, onServicesSelectionChanged);
+                $scope.$watch("vm.pager.itemPerPage", onItemPerPageChanged);
+                $scope.$watch("vm.pager.currentPage", onCurrentPageChanged);
                 pageTitleService.setSubPageTitle($translate.instant(namespace + "lbl.title"));
             }
 
             activate();
+
+            function onItemPerPageChanged() {
+                if (vm.service.id !== -1)
+                {
+                    ServicesProxy.getEntitlements(vm.service.id, vm.pager)
+                        .then(onGetEntitlementsSuccess);
+                }
+            }
+
+            function onCurrentPageChanged() {
+                if (vm.service.id !== -1)
+                {
+                    ServicesProxy.getEntitlements(vm.service.id, vm.pager)
+                        .then(onGetEntitlementsSuccess);
+                }
+            }
+
 
             /* UI */
 
@@ -145,7 +173,7 @@
 
                     vm.service = {id: selectedService};
                     //Get Service entitlements
-                    ServicesProxy.getEntitlements(selectedService)
+                    ServicesProxy.getEntitlements(selectedService, vm.pager)
                         .then(onGetEntitlementsSuccess);
                     //Get entitlementprefix
                     EntitlementpacksProxy.getEntitlementPrefix()
@@ -204,6 +232,7 @@
 
             function onGetEntitlementsSuccess(data) {
                 vm.service.entitlements = angular.copy(data.data.items);
+                vm.pager.totalItems = data.data.item_number;
             }
 
             function onUpdateEntitlementError(entitlement) {

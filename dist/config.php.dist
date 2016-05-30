@@ -19,6 +19,7 @@ $hexaa_force_https = true;
 
 $hexaa_env_eppn = "eppn";
 $hexaa_env_mail = "mail";
+$hexaa_env_display_name = "display_name";
 
 $hexaa_dont_check_ssl_certificate = false;
 

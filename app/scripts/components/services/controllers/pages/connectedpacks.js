@@ -120,7 +120,7 @@
         function onGetLinkedOrganizationsSuccess(data) {
             $scope.service.connections = angular.copy(data.data.items);
             $scope.service.connections.saveMemento();
-            $scope.pager.totalItems = data.data.length;
+            $scope.pager.totalItems = data.data.item_numberb;
         }
 
         function onGetLinkedOrganizationsError(error) {

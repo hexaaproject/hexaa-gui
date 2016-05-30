@@ -19,7 +19,8 @@
     'use strict';
 
     angular.module('hexaaApp.components.services.controllers.pages').controller('ServicesCtrl', [
-        '$scope', 'ServicesProxy', '$route', '$translate', 'events', 'dialogService', '$location', 'settingsService', '$modal', 'pageTitleService',
+        '$scope', 'ServicesProxy', '$route', '$translate', 'events', 'dialogService', '$location',
+        'settingsService', '$modal', 'pageTitleService',
         function ($scope, ServicesProxy, $route, $translate, events, dialogService, $location, settingsService, $modal, pageTitleService) {
 
             var namespace = "services.index.";
@@ -104,16 +105,17 @@
                 $scope.services = angular.copy(data.data.items);
                 if ($route.current.params["id"] ) {
                     var selected = $linq($scope.services).where("x=>x.id==" + $route.current.params["id"]).singleOrDefault(undefined);
-                    $scope.selectionChanged(selected);
                 }
                 else if (settingsService.get("selectedService") != null ) {
                     //carry selected service between sites
                     var selected = $linq($scope.services).where("x=>x.id==" + settingsService.get("selectedService")).singleOrDefault(undefined);
+                }
+
+                if (selected !== undefined)
                     $scope.selectionChanged(selected);
-                }
-                else {
-                    openServiceChanger();
-                }
+                else
+                    $scope.openServiceChanger();
+
             }
 
             /**
@@ -122,7 +124,6 @@
              */
             function selectionChanged(item) {
                 $scope.selectedService = item;
-
                 if ($scope.selectedService ) {
                     settingsService.set("selectedService", item.id);
                     $scope.$broadcast(events.servicesSelectionChanged, item.id);

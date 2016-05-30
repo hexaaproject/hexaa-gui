@@ -75,12 +75,18 @@
                                 return $scope.service;
                             },
                             targetEntitlementpack: function () {
-                                return entitlementpack || EntitlementpacksProxy.new({
+                                if (entitlementpack) {
+                                    return entitlementpack;
+                                }
+                                else {
+                                    var brandNew = EntitlementpacksProxy.new({
                                         type: 'private',
                                         id: -1,
                                         entitlements: [],
                                         service: {id: $scope.service.id}
                                     });
+                                    return brandNew;
+                                }
                             }
                         }
                     });
@@ -145,7 +151,7 @@
                  * @param id
                  */
                 function onServicesSelectionChanged(event, selectedService) {
-                    if ($scope.selectedService ) {
+                    if ($scope.selectedService) {
                         $scope.service = {id: selectedService};
                         //Query entitlementpacks of service
                         refreshEntitlementpacks();

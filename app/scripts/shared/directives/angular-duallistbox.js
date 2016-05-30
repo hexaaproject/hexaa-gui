@@ -55,9 +55,8 @@
 
                 function activate() {
                     create();
-                    //scope.$watchCollection("elements", refresh,true);
-                    //scope.$watchCollection("selected", refresh,true);
-                    $interval(refresh, 1000, 0, false); //refresh bug.
+                    scope.$watchCollection("elements", refresh,true);
+                    scope.$watchCollection("selected", refresh,true);
                 }
 
                 activate();

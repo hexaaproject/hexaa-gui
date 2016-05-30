@@ -31,9 +31,20 @@
                 /* INTERFACE */
                 $scope.link = link;
                 $scope.remove = remove;
+                $scope.filterText = "";
+                $scope.searchFunc = searchFunc;
 
                 /* IMPLEMENTATION */
 
+                function searchFunc(filterText) {
+                    return function(value) {
+                        if (value.name.indexOf(filterText) > -1
+                            || value.description.indexOf(filterText) > -1)
+                        {
+                            return value;
+                        }
+                    }
+                }
 
                 /**
                  * Link Button click handler.

@@ -1,0 +1,33 @@
+{
+  "services": {
+    "hooks": {
+      "lbl": {
+        "title": "Hooks",
+        "hookName" : "Name",
+        "hookUrl": "URL",
+        "hookType": "Type",
+        "hookCreated": "Added",
+        "hookUpdated": "Updated",
+        "hookLastCallMessage": "Last call message"
+      },
+      "btn": {
+        "addHook": "New hook"
+      },
+      "msg": {
+        "hookUpdateSuccess": "Hook updated!",
+        "hookUpdateError": "Hook update failed!",
+        "hookDeleteSuccess": "Hook deleted!",
+        "hookDeleteError": "Failed to delete the hook!",
+        "hookCreateSuccess": "Hook created!",
+        "hookCreateError": "Failed to create the hook!",
+        "confirmationNeeded": "Confirmation needed",
+        "confirmHookRemove" : "Are you sure, you want to delete the hook?"
+      },
+      "types": {
+        "user_added": "User added",
+        "user_removed": "User removed",
+        "attribute_change": "Attribute change"
+      }
+    }
+  }
+}
