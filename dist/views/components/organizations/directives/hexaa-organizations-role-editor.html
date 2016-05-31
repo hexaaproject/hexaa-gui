@@ -1,0 +1,62 @@
+<form name="roleEditForm" ng-model="roleEditForm" novalidate>
+    <h4 translate>organizations.roles.lbl.roleProperties</h4>
+    <label for="name" translate>organizations.roles.lbl.roleName</label>
+    <input type="text" class="form-control" id="name" placeholder="Role name" ng-model="role.name" required notifyuierror/>
+    <label for="description" translate>organizations.roles.lbl.roleDescription</label>
+    <input type="text" class="form-control" id="description" placeholder="Description of Role" ng-model="role.description" notifyuierror/>
+    <p>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="start_date" translate>organizations.roles.lbl.roleStartDate</label>
+            <p class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input type="text" class="form-control" id="start_date" datepicker-popup="yyyy-MM-dd" ng-model="role.start_date" is-open="start_opened"  notifyuierror/>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <label for="end_date" translate>organizations.roles.lbl.roleEndDate</label>
+            <p class="input-group leftify">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input type="text" class="form-control" id="end_date" datepicker-popup="yyyy-MM-dd" ng-model="role.end_date" is-open="end_opened"  notifyuierror/>
+            </p>
+        </div>
+    </div>
+    </p>
+    <!-- Entitlements -->
+    <div ng-if="organization.entitlements && organization.entitlements.length != 0">
+        <h4 translate>organizations.roles.lbl.roleEntitlements</h4>
+        <div class="container-fluid row"  ng-hide="organization.entitlements.length == 0">
+            <div id="entitlementsbox" angular-duallistbox elements="organization.entitlements" selected="role.entitlements"  element-display="'scoped_name'" element-value="'id'"
+                 non-selected-list-label="'organizations.roles.lbl.entitlementList' | translate"
+                 selected-list-label="'organizations.roles.lbl.roleEntitlementList' | translate"
+                 filter-place-holder="Filter">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Members -->
+
+    <div ng-if="organization.principals && organization.principals.length != 0">
+        <h4 translate>organizations.roles.lbl.roleMembers</h4>
+        <div class="container-fluid row">
+            <div id="membersbox" angular-duallistbox elements="organization.principals" selected="role.principals"
+                 element-display="'fedid'" element-value="'id'"
+                 non-selected-list-label="'organizations.roles.lbl.organizationMemberList' | translate"
+                 selected-list-label="'organizations.roles.lbl.roleMembers' | translate"
+                 filter-place-holder="Filter">
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="clearfix">
+        <div class="pull-right">
+            <button type="button" ng-click="save()"  class="btn btn-primary"  ng-disabled="!roleEditForm.$valid">
+                <span translate>organizations.roles.btn.roleSave</span>
+            </button>
+            <button type="button" ng-click="undo()"  class="btn btn-default">
+                <span translate>organizations.roles.btn.roleUndo</span>
+            </button>
+        </div>
+    </div>
+</form>

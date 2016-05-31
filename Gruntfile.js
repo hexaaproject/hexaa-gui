@@ -227,7 +227,7 @@ module.exports = function (grunt) {
     // additional tasks can operate on them
     useminPrepare: {
       html: ['<%= yeoman.app %>/index.html'],
-      js: ['<%= yeoman.dist %>/scripts/themeService.js','<%= yeoman.dist %>/scripts/imageFormatter.js'],      
+      js: ['<%= yeoman.dist %>/scripts/theme.service.js','<%= yeoman.dist %>/scripts/image-formatter.js'],
       options: {
         dest: '<%= yeoman.dist %>',
         flow: {

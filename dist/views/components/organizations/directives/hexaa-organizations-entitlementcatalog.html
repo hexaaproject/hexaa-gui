@@ -1,0 +1,37 @@
+<h4 translate ng-show="entitlementpacks.length == 0">organizations.public_catalog.lbl.noPublicEntitlementsWereFound</h4>
+<div class="row" ng-show="entitlementpacks.length != 0">
+
+    <div ng-repeat="entitlementpack in entitlementpacks">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a ng-click="showService(entitlementpack.service.id)">{{entitlementpack.scoped_name}}</a></h3>
+            </div>
+            <div class="panel-body">
+                <blockquote>{{entitlementpack.description}}</blockquote>
+                <h4 translate>organizations.public_catalog.lbl.entitlements</h4>
+                <ul style="margin-top: 10px; margin-left: 5px;">
+                    <li ng-repeat="entitlement in entitlementpack.entitlements">
+                        <p>
+                            <b>{{entitlement.name}}</b>
+                            <br><i>{{entitlement.description}}</i></br>
+                        </p>
+                    </li>
+                </ul>
+                <div ng-if="getStatus(entitlementpack.id) ">
+                    <h4 translate>organizations.public_catalog.lbl.status</h4>
+                    <p class="alert-warning"><i class="fa fa-exclamation-triangle"></i> {{ 'organizations.public_catalog.lbl.pendingEntitlementpack'| translate }}
+                    </p>
+                </div>
+                <p>
+                    <button class="btn btn-primary pull-right" ng-click="add(entitlementpack)" ng-hide="isAttached(entitlementpack)" translate>
+                        organizations.public_catalog.btn.addEntitlementpack
+                    </button>
+                    <button class="btn btn-danger" ng-click="remove(entitlementpack)" ng-hide="!isAttached(entitlementpack)" translate>
+                        organizations.public_catalog.btn.removeEntitlementpack
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

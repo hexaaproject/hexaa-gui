@@ -1,0 +1,31 @@
+<div class="modal-header clearfix" >
+        <button class="btn pull-right" ng-click="vm.close()"
+                title="{{'modals.serviceChangerDialog.btn.close' | translate}}">
+            <i class="fa fa-times"></i>
+            </button>
+        <h3 class="modal-title" translate="modals.serviceChangerDialog.lbl.title"></h3>
+</div>
+<div class="modal-body">
+    <div class="form-group input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
+        <input type="text" class="form-control" name="serviceFilter" ng-model="vm.serviceFilter" placeholder="Filter"/>
+    </div>
+    <table class="table table-responsive">
+        <tr>
+            <th translate>modals.serviceChangerDialog.lbl.serviceLogo</th>
+            <th translate>modals.serviceChangerDialog.lbl.serviceName</th>
+            <th translate>modals.serviceChangerDialog.lbl.serviceDescription</th>
+            <!-- <th translate>modals.serviceChangerDialog.lbl.serviceUrl</th> -->
+        </tr>
+        <tr ng-repeat="service in vm.services | filter: vm.serviceFilter | pager: vm.pager">
+            <td><img class="servicelogo" ng-src="{{service.getLogo()}}"/></td>
+            <td><a href="" ng-click="vm.select(service)" >{{service.name}}</a></td>
+            <td>{{service.description}}</td>
+            <!-- <td>                
+                <a href="{{service.url}}" target="_blank">{{service.url}}</a>
+            </td> -->
+        </tr>
+    </table>
+    <pagination total-items="vm.pager.totalItems" page="vm.pager.currentPage" max-size="vm.pager.maxSize"
+    class="pagination-sm" boundary-links="true" rotate="false" num-pages="vm.pager.numPages" items-per-page="vm.pager.itemPerPage"></pagination>
+</div>

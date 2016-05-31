@@ -39,7 +39,7 @@ describe('Controller: OrganizationNewsCtrl', function () {
             $scope: scope,
             $rootScope: $rootScope,
             events: $injector.get('events'),
-            OrganizationsProxy: $injector.get('OrganizationsProxyMockup'),
+            OrganizationsFacade: $injector.get('OrganizationsFacadeMockup'),
             tags: $injector.get('tags')
         });
     }));

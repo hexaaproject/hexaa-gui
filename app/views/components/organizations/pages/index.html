@@ -21,8 +21,8 @@
                         ng-click="navigate('#/organizations/roles')" ng-show="profile.isMemberOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.roles" href=""></a></li>
                     <li ng-class="{active: page=='attributes'}"
                         ng-click="navigate('#/organizations/attributes')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.attributes" href=""></a></li>
-                    <li ng-class="{active: page=='public_catalog'}"
-                        ng-click="navigate('#/organizations/public_catalog')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.public_catalog" href=""></a></li>
+                    <li ng-class="{active: page=='public-catalog'}"
+                        ng-click="navigate('#/organizations/public-catalog')" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.subpages.public_catalog" href=""></a></li>
                     <li class="danger" ng-click="deleteOrganization(selectedOrganization)" ng-show="profile.isManagerOfOrganization(selectedOrganization.id)"><a translate="organizations.index.btn.deleteOrganization"></a></li>
                     <li class="list-group-item" ng-show="profile.isAdmin">
                         Administration

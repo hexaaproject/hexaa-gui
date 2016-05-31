@@ -13,7 +13,8 @@
 				"connectedEntitlementpacks" : "Connected Organizations",
 				"invitations" : "Invitation management",				
 				"contactAdmin": "Contact Admin",
-				"contactServiceManagers": "Contact Managers"
+				"contactServiceManagers": "Contact Managers",
+			  	"hooks": "Hooks"
 			},
 			"msg":
 			{

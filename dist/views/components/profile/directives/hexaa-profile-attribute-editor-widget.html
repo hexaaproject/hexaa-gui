@@ -4,7 +4,7 @@
            notifyuierror required/>
     <label for="value" translate>profile.attributes.lbl.attributeAssociations</label>
 
-    <div class="container-fluid row">
+    <div class="container-fluid row" ng-if="attributeSpecification.is_multivalue == true">
 
         <div id="attributesbox" angular-duallistbox elements="attributeSpecification.supportingServices"
              selected="attribute.associatedServices" element-display="'name'" element-value="'id'"
@@ -13,12 +13,16 @@
              filter-place-holder="'profile.attributes.placeholder.serviceList' | translate">
         </div>
 
+        <blockquote >
+            <i translate>profile.attributes.lbl.serviceAssociationWarning</i>
+        </blockquote>
     </div>
-    <blockquote><i translate>profile.attributes.lbl.serviceAssociationWarning</i></blockquote>
     <div class="clearfix">
         <button class="btn btn-primary pull-right" ng-click="save()" ng-disabled="attributeEditorForm.$invalid" translate>
             profile.attributes.btn.attributeSave
         </button>
+        <!--
         <button class="btn btn-warning" ng-click="undo()" translate>profile.attributes.btn.cancel</button>
+        -->
     </div>
 </form>

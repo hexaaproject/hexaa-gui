@@ -1,37 +1,38 @@
 {
-	"organizations":
-	{
-		"entitlementpacks":
-		{
-			"lbl":
-			{
-				"title": "Használt szolgáltatások",
-				"entitlementpackPublic": "Publikus csomagok",
-				"entitlementpackConnected": "Használatban levő csomagok",
-				"token": "Token"
-			},
-			"msg":
-			{
-				"organizationEntitlementpacksRetrieveError": "Nem sikerült lekérdezni a csoport jogosultságcsomagait!",
-				"publicEntitlementpacksRetrieveError": "Nem sikerült lekérdezni a publikus jogosultságcsomagokat!",
-				"tokenLinkSuccessful": "Token beváltva!",
-				"tokenLinkError": "Token beváltása sikertelen!",
-				"entilementpackUpdateError": "Jogosultságcsomag mentve!",
-				"entitlementpackUpdateSuccess" : "Nem sikerült menteni a jogosultságcsomagot!",
-				"entitlementpackChangesSaved": "A változtatások mentésre kerültek!",
-				"problemOccured": "Hiba történt"
-			},
-			"placeholder":
-			{
-				"token": "Írja be a tokent ide",
-				"serviceFilter": "Írja be a szolgáltatás nevét"
-			},
-			"btn":
-			{
-				"entitlementpackAdd": "Hozzáad",
-				"entitlementpackRemove": "Töröl",
-				"tokenLink": "OK"
-			}	
-		}
-	}	
+  "organizations": {
+    "entitlementpacks": {
+      "lbl": {
+        "title": "Használt szolgáltatások",
+        "entitlementpackPublic": "Publikus csomagok",
+        "entitlementpackConnected": "Használatban levő csomagok",
+        "token": "Token"
+      },
+      "msg": {
+        "organizationEntitlementpacksRetrieveError": "Nem sikerült lekérdezni a csoport jogosultságcsomagait!",
+        "publicEntitlementpacksRetrieveError": "Nem sikerült lekérdezni a publikus jogosultságcsomagokat!",
+        "tokenLinkSuccessful": "Token beváltva!",
+        "tokenLinkError": "Token beváltása sikertelen!",
+        "entilementpackUpdateError": "Jogosultságcsomag mentve!",
+        "entitlementpackUpdateSuccess": "Nem sikerült menteni a jogosultságcsomagot!",
+        "entitlementpackChangesSaved": "A változtatások mentésre kerültek!",
+        "problemOccured": "Hiba történt",
+        "areyousure": "Biztos benne?",
+        "statusPending": "Folyamatban",
+        "statusOk": "Ok",
+        "confirmationNeeded": "Megerősítés szükséges",
+        "entitlementpackDeleteConfirm": "Biztosan törli a {{name}} jogosultságcsomagot?",
+        "entitlementpackAttachToRoleConfirmTitle": "Jogosultságcsomag szerepkörhöz rendelése",
+        "entitlementpackAttachToRoleConfirm": "Szeretné a jogosultságcsomagot egy szerepkörhöz rendelni?"
+      },
+      "placeholder": {
+        "token": "Írja be a tokent ide",
+        "serviceFilter": "Írja be a szolgáltatás nevét"
+      },
+      "btn": {
+        "entitlementpackAdd": "Hozzáad",
+        "entitlementpackRemove": "Töröl",
+        "tokenLink": "OK"
+      }
+    }
+  }
 }

@@ -1,0 +1,60 @@
+<h4 translate>organizations.roles.lbl.roleProperties</h4>
+
+<dl class="dl-horizontal">
+    <dt><b translate>organizations.roles.lbl.roleName</b></dt>
+    <dd>{{role.name}}</dd>
+
+    <dt ng-if="role.description"><b translate>organizations.roles.lbl.roleDescription</b></dt>
+    <dd>{{role.description}}</dd>
+
+    <dt ng-if="role.start_date"><b translate>organizations.roles.lbl.roleStartDate</b></dt>
+    <dd>{{role.start_date | date}}</dd>
+
+    <dt ng-if="role.end_date"><b translate>organizations.roles.lbl.roleEndDate</b></dt>
+    <dd>{{role.end_date | date}}</dd>
+</dl>
+
+<div class="container-fluid row">
+    <div class="col-xs-6 col-md-6">
+        <h4 translate ng-show="role.principals && role.principals.length != 0">organizations.roles.lbl.roleMembers</h4>
+        <div>
+            <ul>
+                <li class="list-unstyled" ng-repeat="item in role.principals" ng-class="{strong: item.fedid == profile.fedid}">
+                    <span ng-if="item.display_name">
+                        <!-- Ha van neve -->
+                        {{item.display_name}}
+                        <span ng-if="item.email">
+                            <!-- Ha van neve es e-mail cime -->
+                            &lt;{{item.email}}&gt;
+                        </span>
+                        <span ng-if="!item.email">
+                            <!-- Ha van neve es nincs e-mail cime -->
+                            {{item.fedid}}
+                        </span>
+                    </span>
+                    <span ng-if="!item.display_name" >
+                        <!-- Ha nincs neve -->
+                        {{item.fedid}}
+                        <span ng-if="item.email">
+                            <!-- Ha van e-mail cime -->
+                            &lt;{{item.email}}&gt;
+                        </span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-xs-6 col-md-6">
+        <h4 translate ng-show="role.entitlements && role.entitlements.length != 0">organizations.roles.lbl.roleEntitlements</h4>
+        <div>
+            <ul class="list-unstyled">
+                <li ng-repeat="item in role.entitlements">{{item.scoped_name}}</li>
+            </ul>
+        </div>
+    </div>
+
+
+    </p>
+
+</div>

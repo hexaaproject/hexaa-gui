@@ -22,8 +22,6 @@
 				"attributeSpecificationGetError": "Couldnt download attributespecifications!",
 				"attributeSpecificationDeleteSuccess": "Attribute deleted!",
 				"attributeSpecificationDeleteError": "Failed to delete Attribute!",
-				"attributeSpecificationUpdateSuccess" : "Attribute updated!",
-				"attributeSpecificationUpdateError" : "Failed to update Attribute!",
 				"attributeSpecificationDeleteConfirm": "Do you want to delete {{name}}?",
 				"confirmationNeeded" : "Confirmation needed!"
 			}

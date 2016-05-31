@@ -1,0 +1,14 @@
+<div class="modal-header clearfix" xmlns="http://www.w3.org/1999/html">
+    <button class="btn pull-right" ng-click="close()"
+            title="{{'modals.newRole.btn.dialogClose' | translate}}">
+        <i class="fa fa-times"></i>
+            </button>
+    <h3 class="modal-title" translate>modals.newRole.lbl.title</h3>
+</div>
+<div class="modal-body">
+    <div hexaa-organizations-role-editor-widget
+         organization="organization"
+         role="role"
+         save-role="saveRole()">
+    </div>
+</div>

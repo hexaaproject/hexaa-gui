@@ -7,11 +7,12 @@
         "hookUrl": "URL",
         "hookType": "Típus",
         "hookCreated": "Létrehozva ",
-        "hookUpdated": "Frissítve".
+        "hookUpdated": "Frissítve",
         "hookLastCallMessage": "Utolsó válaszüzenet"
       },
       "btn": {
-        "addHook": "Új horgony"
+        "addHook": "Új horgony",
+        "renewHookKey": "Új kulcs"
       },
       "msg": {
         "hookUpdateSuccess": "Horgony frissítve!",
@@ -21,7 +22,10 @@
         "hookCreateSuccess": "Horgony létrehozva!",
         "hookCreateError": "Nem sikerült létrehozni a horgonyt!",
         "confirmationNeeded": "Megerősítés szükséges!",
-        "confirmHookRemove" : "Biztosan törli a horgonyt?"
+        "confirmHookRemove" : "Biztosan törli a horgonyt?",
+        "hookKeyRenewSucess": "Kulcs frissítve!",
+        "hookKeyRenewError": "Nem sikerült frissíteni a kulcsot!"
+
       },
       "types": {
         "user_added": "Új felhasználó lett hozzáadva",

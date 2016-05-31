@@ -1,0 +1,18 @@
+<script id="template/modal/window.html" type="text/ng-template">
+    <div tabindex="-1" role="dialog" class="modal fade" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10, display: 'block'}" ng-click="close($event)">
+        <div class="modal-dialog" ng-class="{'modal-sm': size == 'sm', 'modal-lg': size == 'lg'}"  draggable=".modal-header" resizable>
+            <div class="modal-content" ng-transclude></div>
+        </div>
+    </div>
+</script>
+<div class="modal-header clearfix" >
+    <button class="btn btn-primary" ng-click="close()" title="{{'modals.message.btn.messageClose' | translate}}">
+        <i class="fa fa-times"></i>
+    </button>
+    <h3 class="modal-title">{{title}}</h3>
+</div>
+<div class="modal-body">
+    <p ng-bind-html="body">
+
+    </p>
+</div>

@@ -34,7 +34,7 @@
                 restrict: 'A',
                 scope: scope,
                 link: link,
-                templateUrl: 'views/shared/directives/angular-duallistbox.tpl.html'
+                templateUrl: 'views/shared/directives/angular-duallistbox.directive.html'
             };
 
             function link(scope, elm, attr) {

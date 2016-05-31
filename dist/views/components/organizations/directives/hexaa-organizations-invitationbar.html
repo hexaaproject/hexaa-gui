@@ -1,0 +1,14 @@
+<div class="btn-group pull-right">
+    <button class="btn btn-success dropdown-toggle pull-right" data-toggle="dropdown">
+        <i class="fa fa-plus"></i> {{ 'organizations.invitations.btn.invitationInvite' | translate}} <i class="fa fa-caret-down"></i>
+    </button>
+    <ul class="dropdown-menu">
+        <li ng-controller="InviteOrganizationMembersCtrl">
+            <a ng-click="inviteMembers(organization)" translate>
+                organizations.invitations.btn.invitationInviteMember</a>
+        </li>
+        <li ng-controller="InviteOrganizationManagersCtrl">
+            <a ng-click="inviteManagers(organization)" translate>organizations.invitations.btn.invitationInviteManager</a>
+        </li>
+    </ul>
+</div>

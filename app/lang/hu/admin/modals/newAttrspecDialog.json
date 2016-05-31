@@ -7,6 +7,10 @@
 				},
 				"btn": {
 					"close": "Bezárás"
+				},
+			  	"msg": {
+				  "attributeSpecificationUpdateSuccess" : "Attribútum mentve!",
+				  "attributeSpecificationUpdateError" : "Nem sikerült elmenteni az attribútumot!"
 				}
 			}
 		}

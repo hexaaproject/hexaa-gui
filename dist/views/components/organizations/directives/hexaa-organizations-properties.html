@@ -1,0 +1,41 @@
+<form name="newOrganizationForm" model="newOrganizationForm">
+    <div class="form-group">
+        <label for="name" translate>organizations.new.lbl.organizationName</label>
+        <input type="text" class="form-control" ng-model="organization.name" id="name"
+               placeholder="{{'organizations.new.placeholder.organizationName' | translate}}" required notifyuierror/>
+    </div>
+
+    <div class="form-group">
+        <label for="description" translate>organizations.new.lbl.organizationDescription</label>
+        <input type="text" class="form-control" ng-model="organization.description" id="description"
+               placeholder="{{'organizations.new.placeholder.organizationDescription' | translate}}" notifyuierror/>
+    </div>
+    <div class="form-group">
+
+        <label for="role" translate>organizations.new.lbl.organizationDefaultRole</label>
+        <input type="text" class="form-control" ng-model="organization.role.name" id="role"
+               placeholder="{{'organizations.new.placeholder.organizationDefaultRole' | translate}}" required
+               notifyuierror/>
+    </div>
+
+    <div class="form-inline">
+        <label class="checkbox">
+            <switch type="checkbox" ng-model="organization.isolate_members" id="isolate_members" on="On" off="Off"
+                    class="green"/>
+        </label>
+        <label>
+            <b translate>organizations.new.lbl.organizationIsolateMembers</b>
+        </label>
+    </div>
+
+    <div class="form-inline">
+        <label class="checkbox">
+            <switch type="checkbox" ng-model="organization.isolate_role_members" id="isolate_role_members" on="On"
+                    off="Off" class="green"/>
+        </label>
+        <label>
+            <b translate>organizations.new.lbl.organizationIsolateRoleMembers</b>
+        </label>
+    </div>
+
+</form>

@@ -1,26 +1,29 @@
 {
-	"shared": {
-		"modals": {
-			"hookEditor": {
-			  "lbl": {
-				"titleHookEdit": "Edit hook",
-				"titleNewHook": "New hook",
-				"hookName" : "Name",
-				"hookDescription": "Description",
-				"hookUrl": "URL",
-				"hookType": "Type",
-				"hookCreated": "Added",
-				"hookUpdated": "Updated"
-			  },
-			  "btn": {
-				"save": "Save"
-			  },
-			  "types": {
-				"user_added": "User added",
-				"user_removed": "User removed",
-				"attribute_change": "Attribute change"
-			  }
-			}
-		}
-	}
+    "shared": {
+        "modals": {
+            "hookEditor": {
+                "lbl": {
+                    "titleHookEdit": "Edit hook",
+                    "titleNewHook": "New hook",
+                    "hookName": "Name",
+                    "hookDescription": "Description",
+                    "hookUrl": "URL",
+                    "hookType": "Type",
+                    "hookCreated": "Added",
+                    "hookUpdated": "Updated"
+                },
+                "btn": {
+                    "save": "Save"
+                },
+                "types": {
+                    "user_added": "User added",
+                    "user_removed": "User removed",
+                    "attribute_change": "Attribute change"
+                },
+                "msg": {
+                    "hookUrlIsNotHttps": "Hook URL (in a nice world) should use HTTPS. Please consider switching to HTTPS."
+                }
+            }
+        }
+    }
 }

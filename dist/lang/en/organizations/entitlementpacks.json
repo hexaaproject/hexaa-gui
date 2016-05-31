@@ -14,14 +14,16 @@
 			{
 				"tokenLinkSuccessful": "Token linked!",
 				"tokenLinkError": "Failed to link token!",
-				"entilementpackRemoveError": "Failed to remove entitlementpack!",
-				"entitlementpackRemoveSuccess" : "Entitlementpack removed!",				
+				"entilementpackRemoveError": "Failed to remove permission set!",
+				"entitlementpackRemoveSuccess" : "Permission set removed!",
 				"problemOccured": "Problem occured",
 				"areyousure": "Are you sure?",
 				"statusPending": "Pending",
 				"statusOk": "Ok",
 				"confirmationNeeded": "Confirmation needed",
-				"entitlementpackDeleteConfirm": "Do you want to delete entitlementpack {{name}}?"
+				"entitlementpackDeleteConfirm": "Do you want to delete permission set {{name}}?",
+			  	"entitlementpackAttachToRoleConfirmTitle": "Attaching permission set to role",
+			  	"entitlementpackAttachToRoleConfirm": "Do you want to attach the permission set to a role?"
 			},
 			"placeholder":
 			{

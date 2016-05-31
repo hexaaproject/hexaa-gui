@@ -15,7 +15,8 @@
 				"connectedEntitlementpacks" : "Használt jogosultságcsomagok",
 				"invitations" : "Meghívók",
 				"contactAdmin": "Kapcsolatfelvétel az Adminnal",
-				"contactServiceManagers": "Kapcsolatfelvétel a managerekkel"
+				"contactServiceManagers": "Kapcsolatfelvétel a managerekkel",
+			  	"hooks": "Hurkok"
 			},
 			"msg":
 			{

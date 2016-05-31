@@ -16,7 +16,7 @@
 
 'use strict';
 
-hexaaApp.factory('PrincipalProxy', function($q) {
+hexaaApp.factory('PrincipalFacade', function($q) {
 
     return {
 

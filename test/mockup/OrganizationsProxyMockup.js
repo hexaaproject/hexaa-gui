@@ -16,7 +16,7 @@
 
 'use strict';
 
-hexaaApp.factory('OrganizationsProxyMockup', function($q) {
+hexaaApp.factory('OrganizationsFacadeMockup', function($q) {
 
     return {
         getNews: function(id, skip, take, tags)
