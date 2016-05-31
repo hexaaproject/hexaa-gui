@@ -1,0 +1,11 @@
+<div ng-controller="HooksCtrl as vm">
+    <div class="panel panel-info panel-heading clearfix">
+        <button type="button" ng-click="vm.addHook()"  class="btn btn-primary pull-right" >
+            <b translate>services.hooks.btn.addHook</b> <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </div>
+
+    <div hook-list hooks="vm.service.hooks"
+         on-delete-clicked="vm.onHookDeleteClicked(hook)"
+         on-edit-clicked="vm.onHookEditClicked(hook)"></div>
+</div>

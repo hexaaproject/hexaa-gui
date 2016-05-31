@@ -14,7 +14,7 @@
         <!--
         <script src="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js" ></script>
         -->
-        <link rel="stylesheet" href="styles/a3fc2f14.vendor.css"/>
+        <link rel="stylesheet" href="styles/5f664738.vendor.css"/>
         <link rel="stylesheet" href="styles/6a0b0a6a.main.css"/>
         <?php 
             if (isSet($redirectUrl)) {
@@ -28,7 +28,7 @@
                 <div id="navContainer" class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <a class="navbar-brand navbar-left"><img src="images/7953d79e.hexaa.png"></a>
+                        <a class="navbar-brand navbar-left"><img src="images/7e80cfe0.hexaa.png"></a>
                     </div>
                 </div><!-- /.container-fluid -->
             </nav>        
@@ -48,13 +48,13 @@
             <div class="footer">
                 <div class="row">
                     <div  class="col-md-4">
-                        <img src="images/a0c95065.sztaki.png" height="80em" />
+                        <img src="images/97b495cc.sztaki.png" height="80em" />
                     </div>
                     <div class="col-md-4" style="text-align: center; vertical-align: center">
                         <h4>Copyright 2013-2015</h4>
                     </div>               
                     <div class="col-md-4">
-                        <img src="images/cf2e22a3.niifi.png" height="80em" class="pull-right"/>
+                        <img src="images/bfdc24da.niifi.png" height="80em" class="pull-right"/>
                     </div>
                 </div>                
              </div>

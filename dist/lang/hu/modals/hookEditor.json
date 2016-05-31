@@ -1,0 +1,26 @@
+{
+	"shared": {
+		"modals": {
+			"hookEditor": {
+			  "lbl": {
+				"titleHookEdit": "Horgony szerkesztése",
+				"titleNewHook": "Új horgony",
+				"hookName" : "Név",
+				"hookDescription": "Leírás",
+				"hookUrl": "URL",
+				"hookType": "Típus",
+				"hookCreated": "Hozzáadva",
+				"hookUpdated": "Frissítve"
+			  },
+			  "btn": {
+				"save": "Mentés"
+			  },
+			  "types": {
+				"user_added": "Új felhasználó lett hozzáadva",
+				"user_removed": "Felhasználó törölve lett",
+				"attribute_change": "Attribútum változás"
+			  }
+			}
+		}
+	}
+}
