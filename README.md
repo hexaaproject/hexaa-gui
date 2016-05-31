@@ -66,3 +66,6 @@ The first command will install all the tools that you need for development, espe
 When this project started, hexaa-gui was a pilot project. As the time went by, It has grown up, and became a very huge and complex front end. Due to this fact, It had a few refactor cycles. Even now we are in the middle of one smaller AngularJS dependent pattern refactor, in which we refactor our controllers to use controllerAs syntax instead of $scope. That's why the current stable version (0.26) has mixed controller syntaxes. (A few of them uses the older style, but the majority uses the controllerAs syntax.)
 This is necessary to ensure that the controllers are technology independent, and to reduce the effort of porting the whole project into Angular 2.0 (once if it will be necessary).
 
+Changelog
+-------------------
+0.27.0 - Added support for service hooks
