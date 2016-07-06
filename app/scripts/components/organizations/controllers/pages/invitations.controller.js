@@ -120,8 +120,8 @@
                 $scope.$emit(events.organizationCanBeSaved, false);
                 $scope.$on(events.organizationsSelectionChanged, onOrganizationsSelectionChanged);
                 $scope.$on(events.refreshOrganizationInvitations, onRefreshInvitations);
-                $scope.$watch("pager.currentPage", onCurrentPageChanged);
-                $scope.$watch("pager.itemPerPage", onItemPerPageChanged);
+                $scope.$watch("vm.pager.currentPage", onCurrentPageChanged);
+                $scope.$watch("vm.pager.itemPerPage", onItemPerPageChanged);
                 pageTitleService.setSubPageTitle($translate.instant(namespace + "lbl.title"));
             }
 
