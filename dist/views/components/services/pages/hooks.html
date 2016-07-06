@@ -1,5 +1,10 @@
 <div ng-controller="HooksCtrl as vm">
     <div class="panel panel-info panel-heading clearfix">
+        <input type="text" ng-disabled="true" ng-model="vm.service.hook_key" />
+        <Button type="button" class="btn btn-danger" ng-click="vm.renewHookKey()">
+            <span translate="services.hooks.btn.renewHookKey"></span>
+            <i class="glyphicon glyphicon-refresh"></i>
+        </Button>
         <button type="button" ng-click="vm.addHook()"  class="btn btn-primary pull-right" >
             <b translate>services.hooks.btn.addHook</b> <span class="glyphicon glyphicon-plus"></span>
         </button>

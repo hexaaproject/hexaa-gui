@@ -11,7 +11,8 @@
         "hookLastCallMessage": "Last call message"
       },
       "btn": {
-        "addHook": "New hook"
+        "addHook": "New hook",
+        "renewHookKey": "Renew Key"
       },
       "msg": {
         "hookUpdateSuccess": "Hook updated!",
@@ -21,7 +22,9 @@
         "hookCreateSuccess": "Hook created!",
         "hookCreateError": "Failed to create the hook!",
         "confirmationNeeded": "Confirmation needed",
-        "confirmHookRemove" : "Are you sure, you want to delete the hook?"
+        "confirmHookRemove" : "Are you sure, you want to delete the hook?",
+        "hookKeyRenewSucess": "Hook key renewed!",
+        "hookKeyRenewError": "Error renewing hook key!"
       },
       "types": {
         "user_added": "User added",

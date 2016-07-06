@@ -17,6 +17,9 @@
 
         <label for="hookUrl">{{"shared.modals.hookEditor.lbl.hookUrl" | translate}}</label>
         <input type="text" class="form-control" id="hookUrl" ng-model="vm.hook.url"/>
+        <div ng-if="!vm.isHookUrlHttps()" class="alert alert-warning">
+            {{"shared.modals.hookEditor.msg.hookUrlIsNotHttps" | translate}}
+        </div>
 
         <label>{{"shared.modals.hookEditor.lbl.hookType" | translate}}</label>
         <select class="form-control" ng-model="vm.hook.type">
