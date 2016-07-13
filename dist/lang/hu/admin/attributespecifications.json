@@ -12,6 +12,7 @@
 				"attributeSpecificationIsMultiValue": "Többértékű",
                 "attributeSpecificationMaintainer": "Karbantartó",
                 "attributeSpecificationMaintainerUser":"Felhasználó",
+				"attributeSpecificationMaintainerAdmin":"Rendszergazda",
                 "attributeSpecificationMaintainerOrganization":"Szervezet menedzsere"
 			},
 			"btn": {

@@ -12,6 +12,7 @@
 				"attributeSpecificationIsMultiValue": "Multivalue",
                 "attributeSpecificationMaintainer": "Maintainer",
                 "attributeSpecificationMaintainerUser":"User",
+				"attributeSpecificationMaintainerAdmin":"Admin",
                 "attributeSpecificationMaintainerOrganization":"Organization manager"
 			},
 			"btn": {
